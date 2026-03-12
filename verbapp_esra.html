@@ -3,16 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VerbEspañol A1 — Español · Türkçe</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<title>esracademiapp — İspanyolca Fiil Çekimleri</title>
 <style>
 /* ============================================================
-   DUOLINGO-INSPIRED DESIGN SYSTEM — VerbEspañol A1
-   Fredoka One (display) + Poppins (body)
-   Vibrant, playful, colorful — aprende jugando
+   DUOLINGO-INSPIRED DESIGN SYSTEM — esracademiapp
    ============================================================ */
+/* Google Fonts — isteğe bağlı, bloke edilirse sistem fontları kullanılır */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 :root {
   /* ── Core palette ── */
   --white:          #FFFFFF;
@@ -25,10 +22,10 @@
   --border-light:   #F3F4F6;
 
   /* ── Brand colors ── */
-  --primary:        #58CC02;   /* Duolingo green */
-  --primary-dark:   #46A302;
-  --primary-bg:     #E5F8D0;
-  --primary-shadow: rgba(88,204,2,.3);
+  --primary:        #4F6AF5;   /* Calm indigo blue */
+  --primary-dark:   #3451D1;
+  --primary-bg:     #EEF1FE;
+  --primary-shadow: rgba(79,106,245,.3);
 
   --purple:         #CE82FF;
   --purple-dark:    #A855F7;
@@ -119,11 +116,13 @@
 
 /* ── Reset ── */
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0 }
-html { scroll-behavior:smooth }
+html { scroll-behavior:smooth; font-size:17px }
 body {
-  font-family:'Poppins', sans-serif;
+  font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
+  font-size:1rem;
+  line-height:1.6;
   min-height:100vh;
   -webkit-font-smoothing:antialiased;
   transition:background .3s, color .3s;
@@ -169,12 +168,12 @@ a { color:inherit; text-decoration:none }
   50%{ transform:scale(1.5); opacity:.6 }
 }
 .app-title {
-  font-family:'Fredoka One', cursive;
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
   font-size:1.25rem; color:var(--primary);
   letter-spacing:.01em;
 }
 .app-subtitle {
-  font-size:.62rem; color:var(--text-muted); font-weight:600;
+  font-size:.76rem; color:var(--text-muted); font-weight:600;
   text-transform:uppercase; letter-spacing:.1em;
 }
 .header-right { display:flex; align-items:center; gap:8px }
@@ -183,8 +182,8 @@ a { color:inherit; text-decoration:none }
   padding:8px 16px; border-radius:var(--radius-pill);
   border:2px solid var(--border);
   background:var(--bg-card); color:var(--text);
-  font-size:.78rem; font-weight:600;
-  transition:all .18s; font-family:'Poppins',sans-serif;
+  font-size:1.06rem; font-weight:600;
+  transition:all .18s; font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif;
 }
 .btn-icon:hover { border-color:var(--primary); color:var(--primary); background:var(--primary-bg) }
 #themeBtn {
@@ -196,8 +195,8 @@ a { color:inherit; text-decoration:none }
   padding:7px 14px; border-radius:var(--radius-pill);
   background:var(--gold-bg); color:var(--gold-dark);
   border:2px solid var(--gold);
-  font-size:.8rem; font-weight:700;
-  font-family:'Fredoka One', cursive; letter-spacing:.02em;
+  font-size:1.08rem; font-weight:700;
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; letter-spacing:.02em;
   box-shadow:0 2px 0 var(--gold-dark);
   transition:transform .15s;
 }
@@ -221,9 +220,9 @@ a { color:inherit; text-decoration:none }
   padding:9px 20px; border-radius:var(--radius-pill);
   border:2px solid transparent;
   background:transparent; color:var(--text-muted);
-  font-size:.82rem; font-weight:600; cursor:pointer;
+  font-size:1.09rem; font-weight:600; cursor:pointer;
   transition:all .2s;
-  font-family:'Poppins',sans-serif; white-space:nowrap;
+  font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif; white-space:nowrap;
 }
 .nav-tab:hover { background:var(--bg); color:var(--text) }
 .nav-tab.active {
@@ -249,7 +248,7 @@ a { color:inherit; text-decoration:none }
 @media(max-width:680px) {
   #main-content { padding-left:14px !important; padding-right:14px !important }
   #app-nav { padding:0 10px; gap:2px; justify-content:flex-start; overflow-x:auto }
-  .nav-tab { padding:8px 12px; font-size:.72rem }
+  .nav-tab { padding:8px 12px; font-size:1rem }
 }
 
 /* ── Page wrapper ── */
@@ -259,7 +258,7 @@ a { color:inherit; text-decoration:none }
    HOME — HERO
    ============================================================ */
 .home-hero {
-  background:linear-gradient(135deg, var(--primary) 0%, #4ADE80 100%);
+  background:linear-gradient(135deg, #4F6AF5 0%, #7C3AED 100%);
   border-radius:var(--radius-xl);
   padding:36px 40px 32px;
   margin-bottom:28px;
@@ -276,19 +275,19 @@ a { color:inherit; text-decoration:none }
 }
 .home-hero-flag { font-size:2.4rem; margin-bottom:10px; display:block }
 .home-hero-title {
-  font-family:'Fredoka One', cursive;
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
   font-size:2rem; color:#fff;
   margin-bottom:8px; letter-spacing:.01em;
   text-shadow:0 2px 0 rgba(0,0,0,.15);
 }
 .home-hero-sub {
-  font-size:.85rem; color:rgba(255,255,255,.9);
+  font-size:1rem; color:rgba(255,255,255,.9);
   line-height:1.65; max-width:480px; margin:0 auto 22px;
 }
 .hero-xp-bar-wrap { max-width:380px; margin:0 auto 16px }
 .hero-xp-label {
   display:flex; justify-content:space-between;
-  font-size:.72rem; font-weight:700; color:rgba(255,255,255,.9);
+  font-size:1rem; font-weight:700; color:rgba(255,255,255,.9);
   margin-bottom:7px; text-transform:uppercase; letter-spacing:.07em;
 }
 .hero-xp-track {
@@ -309,25 +308,26 @@ a { color:inherit; text-decoration:none }
 .hero-stat {
   display:flex; align-items:center; gap:6px;
   background:rgba(255,255,255,.2); padding:6px 14px; border-radius:var(--radius-pill);
-  font-size:.8rem; font-weight:700; color:#fff;
+  font-size:1.08rem; font-weight:700; color:#fff;
   backdrop-filter:blur(4px);
 }
-.hero-stat-val { font-family:'Fredoka One',cursive; font-size:.88rem }
+.hero-stat-val { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.02rem }
 .hero-stat-badge {
   padding:4px 12px; border-radius:var(--radius-pill);
   background:#fff; color:var(--primary-dark);
-  font-size:.72rem; font-weight:800;
-  font-family:'Fredoka One',cursive;
+  font-size:1rem; font-weight:800;
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
 }
 
 /* ============================================================
    LEVEL CARDS
    ============================================================ */
 .levels-grid {
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-  gap:20px; margin-bottom:28px;
+  display:grid; grid-template-columns:repeat(3, 1fr);
+  gap:16px; margin-bottom:28px;
 }
-@media(max-width:680px) { .levels-grid { grid-template-columns:1fr } }
+@media(max-width:780px) { .levels-grid { grid-template-columns:repeat(3, 1fr); gap:10px } }
+@media(max-width:480px) { .levels-grid { grid-template-columns:1fr } }
 
 .level-card {
   background:var(--bg-card);
@@ -346,25 +346,26 @@ a { color:inherit; text-decoration:none }
 .level-card.locked-card:hover { opacity:.85; cursor:pointer; transform:translateY(-2px) }
 
 .level-card-accent { height:8px; width:100% }
-.n1-accent { background:linear-gradient(90deg, var(--primary), #4ADE80) }
+.n1-accent { background:linear-gradient(90deg, #4F6AF5, #7C3AED) }
+
 .n2-accent { background:linear-gradient(90deg, var(--blue), var(--sky)) }
 .n3-accent { background:linear-gradient(90deg, var(--purple), var(--coral)) }
 
 .level-card-body { padding:22px 24px; flex:1; display:flex; flex-direction:column }
 .level-num-badge {
-  font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  font-size:.79rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
   padding:4px 12px; border-radius:var(--radius-pill); margin-bottom:10px;
-  display:inline-block; font-family:'Fredoka One',cursive;
+  display:inline-block; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
 }
 .n1-badge { background:var(--primary-bg); color:var(--primary-dark); border:2px solid var(--primary) }
 .n2-badge { background:var(--blue-bg); color:var(--blue-dark); border:2px solid var(--blue) }
 .n3-badge { background:var(--purple-bg); color:var(--purple-dark); border:2px solid var(--purple) }
 
 .level-card-title {
-  font-family:'Fredoka One', cursive;
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
   font-size:1.25rem; color:var(--text); margin-bottom:6px; letter-spacing:.01em;
 }
-.level-card-desc { font-size:.78rem; color:var(--text-muted); line-height:1.6; margin-bottom:16px }
+.level-card-desc { font-size:1.06rem; color:var(--text-muted); line-height:1.6; margin-bottom:16px }
 .level-lock { font-size:1.6rem }
 
 .level-stars { display:flex; gap:4px; margin-bottom:12px }
@@ -372,21 +373,21 @@ a { color:inherit; text-decoration:none }
 .level-star.filled { opacity:1; filter:none; animation:starPop .4s cubic-bezier(.34,1.56,.64,1) }
 @keyframes starPop { 0%{transform:scale(0)} 70%{transform:scale(1.2)} 100%{transform:scale(1)} }
 
-.level-status { font-size:.72rem; color:var(--text-muted); margin-bottom:14px; font-weight:500 }
+.level-status { font-size:1rem; color:var(--text-muted); margin-bottom:14px; font-weight:500 }
 
 .level-units { display:flex; flex-direction:column; gap:8px; margin-bottom:18px }
 .level-unit-row { display:flex; align-items:center; gap:10px }
-.level-unit-name { font-size:.7rem; font-weight:600; color:var(--text-muted); width:82px; flex-shrink:0 }
+.level-unit-name { font-size:.84rem; font-weight:600; color:var(--text-muted); width:82px; flex-shrink:0 }
 .level-unit-track { flex:1; height:6px; background:var(--border); border-radius:var(--radius-pill); overflow:hidden }
 .level-unit-fill { height:100%; border-radius:var(--radius-pill); transition:width .8s ease }
-.n1-fill { background:linear-gradient(90deg, var(--primary), #4ADE80) }
+.n1-fill { background:linear-gradient(90deg, #4F6AF5, #7C3AED) }
 .n2-fill { background:linear-gradient(90deg, var(--blue), var(--sky)) }
 .n3-fill { background:linear-gradient(90deg, var(--purple), var(--coral)) }
-.level-unit-pct { font-size:.64rem; font-weight:700; color:var(--text-muted); width:28px; text-align:right; font-family:'Fredoka One',cursive }
+.level-unit-pct { font-size:1.06rem; font-weight:700; color:var(--text-muted); width:28px; text-align:right; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif }
 
 .level-cta {
   width:100%; padding:14px; border-radius:var(--radius-sm); border:none;
-  font-family:'Fredoka One', cursive; font-size:.95rem; cursor:pointer;
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.08rem; cursor:pointer;
   transition:all .18s; display:flex; align-items:center; justify-content:center; gap:9px;
   margin-top:auto; letter-spacing:.02em;
 }
@@ -404,6 +405,267 @@ a { color:inherit; text-decoration:none }
 /* ============================================================
    UNIT VIEW — back bar + unit pills
    ============================================================ */
+/* ── Unit Step Strip (inside unit view) ── */
+.unit-step-strip {
+  display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap;
+}
+.unit-step-item {
+  flex:1; min-width:130px;
+  display:flex; align-items:center; gap:10px;
+  padding:10px 14px; border-radius:var(--radius-sm);
+  border:2px solid var(--border); background:var(--bg);
+  cursor:pointer; transition:all .2s; text-align:left;
+}
+.unit-step-item:hover { border-color:var(--primary); background:var(--primary-bg) }
+.unit-step-item.strip-active {
+  border-color:var(--primary); background:var(--primary-bg);
+  box-shadow:0 3px 0 var(--primary-dark);
+}
+.unit-step-item .step-num {
+  width:28px; height:28px; border-radius:50%; flex-shrink:0;
+  background:var(--border); color:var(--text-muted);
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.05rem;
+  display:flex; align-items:center; justify-content:center;
+}
+.unit-step-item.strip-active .step-num { background:var(--primary); color:#fff }
+.unit-step-item .strip-body { flex:1; min-width:0 }
+.unit-step-item .strip-name {
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.09rem;
+  color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.unit-step-item .strip-pct {
+  font-size:.84rem; font-weight:700; color:var(--text-muted); flex-shrink:0;
+}
+.unit-step-item.strip-active .strip-pct { color:var(--primary-dark) }
+
+/* ── Home Quick Row ── */
+.home-quick-row { display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap }
+.quick-btn {
+  flex:1; min-width:90px; display:flex; flex-direction:column; align-items:center; gap:6px;
+  padding:14px 10px; border-radius:var(--radius-sm);
+  border:2px solid var(--border); background:var(--bg-card);
+  cursor:pointer; transition:all .18s; font-family:'Nunito',sans-serif;
+}
+.quick-btn:hover { border-color:var(--primary); background:var(--primary-bg); transform:translateY(-2px) }
+.quick-btn-icon { font-size:1.5rem }
+.quick-btn-label { font-size:1rem; font-weight:700; color:var(--text-muted) }
+.quick-btn:hover .quick-btn-label { color:var(--primary-dark) }
+
+/* ── Daily Challenge ── */
+.daily-challenge {
+  display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  background:linear-gradient(135deg,#FF9600,#FF4B4B);
+  border-radius:var(--radius); padding:16px 20px; margin-bottom:22px;
+  cursor:pointer; transition:transform .15s;
+  box-shadow:0 4px 0 #CC3300, var(--shadow-md);
+}
+.daily-challenge:hover { transform:translateY(-2px) }
+.dc-left { display:flex; align-items:center; gap:14px }
+.dc-icon { font-size:2.2rem }
+.dc-label { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:.84rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.85); margin-bottom:2px }
+.dc-verb { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.1rem; font-weight:800; color:#fff }
+.dc-tr { font-weight:500; font-size:1.05rem; opacity:.85 }
+.dc-sub { font-size:1rem; color:rgba(255,255,255,.85); margin-top:2px }
+.dc-btn {
+  padding:11px 22px; border-radius:var(--radius-pill); border:none;
+  background:#fff; color:#CC3300; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
+  font-size:1rem; font-weight:800; cursor:pointer; white-space:nowrap;
+  box-shadow:0 3px 0 rgba(0,0,0,.15); transition:all .15s;
+}
+.dc-btn:hover { transform:translateY(-2px) }
+.dc-btn.dc-done { background:rgba(255,255,255,.3); color:#fff; cursor:default; box-shadow:none }
+.dc-q-input.dc-inp-ok  { border-color:#18A34A!important; background:#dcfce7!important; color:#15803d!important }
+.dc-q-input.dc-inp-err { border-color:var(--coral-dark)!important; background:var(--coral-bg)!important; color:var(--coral-dark)!important }
+
+/* ── step-locked ── */
+.level-step.step-locked { opacity:.55 }
+
+/* ═══════════════════════════════════════════
+   GÜNÜN GÖREVİ PAGE — redesigned
+   ═══════════════════════════════════════════ */
+.dp-hero {
+  background:linear-gradient(135deg,#FF9600,#FF4B4B);
+  border-radius:var(--radius-xl); padding:24px 28px;
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:18px; box-shadow:0 6px 0 #CC3300, var(--shadow-lg);
+}
+.dp-hero-left .dp-hero-title { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.5rem; font-weight:800; color:#fff; margin-bottom:4px }
+.dp-hero-left .dp-hero-sub   { font-size:.92rem; color:rgba(255,255,255,.85); font-weight:600 }
+.dp-streak-circle {
+  width:84px; height:84px; border-radius:50%;
+  border:4px solid rgba(255,255,255,.35); background:rgba(255,255,255,.12);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+}
+.dp-streak-circle.dp-streak-active {
+  border-color:#fff; background:rgba(255,255,255,.25);
+  box-shadow:0 0 24px rgba(255,255,255,.45);
+}
+.dp-streak-num { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:2rem; font-weight:800; color:#fff; line-height:1 }
+.dp-streak-lbl { font-size:.66rem; font-weight:700; color:rgba(255,255,255,.85); letter-spacing:.05em; text-transform:uppercase }
+
+.dp-stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:18px }
+.dp-stat { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius-sm); padding:14px 10px; text-align:center }
+.dp-stat-icon { font-size:1.5rem; margin-bottom:4px }
+.dp-stat-val  { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.3rem; font-weight:800; color:var(--text); line-height:1.1 }
+.dp-stat-lbl  { font-size:.72rem; color:var(--text-muted); font-weight:600; margin-top:3px }
+
+.dp-today {
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  border-radius:var(--radius); padding:18px 20px; margin-bottom:18px;
+  border:2px solid var(--border); flex-wrap:wrap; transition:all .2s;
+}
+.dp-today-pending { border-color:var(--primary); background:var(--primary-bg) }
+.dp-today-done    { border-color:#18A34A; background:#f0fdf4 }
+.dp-today-left    { display:flex; align-items:center; gap:14px }
+.dp-today-badge   { font-size:2.2rem }
+.dp-today-label   { font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted); margin-bottom:3px }
+.dp-today-verb    { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.3rem; font-weight:800; color:var(--text) }
+.dp-today-tr      { font-size:1rem; font-weight:500; color:var(--text-muted) }
+.dp-today-status  { font-size:.84rem; font-weight:600; color:var(--primary-dark); margin-top:3px }
+.dp-today-done .dp-today-status { color:#15803d }
+.dp-today-btn {
+  padding:12px 26px; border-radius:var(--radius-pill); border:none;
+  background:var(--primary); color:#fff; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
+  font-size:.97rem; font-weight:800; cursor:pointer;
+  box-shadow:0 4px 0 var(--primary-dark); transition:all .15s;
+}
+.dp-today-btn:hover { transform:translateY(-2px) }
+
+/* Calendar section */
+.dp-cal-section {
+  background:var(--bg-card); border:2px solid var(--border);
+  border-radius:var(--radius); padding:20px 22px; margin-bottom:20px;
+}
+.dp-cal-header {
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:16px; flex-wrap:wrap; gap:8px; font-size:.97rem; color:var(--text);
+}
+.dp-cal-legend  { display:flex; align-items:center; gap:5px }
+.dp-cal-scroll  { overflow-x:auto; padding-bottom:4px }
+.dp-cal-scroll::-webkit-scrollbar { height:4px }
+.dp-cal-scroll::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px }
+.dc365-month-row { display:flex; margin-left:30px; margin-bottom:5px; gap:0 }
+.dc365-month-lbl { min-width:14px; font-size:.66rem; font-weight:700; color:var(--text-muted); flex:0 0 14px; text-align:left; white-space:nowrap }
+.dc365-grid-row  { display:flex; gap:4px; align-items:flex-start }
+.dc365-day-labels{ display:flex; flex-direction:column; gap:2px; margin-right:5px; padding-top:2px }
+.dc365-day-lbl   { height:13px; font-size:.62rem; font-weight:700; color:var(--text-muted); line-height:13px; width:20px }
+.dc365-cols      { display:flex; gap:2px }
+.dc365-col       { display:flex; flex-direction:column; gap:2px }
+.dc-cell         { width:13px; height:13px; border-radius:2px; background:var(--border); flex-shrink:0 }
+.dc-cell-empty   { background:transparent }
+.dc-cell-done    { background:var(--primary) }
+.dc-cell-today   { background:var(--border); outline:2px solid var(--primary); outline-offset:1px }
+
+/* Milestone tiles */
+.dp-miles-section { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius); padding:20px 22px; margin-bottom:24px }
+.dp-miles-title   { font-size:.97rem; color:var(--text); margin-bottom:18px }
+.dp-miles-track   { display:grid; grid-template-columns:repeat(auto-fill,minmax(105px,1fr)); gap:12px }
+.dp-miles-line    { display:none }
+.dp-mile {
+  border:2px solid var(--border); border-radius:var(--radius-sm);
+  padding:14px 10px; text-align:center; background:var(--bg); transition:all .2s;
+}
+.dp-mile-done    { border-color:#18A34A; background:#f0fdf4 }
+.dp-mile-current { border-color:var(--primary); background:var(--primary-bg); box-shadow:0 4px 0 var(--primary-dark) }
+.dp-mile-dot     { font-size:1.7rem; margin-bottom:5px }
+.dp-mile-days    { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.05rem; font-weight:800; color:var(--text) }
+.dp-mile-label   { font-size:.72rem; color:var(--text-muted); font-weight:600; margin-top:2px }
+.dp-mile-progress{ height:5px; background:var(--border); border-radius:3px; margin-top:8px; overflow:hidden }
+.dp-mile-fill    { height:100%; background:var(--primary); border-radius:3px; transition:width .5s }
+.dp-mile-done .dp-mile-days, .dp-mile-done .dp-mile-label { color:#15803d }
+.dp-mile-current .dp-mile-days { color:var(--primary-dark) }
+
+@media(max-width:600px){
+  .dp-stats-row { grid-template-columns:repeat(2,1fr) }
+  .dp-hero { flex-direction:column; gap:14px; text-align:center }
+  .dp-streak-circle { margin:0 auto }
+  .dp-miles-track { grid-template-columns:repeat(3,1fr) }
+}
+
+.vc-section { margin-bottom:16px; background:var(--bg-card); border-radius:var(--radius); border:2px solid var(--border); overflow:hidden }
+.vc-section-head { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; padding:14px 18px; border-bottom:2px solid var(--border); background:var(--bg) }
+.vc-section-title { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.05rem; font-weight:700; color:var(--text) }
+.vc-controls { display:flex; gap:8px; flex-wrap:wrap }
+.vc-filter,.vc-search {
+  padding:7px 12px; border-radius:var(--radius-pill); border:2px solid var(--border);
+  background:var(--bg-card); color:var(--text); font-family:'Nunito',sans-serif;
+  font-size:1.06rem; font-weight:600; outline:none;
+}
+.vc-filter:focus,.vc-search:focus { border-color:var(--primary) }
+.vc-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:8px; max-height:360px; overflow-y:auto; padding:12px }
+.vc-grid::-webkit-scrollbar { width:5px }
+.vc-grid::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px }
+.vc-card { border:2px solid var(--border); border-radius:var(--radius-sm); background:var(--bg); overflow:hidden; transition:border-color .15s, box-shadow .15s }
+.vc-card:hover { border-color:var(--primary); box-shadow:var(--shadow) }
+.vc-card-head { display:flex; align-items:center; gap:5px; flex-wrap:nowrap; padding:7px 9px; background:var(--primary); overflow:hidden }
+.vc-inf  { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:.88rem; font-weight:800; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+.vc-tr   { font-size:.72rem; color:rgba(255,255,255,.92); font-weight:600; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+.vc-part { font-size:.66rem; background:rgba(255,255,255,.25); color:#fff; padding:2px 6px; border-radius:var(--radius-pill); font-weight:700; margin-left:auto; flex-shrink:0; white-space:nowrap }
+.vc-card-forms { padding:6px 8px }
+.vc-row  { display:flex; justify-content:space-between; align-items:center; padding:3px 2px; border-bottom:1px solid var(--border-light) }
+.vc-row:last-child { border-bottom:none }
+.vc-pron { font-size:.76rem; color:var(--text-muted); font-weight:600; flex:1 }
+.vc-form { font-size:1rem; font-weight:700; color:var(--primary-dark); text-align:right }
+
+/* ── Logros ── */
+.logros-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px }
+.logros-title  { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.6rem; font-weight:800; color:var(--text); margin:0 }
+.logros-meta   { font-size:1.08rem; font-weight:700; color:var(--text-muted) }
+.logros-progress-bar  { height:8px; background:var(--border); border-radius:var(--radius-pill); overflow:hidden; margin-bottom:20px }
+.logros-progress-fill { height:100%; background:linear-gradient(90deg,var(--primary),var(--purple-dark)); border-radius:var(--radius-pill); transition:width .5s }
+.logros-section-label { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.06rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); margin:16px 0 8px }
+.logros-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px }
+.logro-card { display:flex; align-items:center; gap:12px; padding:14px 16px; border-radius:var(--radius-sm); border:2px solid var(--border); background:var(--bg-card); transition:all .18s }
+.logro-unlocked { border-color:var(--primary); background:var(--primary-bg) }
+.logro-locked   { opacity:.6 }
+.logro-icon  { font-size:1.8rem; flex-shrink:0 }
+.logro-body  { flex:1 }
+.logro-title { font-size:1rem; color:var(--text); margin-bottom:2px }
+.logro-desc  { font-size:1rem; color:var(--text-muted) }
+.logro-check,.logro-lock { font-size:1.1rem }
+
+/* ── Verb Search ── */
+.verb-search-box { width:min(820px,96vw); max-height:88vh; display:flex; flex-direction:column; overflow:hidden }
+.verb-search-input {
+  width:100%; padding:12px 16px; border-radius:var(--radius-sm);
+  border:2px solid var(--border); background:var(--bg);
+  color:var(--text); font-family:'Nunito',sans-serif; font-size:1.05rem; font-weight:600;
+  outline:none; box-sizing:border-box; margin-bottom:12px;
+}
+.verb-search-input:focus { border-color:var(--primary) }
+.verb-search-results { overflow-y:auto; flex:1; display:grid; grid-template-columns:repeat(auto-fill,minmax(185px,1fr)); gap:8px; padding-bottom:8px; align-items:start }
+
+/* Verb search detail view (single verb) */
+.vsearch-detail { width:100% }
+.vsearch-detail-head {
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  padding:14px 18px; background:var(--primary); border-radius:var(--radius-sm); margin-bottom:14px;
+}
+.vsearch-detail-inf { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.4rem; font-weight:800; color:#fff }
+.vsearch-detail-tr  { font-size:1.05rem; color:rgba(255,255,255,.9); font-weight:600 }
+.vsearch-tense-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:10px;
+}
+.vsearch-tense-block {
+  border:2px solid var(--border); border-radius:var(--radius-sm); overflow:hidden; background:var(--bg-card);
+}
+.vsearch-tense-label {
+  padding:7px 12px; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:.87rem; font-weight:700;
+  color:#fff; letter-spacing:.02em;
+}
+.vsearch-tense-block .vsearch-pair { padding:3px 8px }
+.vsearch-tense-block .vsearch-pron { width:105px }
+.vsearch-card  { border:2px solid var(--border); border-radius:var(--radius-sm); overflow:hidden; background:var(--bg-card) }
+.vsearch-head  { display:flex; align-items:center; gap:5px; flex-wrap:nowrap; padding:8px 10px; background:var(--primary); overflow:hidden }
+.vsearch-inf   { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:.9rem; font-weight:800; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex-shrink:0 }
+.vsearch-tr    { font-size:.75rem; color:rgba(255,255,255,.9); font-weight:600; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+.vsearch-tipo  { font-size:.65rem; background:rgba(255,255,255,.25); color:#fff; padding:2px 6px; border-radius:var(--radius-pill); font-weight:700; flex-shrink:0 }
+.vsearch-forms { padding:6px 8px }
+.vsearch-pair  { display:flex; align-items:center; padding:3px 0; border-bottom:1px solid var(--border-light) }
+.vsearch-pair:last-child { border-bottom:none }
+.vsearch-pron  { font-size:.73rem; color:var(--text-muted); font-weight:600; width:110px; flex-shrink:0 }
+.vsearch-form  { font-size:.88rem; font-weight:700; color:var(--primary-dark) }
+
 .unit-back-bar {
   display:flex; align-items:center; gap:12px; flex-wrap:wrap;
   margin-bottom:24px; padding-bottom:18px;
@@ -413,17 +675,17 @@ a { color:inherit; text-decoration:none }
   display:flex; align-items:center; gap:7px;
   padding:9px 18px; border-radius:var(--radius-pill);
   border:2px solid var(--border); background:var(--bg-card);
-  color:var(--text-muted); font-size:.8rem; font-weight:600; cursor:pointer;
-  transition:all .18s; font-family:'Poppins',sans-serif;
+  color:var(--text-muted); font-size:1.08rem; font-weight:600; cursor:pointer;
+  transition:all .18s; font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif;
 }
 .btn-back:hover { border-color:var(--primary); color:var(--primary); background:var(--primary-bg) }
 .unit-nav-pills { display:flex; gap:8px; flex-wrap:wrap }
 .unit-pill {
   padding:8px 18px; border-radius:var(--radius-pill);
-  font-size:.78rem; font-weight:700; cursor:pointer;
+  font-size:1.06rem; font-weight:700; cursor:pointer;
   transition:all .18s; border:2px solid var(--border);
   background:var(--bg-card); color:var(--text-muted);
-  font-family:'Poppins',sans-serif;
+  font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif;
 }
 .unit-pill.active {
   background:var(--primary); color:#fff;
@@ -438,20 +700,20 @@ a { color:inherit; text-decoration:none }
 .unit-header-top { display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:12px }
 .unit-badge {
   display:inline-flex; align-items:center; gap:6px;
-  font-size:.66rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  font-size:1.08rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
   color:#fff; background:var(--primary); padding:5px 14px;
   border-radius:var(--radius-pill); margin-bottom:10px;
-  font-family:'Fredoka One',cursive;
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
   box-shadow:0 2px 0 var(--primary-dark);
 }
 .unit-main-title {
-  font-family:'Fredoka One', cursive;
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
   font-size:1.7rem; color:var(--text); line-height:1.2; letter-spacing:.01em;
 }
-.unit-desc { font-size:.85rem; color:var(--text-muted); margin-top:8px; max-width:560px; line-height:1.65 }
+.unit-desc { font-size:1rem; color:var(--text-muted); margin-top:8px; max-width:560px; line-height:1.65 }
 .unit-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px }
 .tag {
-  font-size:.7rem; padding:4px 12px; border-radius:var(--radius-pill);
+  font-size:.84rem; padding:4px 12px; border-radius:var(--radius-pill);
   border:2px solid var(--border); color:var(--text-muted); font-weight:600;
   background:var(--bg-card); transition:all .15s;
 }
@@ -471,7 +733,7 @@ a { color:inherit; text-decoration:none }
 .tab-btn {
   padding:8px 22px; border-radius:var(--radius-pill); border:none;
   background:transparent; color:var(--text-muted);
-  font-size:.82rem; font-weight:600; transition:all .2s; font-family:'Poppins',sans-serif;
+  font-size:1.09rem; font-weight:600; transition:all .2s; font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif;
 }
 .tab-btn.active {
   background:var(--primary); color:#fff;
@@ -485,7 +747,7 @@ a { color:inherit; text-decoration:none }
   min-height:240px; gap:14px; color:var(--text-muted);
 }
 .coming-soon-icon { font-size:3rem }
-.coming-soon-title { font-family:'Fredoka One',cursive; font-size:1.1rem; color:var(--text) }
+.coming-soon-title { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.1rem; color:var(--text) }
 
 /* ============================================================
    ACCORDION CARDS — Colorful
@@ -533,12 +795,12 @@ a { color:inherit; text-decoration:none }
 .accord-head:hover { filter:brightness(.98) }
 .accord-icon { font-size:1.5rem; flex-shrink:0 }
 .accord-title-wrap { flex:1 }
-.accord-title { font-family:'Fredoka One',cursive; font-size:.97rem; color:var(--text); line-height:1.2 }
-.accord-subtitle { font-size:.7rem; color:var(--text-muted); margin-top:2px; font-weight:500 }
+.accord-title { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.09rem; color:var(--text); line-height:1.2 }
+.accord-subtitle { font-size:.84rem; color:var(--text-muted); margin-top:2px; font-weight:500 }
 .accord-meta { display:flex; align-items:center; gap:8px }
 .accord-count {
-  font-size:.66rem; font-weight:700; padding:3px 10px; border-radius:var(--radius-pill);
-  font-family:'Fredoka One',cursive;
+  font-size:1.08rem; font-weight:700; padding:3px 10px; border-radius:var(--radius-pill);
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
 }
 .accord-card[data-tipo="rar"] .accord-count { background:var(--mint-bg); color:var(--mint-dark) }
 .accord-card[data-tipo="rer"] .accord-count { background:var(--sky-bg);  color:var(--sky-dark) }
@@ -551,15 +813,15 @@ a { color:inherit; text-decoration:none }
 .accord-card[data-tipo="ref"] .accord-count { background:var(--orange-bg); color:var(--orange-dark) }
 
 .accord-arrow {
-  font-size:.75rem; color:var(--text-muted);
+  font-size:1.05rem; color:var(--text-muted);
   transition:transform .3s cubic-bezier(.34,1.56,.64,1);
 }
 .accord-card.open .accord-arrow { transform:rotate(180deg) }
 
 .accord-head .tipo-badge {
-  font-size:.62rem; font-weight:700; letter-spacing:.06em;
+  font-size:.76rem; font-weight:700; letter-spacing:.06em;
   padding:4px 10px; border-radius:var(--radius-pill); color:#fff;
-  text-transform:uppercase; font-family:'Fredoka One',cursive;
+  text-transform:uppercase; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
 }
 .tb-rar  { background:var(--c-rar) }
 .tb-rer  { background:var(--c-rer) }
@@ -584,16 +846,16 @@ a { color:inherit; text-decoration:none }
    ============================================================ */
 .model-section { margin-top:18px }
 .model-label {
-  font-size:.65rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  font-size:.79rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
   color:var(--text-muted); margin-bottom:12px;
   display:flex; align-items:center; gap:10px;
 }
 .model-label::after { content:''; flex:1; height:2px; background:var(--border); border-radius:2px }
 .model-inf {
-  font-family:'Fredoka One', cursive; font-size:1.15rem; color:var(--primary);
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.15rem; color:var(--primary);
   margin-bottom:14px; letter-spacing:.01em;
 }
-.model-tr { font-size:.78rem; color:var(--text-muted); margin-left:10px; font-style:italic }
+.model-tr { font-size:1.06rem; color:var(--text-muted); margin-left:10px; font-style:italic }
 .conj-table-wrap {
   overflow-x:auto; margin-bottom:16px;
   border-radius:var(--radius-sm); border:2px solid var(--border);
@@ -601,23 +863,23 @@ a { color:inherit; text-decoration:none }
 .conj-table { border-collapse:collapse; width:100%; min-width:320px; font-size:.83rem }
 .conj-table th {
   background:var(--bg); padding:9px 14px;
-  text-align:left; font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  text-align:left; font-size:.79rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
   color:var(--text-muted); border-bottom:2px solid var(--border);
 }
 .conj-table td { padding:9px 14px; border-bottom:1px solid var(--border-light); vertical-align:middle }
 .conj-table tr:last-child td { border-bottom:none }
 .conj-table tbody tr:hover td { background:var(--bg) }
-.pron-cell { font-weight:600; color:var(--text-muted); font-size:.78rem; white-space:nowrap; width:110px }
-.end-cell { font-family:monospace; font-size:.82rem; color:var(--orange); font-weight:700; width:80px }
-.form-cell { font-weight:700; color:var(--text); font-size:.9rem }
+.pron-cell { font-weight:600; color:var(--text-muted); font-size:1.06rem; white-space:nowrap; width:110px }
+.end-cell { font-family:monospace; font-size:1.09rem; color:var(--orange); font-weight:700; width:80px }
+.form-cell { font-weight:700; color:var(--text); font-size:1.05rem }
 .speak-btn {
   background:none; border:none; padding:3px 7px; color:var(--text-muted);
-  font-size:.82rem; transition:all .18s; border-radius:var(--radius-xs); cursor:pointer;
+  font-size:1.09rem; transition:all .18s; border-radius:var(--radius-xs); cursor:pointer;
 }
 .speak-btn:hover { color:var(--primary); background:var(--primary-bg) }
 .row-nos td, .row-vos td { background:rgba(88,204,2,.04) }
 [data-theme="dark"] .row-nos td, [data-theme="dark"] .row-vos td { background:rgba(88,204,2,.07) }
-.row-nos .pron-cell::after, .row-vos .pron-cell::after { content:' ✓'; font-size:.6rem; color:var(--primary); font-weight:800 }
+.row-nos .pron-cell::after, .row-vos .pron-cell::after { content:' ✓'; font-size:1.05rem; color:var(--primary); font-weight:800 }
 
 /* ── Stem-change highlights ── */
 .hl { font-weight:800; padding:0 2px; border-radius:3px }
@@ -629,7 +891,7 @@ a { color:inherit; text-decoration:none }
 .row-yo .form-cell { font-weight:800 }
 
 .change-note {
-  font-size:.78rem; padding:10px 14px; border-radius:var(--radius-sm);
+  font-size:1.06rem; padding:10px 14px; border-radius:var(--radius-sm);
   border-left:4px solid var(--gold); background:var(--gold-bg); color:var(--text);
   margin-bottom:16px; line-height:1.65;
 }
@@ -647,11 +909,11 @@ a { color:inherit; text-decoration:none }
    ============================================================ */
 .chips-section { margin-top:18px }
 .chips-label {
-  font-size:.65rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  font-size:.79rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
   color:var(--text-muted); margin-bottom:12px; display:flex; align-items:center; gap:10px;
 }
 .chips-label::after { content:''; flex:1; height:2px; background:var(--border); border-radius:2px }
-.chips-hint { font-size:.7rem; color:var(--text-muted); margin-bottom:10px; font-style:italic }
+.chips-hint { font-size:.84rem; color:var(--text-muted); margin-bottom:10px; font-style:italic }
 .verb-chips { display:flex; flex-wrap:wrap; gap:7px }
 .verb-chip {
   display:flex; align-items:center; gap:5px;
@@ -665,9 +927,9 @@ a { color:inherit; text-decoration:none }
   box-shadow:0 4px 12px rgba(88,204,2,.25);
 }
 .vc-es { font-weight:700 }
-.vc-tr { color:var(--text-muted); font-size:.68rem; font-style:italic }
-.vc-tr::before { content:'·'; margin-right:3px }
-.verb-chip.has-irr .vc-es::after { content:'*'; color:var(--coral); font-size:.6rem; vertical-align:super }
+.verb-chip .vc-tr { color:var(--text-muted); font-size:1.09rem; font-style:italic }
+.verb-chip .vc-tr::before { content:'·'; margin-right:3px }
+.verb-chip.has-irr .vc-es::after { content:'*'; color:var(--coral); font-size:1.05rem; vertical-align:super }
 
 /* ── YO table ── */
 .yo-table-wrap { overflow-x:auto }
@@ -685,12 +947,12 @@ a { color:inherit; text-decoration:none }
   border-radius:var(--radius-xs); padding:5px 9px !important;
 }
 .yo-table .other-cell { color:var(--text-muted); font-size:.73rem }
-.yo-table .tr-cell { font-style:italic; color:var(--text-muted); font-size:.72rem }
+.yo-table .tr-cell { font-style:italic; color:var(--text-muted); font-size:1rem }
 
 /* ── Reflexive pronoun table ── */
-.pron-table { border-collapse:collapse; font-size:.8rem; margin-bottom:16px; border-radius:var(--radius-sm); overflow:hidden; border:2px solid var(--border) }
+.pron-table { border-collapse:collapse; font-size:1.08rem; margin-bottom:16px; border-radius:var(--radius-sm); overflow:hidden; border:2px solid var(--border) }
 .pron-table th, .pron-table td { padding:7px 16px; border:1px solid var(--border-light) }
-.pron-table th { background:var(--bg); font-size:.64rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--text-muted) }
+.pron-table th { background:var(--bg); font-size:1.06rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--text-muted) }
 .pron-table td { text-align:center }
 .pron-emph { font-weight:800; color:var(--coral-dark) }
 
@@ -720,19 +982,19 @@ a { color:inherit; text-decoration:none }
   position:absolute; top:14px; right:14px;
   background:var(--bg); border:2px solid var(--border);
   width:32px; height:32px; border-radius:50%;
-  font-size:.78rem; color:var(--text-muted);
+  font-size:1.06rem; color:var(--text-muted);
   display:flex; align-items:center; justify-content:center; transition:all .18s;
 }
 .modal-close:hover { background:var(--coral-bg); color:var(--coral-dark); border-color:var(--coral) }
 
 .vmodal-head { margin-bottom:20px }
-.vmodal-inf { font-family:'Fredoka One',cursive; font-size:1.55rem; color:var(--primary) }
-.vmodal-tr { font-size:.88rem; color:var(--text-muted); margin-top:5px; font-style:italic }
+.vmodal-inf { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.55rem; color:var(--primary) }
+.vmodal-tr { font-size:1.02rem; color:var(--text-muted); margin-top:5px; font-style:italic }
 .vmodal-type {
-  display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.1em;
+  display:inline-block; font-size:1.08rem; font-weight:700; letter-spacing:.1em;
   text-transform:uppercase; padding:4px 12px; border-radius:var(--radius-pill);
   background:var(--primary-bg); color:var(--primary-dark); margin-top:10px;
-  border:2px solid var(--primary); font-family:'Fredoka One',cursive;
+  border:2px solid var(--primary); font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
 }
 .vmodal-forms { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px }
 .vmodal-form-item {
@@ -740,23 +1002,23 @@ a { color:inherit; text-decoration:none }
   padding:10px 14px; transition:border-color .18s;
 }
 .vmodal-form-item:hover { border-color:var(--primary) }
-.vmodal-pron { font-size:.64rem; color:var(--text-muted); font-weight:700; text-transform:uppercase; letter-spacing:.1em }
-.vmodal-form { font-size:.96rem; font-weight:700; color:var(--text); margin-top:4px }
+.vmodal-pron { font-size:1.06rem; color:var(--text-muted); font-weight:700; text-transform:uppercase; letter-spacing:.1em }
+.vmodal-form { font-size:1.08rem; font-weight:700; color:var(--text); margin-top:4px }
 .vmodal-meta { margin-top:16px; display:flex; flex-wrap:wrap; gap:10px }
 .vmodal-meta-item { background:var(--bg); border:2px solid var(--border); border-radius:var(--radius-sm); padding:10px 14px; flex:1; min-width:120px }
-.vmodal-meta-label { font-size:.64rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--text-muted) }
-.vmodal-meta-val { font-size:.9rem; font-weight:700; color:var(--text); margin-top:3px }
+.vmodal-meta-label { font-size:1.06rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--text-muted) }
+.vmodal-meta-val { font-size:1.05rem; font-weight:700; color:var(--text); margin-top:3px }
 .vmodal-speak { margin-top:14px }
 
 .lock-modal-box { text-align:center; max-width:380px }
 .lock-icon-xl { font-size:3.5rem; margin-bottom:12px }
-.lock-modal-box h2 { font-family:'Fredoka One',cursive; font-size:1.4rem; margin-bottom:8px }
-.lock-modal-box p { font-size:.87rem; color:var(--text-muted); margin-bottom:22px; line-height:1.6 }
+.lock-modal-box h2 { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.4rem; margin-bottom:8px }
+.lock-modal-box p { font-size:1rem; color:var(--text-muted); margin-bottom:22px; line-height:1.6 }
 .btn-primary {
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
   padding:12px 28px; border-radius:var(--radius-sm); border:none;
-  background:var(--primary); color:#fff; font-family:'Fredoka One',cursive;
-  font-size:.92rem; transition:all .2s;
+  background:var(--primary); color:#fff; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
+  font-size:1.06rem; transition:all .2s;
   box-shadow:0 4px 0 var(--primary-dark);
 }
 .btn-primary:hover { transform:translateY(-2px); box-shadow:0 6px 0 var(--primary-dark) }
@@ -771,8 +1033,8 @@ a { color:inherit; text-decoration:none }
 }
 .locked-icon { font-size:4rem; animation:wobble 2s ease-in-out infinite }
 @keyframes wobble { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
-.locked-title { font-family:'Fredoka One',cursive; font-size:1.4rem; color:var(--text) }
-.locked-desc { font-size:.87rem; max-width:340px; text-align:center; line-height:1.65 }
+.locked-title { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.4rem; color:var(--text) }
+.locked-desc { font-size:1rem; max-width:340px; text-align:center; line-height:1.65 }
 
 .placeholder-page {
   display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -780,8 +1042,8 @@ a { color:inherit; text-decoration:none }
 }
 .placeholder-icon { font-size:4rem; animation:float 3s ease-in-out infinite }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-.placeholder-title { font-family:'Fredoka One',cursive; font-size:1.3rem; color:var(--text) }
-.placeholder-sub { font-size:.85rem; max-width:320px; line-height:1.65 }
+.placeholder-title { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.3rem; color:var(--text) }
+.placeholder-sub { font-size:1rem; max-width:320px; line-height:1.65 }
 
 /* ============================================================
    RESPONSIVE
@@ -824,13 +1086,13 @@ a { color:inherit; text-decoration:none }
 }
 .ex-type-card.selected { border-color:var(--primary); background:var(--primary-bg) }
 .ex-type-icon { font-size:2rem; line-height:1 }
-.ex-type-name { font-family:'Fredoka One',cursive; font-size:.9rem; color:var(--text) }
+.ex-type-name { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.05rem; color:var(--text) }
 .ex-type-desc { font-size:.73rem; color:var(--text-muted); line-height:1.45 }
 .ex-type-meta { display:flex; gap:6px; margin-top:4px }
 .ex-type-badge {
-  font-size:.64rem; font-weight:700; letter-spacing:.06em;
+  font-size:1.06rem; font-weight:700; letter-spacing:.06em;
   padding:3px 10px; border-radius:var(--radius-pill);
-  background:var(--border); color:var(--text-muted); font-family:'Fredoka One',cursive;
+  background:var(--border); color:var(--text-muted); font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
 }
 .ex-type-card:hover .ex-type-badge { background:var(--primary); color:#fff }
 
@@ -844,12 +1106,12 @@ a { color:inherit; text-decoration:none }
   padding:16px 22px; border-bottom:2px dashed var(--border);
   background:var(--bg);
 }
-.ex-title { font-family:'Fredoka One',cursive; font-size:.9rem; color:var(--text) }
-.ex-sub   { font-size:.72rem; color:var(--text-muted); margin-top:2px }
+.ex-title { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.05rem; color:var(--text) }
+.ex-sub   { font-size:1rem; color:var(--text-muted); margin-top:2px }
 .ex-stats { display:flex; align-items:center; gap:14px }
 .ex-stat  { display:flex; flex-direction:column; align-items:center; gap:1px }
-.ex-stat-val { font-family:'Fredoka One',cursive; font-size:1.05rem; color:var(--text) }
-.ex-stat-lbl { font-size:.6rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.08em }
+.ex-stat-val { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.05rem; color:var(--text) }
+.ex-stat-lbl { font-size:1.05rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.08em }
 .ex-body { padding:26px 28px }
 
 /* Progress bar */
@@ -859,7 +1121,7 @@ a { color:inherit; text-decoration:none }
   height:100%; background:linear-gradient(90deg,var(--primary),#4ADE80);
   border-radius:var(--radius-pill); transition:width .55s cubic-bezier(.34,1.56,.64,1);
 }
-.ex-progress-label { font-size:.74rem; font-weight:700; color:var(--text-muted); white-space:nowrap; min-width:44px; text-align:right; font-family:'Fredoka One',cursive }
+.ex-progress-label { font-size:.74rem; font-weight:700; color:var(--text-muted); white-space:nowrap; min-width:44px; text-align:right; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif }
 
 /* Question card */
 .q-card {
@@ -868,24 +1130,24 @@ a { color:inherit; text-decoration:none }
   animation:qBounce .3s cubic-bezier(.34,1.56,.64,1);
 }
 @keyframes qBounce { from{opacity:0;transform:scale(.95) translateX(20px)} to{opacity:1;transform:scale(1) translateX(0)} }
-.q-label { font-size:.64rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px }
+.q-label { font-size:1.06rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:12px }
 .q-verb-row { display:flex; align-items:center; gap:14px; flex-wrap:wrap }
-.q-inf { font-family:'Fredoka One',cursive; font-size:1.45rem; color:var(--primary) }
+.q-inf { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.45rem; color:var(--primary) }
 .q-plus { font-size:1.1rem; color:var(--text-muted); font-weight:300 }
 .q-pron {
   font-size:1rem; font-weight:700; color:var(--blue-dark);
   background:var(--blue-bg); padding:4px 12px; border-radius:var(--radius-pill);
   border:2px solid var(--blue);
 }
-.q-tr { font-size:.8rem; color:var(--text-muted); font-style:italic; margin-top:8px }
+.q-tr { font-size:1.08rem; color:var(--text-muted); font-style:italic; margin-top:8px }
 .q-sentence { font-size:1.05rem; font-weight:600; color:var(--text); line-height:1.55; margin-bottom:6px }
-.q-sentence-tr { font-size:.8rem; color:var(--text-muted); font-style:italic }
-.q-form-display { font-family:'Fredoka One',cursive; font-size:1.5rem; color:var(--text); margin-bottom:6px }
-.q-form-pron { font-size:.82rem; color:var(--text-muted); font-weight:400; margin-left:6px }
+.q-sentence-tr { font-size:1.08rem; color:var(--text-muted); font-style:italic }
+.q-form-display { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.5rem; color:var(--text); margin-bottom:6px }
+.q-form-pron { font-size:1.09rem; color:var(--text-muted); font-weight:400; margin-left:6px }
 .q-dir-badge {
-  display:inline-block; font-size:.65rem; font-weight:700; letter-spacing:.1em;
+  display:inline-block; font-size:.79rem; font-weight:700; letter-spacing:.1em;
   padding:4px 12px; border-radius:var(--radius-pill); margin-bottom:12px;
-  text-transform:uppercase; font-family:'Fredoka One',cursive;
+  text-transform:uppercase; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
 }
 .q-dir-badge.es-tr { background:var(--primary-bg); color:var(--primary-dark); border:2px solid var(--primary) }
 .q-dir-badge.tr-es { background:var(--blue-bg); color:var(--blue-dark); border:2px solid var(--blue) }
@@ -896,8 +1158,8 @@ a { color:inherit; text-decoration:none }
   flex:1; min-width:180px;
   padding:13px 18px; border-radius:var(--radius-sm);
   border:3px solid var(--border); background:var(--bg-card);
-  color:var(--text); font-size:.96rem; font-weight:600;
-  font-family:'Poppins',sans-serif; outline:none;
+  color:var(--text); font-size:1.08rem; font-weight:600;
+  font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif; outline:none;
   transition:border-color .2s, box-shadow .2s;
 }
 .write-input:focus { border-color:var(--primary); box-shadow:0 0 0 4px rgba(88,204,2,.15) }
@@ -910,8 +1172,8 @@ a { color:inherit; text-decoration:none }
 
 .btn-check {
   padding:13px 24px; border-radius:var(--radius-sm); border:none;
-  background:var(--primary); color:#fff; font-family:'Fredoka One',cursive;
-  font-size:.9rem; transition:all .18s;
+  background:var(--primary); color:#fff; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
+  font-size:1.05rem; transition:all .18s;
   box-shadow:0 4px 0 var(--primary-dark);
 }
 .btn-check:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 6px 0 var(--primary-dark) }
@@ -926,13 +1188,13 @@ a { color:inherit; text-decoration:none }
 }
 .feedback-line.correct { background:var(--primary-bg); color:var(--primary-dark); border-color:var(--primary); display:block }
 .feedback-line.wrong   { background:var(--coral-bg);   color:var(--coral-dark);   border-color:var(--coral);   display:block }
-.feedback-correct-form { font-family:'Fredoka One',cursive; font-size:1rem; margin-left:8px }
+.feedback-correct-form { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1rem; margin-left:8px }
 
 /* Next button */
 .btn-next {
   margin-top:18px; padding:12px 30px; border-radius:var(--radius-sm); border:none;
-  background:var(--blue); color:#fff; font-family:'Fredoka One',cursive;
-  font-size:.9rem; display:none; transition:all .2s;
+  background:var(--blue); color:#fff; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
+  font-size:1.05rem; display:none; transition:all .2s;
   box-shadow:0 4px 0 var(--blue-dark);
 }
 .btn-next.visible { display:inline-flex; align-items:center; gap:8px }
@@ -947,7 +1209,7 @@ a { color:inherit; text-decoration:none }
   border:3px solid var(--border); background:var(--bg-card);
   color:var(--text); font-size:.86rem; font-weight:600;
   text-align:left; transition:all .18s; line-height:1.45; cursor:pointer;
-  font-family:'Poppins',sans-serif;
+  font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif;
 }
 .mcq-btn:hover:not(:disabled) {
   border-color:var(--blue); background:var(--blue-bg); transform:translateY(-2px);
@@ -961,8 +1223,8 @@ a { color:inherit; text-decoration:none }
   display:inline-flex; align-items:center; justify-content:center;
   width:24px; height:24px; border-radius:50%;
   background:var(--border); color:var(--text-muted);
-  font-size:.7rem; font-weight:800; margin-right:9px;
-  flex-shrink:0; vertical-align:middle; font-family:'Fredoka One',cursive;
+  font-size:.84rem; font-weight:800; margin-right:9px;
+  flex-shrink:0; vertical-align:middle; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
 }
 .mcq-btn.selected-correct .mcq-btn-letter { background:var(--primary); color:#fff }
 .mcq-btn.selected-wrong   .mcq-btn-letter { background:var(--coral); color:#fff }
@@ -970,51 +1232,52 @@ a { color:inherit; text-decoration:none }
 
 /* ── Matching ── */
 .match-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px }
-.match-round  { font-family:'Fredoka One',cursive; font-size:.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.08em }
-.match-score  { font-family:'Fredoka One',cursive; font-size:.85rem; color:var(--primary-dark) }
+.match-round  { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.08rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.08em }
+.match-score  { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1rem; color:var(--primary-dark) }
 .match-grid   { display:grid; grid-template-columns:1fr 1fr; gap:10px }
 .match-col    { display:flex; flex-direction:column; gap:8px }
-.match-col-label { font-size:.64rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); padding:4px 8px; margin-bottom:2px }
+.match-col-label { font-size:1.06rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); padding:4px 8px; margin-bottom:2px }
 .match-card {
   padding:12px 14px; border-radius:var(--radius-sm);
   border:3px solid var(--border); background:var(--bg-card);
-  font-size:.82rem; font-weight:600; cursor:pointer;
+  font-size:1.09rem; font-weight:600; cursor:pointer;
   transition:all .18s; min-height:52px;
   display:flex; align-items:center; line-height:1.35;
+  text-align:left; justify-content:flex-start; width:100%;
 }
 .match-card:hover:not(.matched):not(.wrong-flash) {
   border-color:var(--blue); background:var(--blue-bg); transform:scale(1.02);
 }
 .match-card.selected { border-color:var(--primary); background:var(--primary-bg); color:var(--primary-dark) }
-.match-card.matched  { border-color:var(--primary); background:var(--primary-bg); color:var(--primary-dark); cursor:default; animation:correctBounce .4s cubic-bezier(.34,1.56,.64,1) }
+.match-card.matched  { border-color:#18A34A; background:#dcfce7; color:#15803d; cursor:default; animation:correctBounce .4s cubic-bezier(.34,1.56,.64,1) }
 .match-card.wrong-flash { border-color:var(--coral); background:var(--coral-bg); color:var(--coral-dark); animation:wrongShake .4s ease }
 .match-card:disabled, .match-card[disabled] { cursor:default }
 .match-next-row { margin-top:18px; display:flex; gap:10px; align-items:center }
-.match-result-inline { font-size:.8rem; font-weight:600; color:var(--text-muted) }
+.match-result-inline { font-size:1.08rem; font-weight:600; color:var(--text-muted) }
 
 /* ── Translate ── */
 .trans-input {
   width:100%; padding:13px 18px; border-radius:var(--radius-sm);
   border:3px solid var(--border); background:var(--bg-card);
   color:var(--text); font-size:.93rem; font-weight:500;
-  font-family:'Poppins',sans-serif; outline:none; resize:none; min-height:58px;
+  font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif; outline:none; resize:none; min-height:58px;
   transition:border-color .2s, box-shadow .2s;
 }
 .trans-input:focus { border-color:var(--primary); box-shadow:0 0 0 4px rgba(88,204,2,.12) }
 .trans-input.correct { border-color:var(--primary); background:var(--primary-bg); animation:correctBounce .4s cubic-bezier(.34,1.56,.64,1) }
 .trans-input.wrong   { border-color:var(--coral); background:var(--coral-bg); animation:wrongShake .4s ease }
-.trans-hint { font-size:.72rem; color:var(--text-muted); margin-top:7px; font-style:italic }
+.trans-hint { font-size:1rem; color:var(--text-muted); margin-top:7px; font-style:italic }
 
 /* ── Results screen ── */
 .results-screen { padding:32px; text-align:center }
 .results-icon { font-size:3.5rem; margin-bottom:12px; animation:pop .5s cubic-bezier(.34,1.56,.64,1) }
 @keyframes pop { from{transform:scale(0) rotate(-20deg);opacity:0} to{transform:scale(1) rotate(0deg);opacity:1} }
-.results-title { font-family:'Fredoka One',cursive; font-size:1.6rem; color:var(--text); margin-bottom:4px }
+.results-title { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.6rem; color:var(--text); margin-bottom:4px }
 .results-score-ring {
   display:inline-flex; align-items:center; justify-content:center;
   width:120px; height:120px; border-radius:50%;
   border:6px solid var(--primary);
-  font-family:'Fredoka One',cursive; font-size:1.9rem; color:var(--primary);
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.9rem; color:var(--primary);
   margin:20px auto; background:var(--bg-card);
   box-shadow:0 0 0 8px var(--primary-bg), var(--shadow-md), 0 8px 0 var(--primary-dark);
   animation:ringBounce .7s cubic-bezier(.34,1.56,.64,1) .2s both;
@@ -1022,31 +1285,31 @@ a { color:inherit; text-decoration:none }
 @keyframes ringBounce { from{transform:scale(.5) rotate(-15deg);opacity:0} to{transform:scale(1) rotate(0deg);opacity:1} }
 .results-meta { display:flex; justify-content:center; gap:28px; flex-wrap:wrap; margin-bottom:22px }
 .results-meta-item { text-align:center }
-.results-meta-val { font-family:'Fredoka One',cursive; font-size:1.1rem; color:var(--text) }
-.results-meta-lbl { font-size:.66rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.1em }
+.results-meta-val { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.1rem; color:var(--text) }
+.results-meta-lbl { font-size:1.08rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.1em }
 .results-xp {
   display:inline-flex; align-items:center; gap:8px;
   padding:11px 24px; border-radius:var(--radius-pill);
   background:var(--gold); color:var(--text);
-  font-family:'Fredoka One',cursive; font-size:.95rem;
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.08rem;
   margin-bottom:24px; box-shadow:0 4px 0 var(--gold-dark);
   animation:pop .4s cubic-bezier(.34,1.56,.64,1) .4s both;
 }
 .results-errors { text-align:left; max-width:480px; margin:0 auto 22px }
-.results-errors-title { font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--text-muted); margin-bottom:12px }
+.results-errors-title { font-size:1.08rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--text-muted); margin-bottom:12px }
 .error-item {
   display:flex; align-items:center; gap:10px; padding:9px 14px;
   border-radius:var(--radius-sm); border:2px solid var(--coral-bg); margin-bottom:7px; background:var(--bg);
 }
-.error-given   { font-size:.8rem; color:var(--coral-dark); font-weight:600; text-decoration:line-through; flex:1 }
-.error-arrow   { color:var(--text-muted); font-size:.75rem }
-.error-correct { font-size:.85rem; color:var(--primary-dark); font-weight:800; flex:1 }
-.error-verb    { font-size:.68rem; color:var(--text-muted); font-style:italic }
+.error-given   { font-size:1.08rem; color:var(--coral-dark); font-weight:600; text-decoration:line-through; flex:1 }
+.error-arrow   { color:var(--text-muted); font-size:1.05rem }
+.error-correct { font-size:1rem; color:var(--primary-dark); font-weight:800; flex:1 }
+.error-verb    { font-size:1.09rem; color:var(--text-muted); font-style:italic }
 .results-btns  { display:flex; gap:10px; justify-content:center; flex-wrap:wrap }
 .btn-secondary {
   padding:10px 24px; border-radius:var(--radius-sm);
   border:3px solid var(--border); background:var(--bg-card);
-  color:var(--text); font-family:'Fredoka One',cursive; font-size:.88rem;
+  color:var(--text); font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.02rem;
   transition:all .2s; box-shadow:0 3px 0 var(--border);
 }
 .btn-secondary:hover { border-color:var(--primary); color:var(--primary); background:var(--primary-bg); transform:translateY(-2px); box-shadow:0 5px 0 var(--primary) }
@@ -1058,7 +1321,7 @@ a { color:inherit; text-decoration:none }
   display:flex; align-items:center; gap:10px;
   padding:14px 22px; border-radius:var(--radius-xl);
   background:var(--gold); color:var(--text);
-  font-family:'Fredoka One',cursive; font-size:1rem;
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1rem;
   box-shadow:0 6px 0 var(--gold-dark), var(--shadow-lg);
   animation:toastBounce .5s cubic-bezier(.34,1.56,.64,1);
   pointer-events:none;
@@ -1070,7 +1333,113 @@ a { color:inherit; text-decoration:none }
 /* ── Confetti ── */
 #confetti-canvas { position:fixed; inset:0; pointer-events:none; z-index:998 }
 
-/* ── Paywall Modal ── */
+/* ── N1 Step Cards ── */
+.level-steps { display:flex; flex-direction:column; gap:8px; margin-bottom:16px }
+.level-step {
+  display:flex; align-items:center; gap:12px;
+  padding:10px 14px; border-radius:var(--radius-sm);
+  border:2px solid var(--border); background:var(--bg);
+  transition:all .2s;
+}
+.level-step.step-active { border-color:var(--primary); background:var(--primary-bg) }
+.step-num {
+  width:28px; height:28px; border-radius:50%; flex-shrink:0;
+  background:var(--border); color:var(--text-muted);
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.05rem;
+  display:flex; align-items:center; justify-content:center;
+}
+.level-step.step-active .step-num { background:var(--primary); color:#fff }
+.step-body { flex:1; min-width:0 }
+.step-name { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1rem; color:var(--text); margin-bottom:3px }
+.step-desc { font-size:1.09rem; color:var(--text-muted); margin-bottom:5px }
+.step-track { height:4px; background:var(--border); border-radius:2px; overflow:hidden }
+.step-fill { height:100%; border-radius:2px; transition:width .4s }
+.step-pct { font-size:1rem; font-weight:700; color:var(--text-muted); flex-shrink:0; min-width:28px; text-align:right }
+.level-step.step-active .step-pct { color:var(--primary-dark) }
+
+/* ── Flashcards ── */
+.fc-wrap { max-width:520px; margin:0 auto; padding:24px 16px }
+.fc-header { display:flex; flex-direction:column; gap:12px; margin-bottom:16px }
+.fc-title { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.4rem; color:var(--text); margin:0 }
+.fc-controls { display:flex; gap:8px; flex-wrap:wrap; align-items:center }
+.fc-select {
+  padding:8px 12px; border-radius:var(--radius-sm);
+  border:2px solid var(--border); background:var(--bg-card);
+  color:var(--text); font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.08rem;
+  font-weight:600; cursor:pointer;
+}
+.fc-btn-shuffle {
+  padding:8px 14px; border-radius:var(--radius-sm);
+  border:2px solid var(--border); background:var(--bg-card);
+  color:var(--text); font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif;
+  font-size:1.08rem; font-weight:700; cursor:pointer; transition:all .15s;
+}
+.fc-btn-shuffle:hover { border-color:var(--primary); color:var(--primary) }
+.fc-progress-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; flex-wrap:wrap }
+.fc-badge { padding:4px 10px; border-radius:var(--radius-pill); font-size:1rem; font-weight:700; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif }
+.fc-badge-total { background:var(--bg); border:2px solid var(--border); color:var(--text-muted) }
+.fc-badge-known { background:#e6f9ed; border:2px solid #58CC02; color:#2d7a00 }
+.fc-badge-unknown { background:#fff8e6; border:2px solid #FFC800; color:#a07800 }
+.fc-counter { margin-left:auto; font-size:1.08rem; font-weight:700; color:var(--text-muted) }
+.fc-progress-bar-wrap { height:6px; background:var(--border); border-radius:3px; margin-bottom:24px; overflow:hidden }
+.fc-progress-bar { height:100%; background:var(--primary); border-radius:3px; transition:width .3s }
+.fc-card-area { display:flex; align-items:center; gap:12px; margin-bottom:20px }
+.fc-nav {
+  width:42px; height:42px; border-radius:50%; border:2px solid var(--border);
+  background:var(--bg-card); color:var(--text); font-size:1.4rem;
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; transition:all .15s; box-shadow:var(--shadow);
+}
+.fc-nav:hover { border-color:var(--primary); color:var(--primary); transform:scale(1.1) }
+.fc-card {
+  flex:1; height:220px; cursor:pointer;
+  perspective:1000px;
+}
+.fc-card-inner {
+  width:100%; height:100%; position:relative;
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  transform-style:preserve-3d;
+}
+.fc-card-front, .fc-card-back {
+  position:absolute; inset:0;
+  background:var(--bg-card); border-radius:var(--radius-xl);
+  border:3px solid var(--border); box-shadow:var(--shadow-lg);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:24px; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+}
+.fc-card-back { transform:rotateY(180deg); border-color:var(--primary); background:var(--primary-bg) }
+.fc-card-tipo { font-size:.84rem; font-weight:800; letter-spacing:.1em; color:var(--text-muted); margin-bottom:8px; text-transform:uppercase }
+.fc-card-word { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:2rem; color:var(--text); text-align:center }
+.fc-card-hint { font-size:1rem; color:var(--text-muted); margin-top:12px }
+.fc-card-translation { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.8rem; color:var(--primary-dark); text-align:center }
+.fc-card-hint2 { font-size:1rem; color:var(--text-muted); margin-top:8px }
+.fc-actions { display:flex; gap:12px; justify-content:center; margin-bottom:16px }
+.fc-action-unknown, .fc-action-known {
+  flex:1; max-width:180px; padding:13px; border-radius:var(--radius-sm);
+  border:none; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.08rem;
+  cursor:pointer; transition:all .2s; box-shadow:var(--shadow);
+}
+.fc-action-unknown { background:#fff3cd; color:#856404; box-shadow:0 3px 0 #d4a017 }
+.fc-action-unknown:hover { transform:translateY(-2px); box-shadow:0 5px 0 #d4a017 }
+.fc-action-known { background:var(--primary); color:#fff; box-shadow:0 3px 0 var(--primary-dark) }
+.fc-action-known:hover { transform:translateY(-2px); box-shadow:0 5px 0 var(--primary-dark) }
+.fc-done {
+  flex-direction:column; align-items:center; text-align:center;
+  padding:32px; gap:12px;
+}
+.fc-done-emoji { font-size:3rem; animation:pop .5s }
+.fc-done-title { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.5rem; color:var(--text) }
+.fc-done-sub { font-size:1rem; color:var(--text-muted) }
+.fc-btn-restart, .fc-btn-unknown {
+  padding:12px 24px; border-radius:var(--radius-sm); border:none;
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.08rem; cursor:pointer; transition:all .2s;
+}
+.fc-btn-restart { background:var(--primary); color:#fff; box-shadow:0 3px 0 var(--primary-dark) }
+.fc-btn-restart:hover { transform:translateY(-2px) }
+.fc-btn-unknown { background:var(--bg); border:2px solid var(--border); color:var(--text) }
+.fc-btn-unknown:hover { border-color:var(--primary); color:var(--primary) }
+
+/* ── Flashcards ── */
 .paywall-overlay {
   position:fixed; inset:0; z-index:700;
   background:rgba(0,0,0,.6); backdrop-filter:blur(10px);
@@ -1086,21 +1455,21 @@ a { color:inherit; text-decoration:none }
   animation:modalBounce .4s cubic-bezier(.34,1.56,.64,1);
 }
 .paywall-emoji { font-size:3.5rem; margin-bottom:12px; display:block; animation:pop .5s cubic-bezier(.34,1.56,.64,1) }
-.paywall-title { font-family:'Fredoka One',cursive; font-size:1.6rem; color:var(--text); margin-bottom:8px }
-.paywall-sub { font-size:.85rem; color:var(--text-muted); line-height:1.65; margin-bottom:20px }
+.paywall-title { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.6rem; color:var(--text); margin-bottom:8px }
+.paywall-sub { font-size:1rem; color:var(--text-muted); line-height:1.65; margin-bottom:20px }
 .paywall-counter {
   display:inline-flex; align-items:center; gap:6px;
   padding:6px 16px; border-radius:var(--radius-pill);
   background:var(--gold-bg); color:var(--gold-dark);
-  border:2px solid var(--gold); font-size:.78rem; font-weight:700;
-  font-family:'Fredoka One',cursive; margin-bottom:20px;
+  border:2px solid var(--gold); font-size:1.06rem; font-weight:700;
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; margin-bottom:20px;
 }
 .paywall-features { display:flex; flex-direction:column; gap:8px; margin-bottom:22px; text-align:left }
 .paywall-feature {
   display:flex; align-items:center; gap:10px;
   padding:10px 14px; border-radius:var(--radius-sm);
   background:var(--bg); border:2px solid var(--border);
-  font-size:.82rem; font-weight:600; color:var(--text);
+  font-size:1.09rem; font-weight:600; color:var(--text);
 }
 .paywall-feature-icon { font-size:1.1rem; flex-shrink:0 }
 .paywall-plans { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px }
@@ -1114,28 +1483,28 @@ a { color:inherit; text-decoration:none }
 .paywall-popular-badge {
   position:absolute; top:-11px; left:50%; transform:translateX(-50%);
   background:var(--primary); color:#fff;
-  font-family:'Fredoka One',cursive; font-size:.62rem;
+  font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:.76rem;
   padding:3px 12px; border-radius:var(--radius-pill); white-space:nowrap;
 }
-.paywall-plan-name { font-family:'Fredoka One',cursive; font-size:.78rem; color:var(--text-muted); margin-bottom:4px }
-.paywall-plan-price { font-family:'Fredoka One',cursive; font-size:1.4rem; color:var(--text) }
-.paywall-plan-period { font-size:.68rem; color:var(--text-muted) }
+.paywall-plan-name { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.06rem; color:var(--text-muted); margin-bottom:4px }
+.paywall-plan-price { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.4rem; color:var(--text) }
+.paywall-plan-period { font-size:1.09rem; color:var(--text-muted) }
 .paywall-plan-save {
-  font-size:.66rem; font-weight:700; color:var(--primary-dark);
+  font-size:1.08rem; font-weight:700; color:var(--primary-dark);
   background:var(--primary-bg); padding:2px 8px; border-radius:var(--radius-pill);
   margin-top:5px; display:inline-block; border:1px solid var(--primary);
 }
 .paywall-cta {
   width:100%; padding:15px; border-radius:var(--radius-sm); border:none;
-  background:var(--primary); color:#fff; font-family:'Fredoka One',cursive;
+  background:var(--primary); color:#fff; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
   font-size:1.05rem; cursor:pointer; transition:all .2s;
   box-shadow:0 4px 0 var(--primary-dark); margin-bottom:10px;
 }
 .paywall-cta:hover { transform:translateY(-2px); box-shadow:0 6px 0 var(--primary-dark) }
 .paywall-cta:active { transform:translateY(2px); box-shadow:none }
 .paywall-skip-link {
-  font-size:.75rem; color:var(--text-muted); cursor:pointer;
-  background:none; border:none; font-family:'Poppins',sans-serif;
+  font-size:1.05rem; color:var(--text-muted); cursor:pointer;
+  background:none; border:none; font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif;
   text-decoration:underline; transition:color .15s;
 }
 .paywall-skip-link:hover { color:var(--text) }
@@ -1157,13 +1526,13 @@ a { color:inherit; text-decoration:none }
 }
 .auth-logo { text-align:center; margin-bottom:20px }
 .auth-logo-icon { font-size:2.5rem }
-.auth-title { font-family:'Fredoka One',cursive; font-size:1.5rem; color:var(--text); text-align:center; margin-bottom:6px }
-.auth-sub { font-size:.82rem; color:var(--text-muted); text-align:center; margin-bottom:24px; line-height:1.55 }
+.auth-title { font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.5rem; color:var(--text); text-align:center; margin-bottom:6px }
+.auth-sub { font-size:1.09rem; color:var(--text-muted); text-align:center; margin-bottom:24px; line-height:1.55 }
 .auth-tabs { display:flex; background:var(--bg); border-radius:var(--radius-pill); padding:4px; margin-bottom:22px; border:2px solid var(--border) }
 .auth-tab {
   flex:1; padding:9px; border-radius:var(--radius-pill); border:none;
-  background:transparent; color:var(--text-muted); font-family:'Poppins',sans-serif;
-  font-size:.82rem; font-weight:600; cursor:pointer; transition:all .2s;
+  background:transparent; color:var(--text-muted); font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif;
+  font-size:1.09rem; font-weight:600; cursor:pointer; transition:all .2s;
 }
 .auth-tab.active { background:var(--primary); color:#fff; box-shadow:0 2px 0 var(--primary-dark) }
 .auth-field { margin-bottom:14px }
@@ -1171,13 +1540,13 @@ a { color:inherit; text-decoration:none }
 .auth-input {
   width:100%; padding:12px 16px; border-radius:var(--radius-sm);
   border:2px solid var(--border); background:var(--bg-card); color:var(--text);
-  font-size:.9rem; font-family:'Poppins',sans-serif; outline:none;
+  font-size:1.05rem; font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif; outline:none;
   transition:border-color .2s, box-shadow .2s;
 }
 .auth-input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(88,204,2,.15) }
 .auth-btn {
   width:100%; padding:14px; border-radius:var(--radius-sm); border:none;
-  background:var(--primary); color:#fff; font-family:'Fredoka One',cursive;
+  background:var(--primary); color:#fff; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;
   font-size:1rem; cursor:pointer; transition:all .2s; margin-top:6px;
   box-shadow:0 4px 0 var(--primary-dark);
 }
@@ -1187,21 +1556,21 @@ a { color:inherit; text-decoration:none }
 .auth-error {
   padding:10px 14px; border-radius:var(--radius-sm); margin-bottom:14px;
   background:var(--coral-bg); color:var(--coral-dark); border:2px solid var(--coral);
-  font-size:.8rem; font-weight:600; display:none;
+  font-size:1.08rem; font-weight:600; display:none;
 }
 .auth-error.visible { display:block }
 .auth-success {
   padding:10px 14px; border-radius:var(--radius-sm); margin-bottom:14px;
   background:var(--primary-bg); color:var(--primary-dark); border:2px solid var(--primary);
-  font-size:.8rem; font-weight:600; display:none; text-align:center;
+  font-size:1.08rem; font-weight:600; display:none; text-align:center;
 }
 .auth-success.visible { display:block }
-.auth-divider { text-align:center; font-size:.72rem; color:var(--text-muted); margin:14px 0 }
+.auth-divider { text-align:center; font-size:1rem; color:var(--text-muted); margin:14px 0 }
 .auth-google-btn {
   width:100%; padding:13px; border-radius:var(--radius-sm);
   border:2px solid var(--border); background:var(--bg-card);
-  color:var(--text); font-family:'Poppins',sans-serif;
-  font-size:.88rem; font-weight:600; cursor:pointer;
+  color:var(--text); font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif;
+  font-size:1.02rem; font-weight:600; cursor:pointer;
   display:flex; align-items:center; justify-content:center; gap:10px;
   transition:all .2s; box-shadow:var(--shadow);
 }
@@ -1211,11 +1580,32 @@ a { color:inherit; text-decoration:none }
 }
 .auth-google-btn:active { transform:translateY(0); box-shadow:none }
 
+.user-menu-wrap { position:relative }
+.user-dropdown {
+  position:absolute; top:calc(100% + 8px); right:0;
+  background:var(--bg-card); border:2px solid var(--border);
+  border-radius:var(--radius-sm); box-shadow:var(--shadow-lg);
+  min-width:200px; z-index:200; overflow:hidden;
+  animation:fadeIn .15s;
+}
+.user-dropdown.hidden { display:none }
+.user-dropdown-email {
+  padding:10px 14px; font-size:1.05rem; color:var(--text-muted);
+  border-bottom:1px solid var(--border); word-break:break-all;
+}
+.user-dropdown-btn {
+  width:100%; padding:11px 14px; background:none; border:none;
+  color:var(--text); font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif;
+  font-size:1.09rem; font-weight:600; cursor:pointer;
+  text-align:left; transition:background .15s;
+}
+.user-dropdown-btn:hover { background:var(--bg) }
+
 .user-avatar {
   display:flex; align-items:center; gap:8px;
   padding:6px 14px; border-radius:var(--radius-pill);
   background:var(--primary-bg); border:2px solid var(--primary);
-  color:var(--primary-dark); font-size:.78rem; font-weight:700; cursor:pointer;
+  color:var(--primary-dark); font-size:1.06rem; font-weight:700; cursor:pointer;
   transition:all .18s;
 }
 .user-avatar:hover { background:var(--coral-bg); border-color:var(--coral); color:var(--coral-dark) }
@@ -1223,13 +1613,13 @@ a { color:inherit; text-decoration:none }
 .btn-login {
   padding:8px 18px; border-radius:var(--radius-pill);
   border:2px solid var(--primary); background:var(--primary);
-  color:#fff; font-family:'Fredoka One',cursive; font-size:.82rem;
+  color:#fff; font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif; font-size:1.09rem;
   cursor:pointer; transition:all .18s;
   box-shadow:0 3px 0 var(--primary-dark);
 }
 .btn-login:hover { transform:translateY(-2px); box-shadow:0 5px 0 var(--primary-dark) }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 </head>
 <body>
 
@@ -1245,7 +1635,7 @@ a { color:inherit; text-decoration:none }
       <span class="logo-flag">🇹🇷</span>
     </div>
     <div>
-      <div class="app-title" id="appTitle">VerbEspañol A1</div>
+      <div class="app-title" id="appTitle" onclick="showPage('home')" style="cursor:pointer">esracademiapp</div>
       <div class="app-subtitle" id="appSubtitle">Español · Türkçe</div>
     </div>
   </div>
@@ -1278,6 +1668,10 @@ a { color:inherit; text-decoration:none }
   <button class="nav-tab" id="nav-logros" onclick="showPage('logros')">
     <span class="nav-tab-icon">🏆</span>
     <span id="nav-lbl-logros">Logros</span>
+  </button>
+  <button class="nav-tab" id="nav-daily" onclick="showPage('daily')">
+    <span class="nav-tab-icon">🔥</span>
+    <span id="nav-lbl-daily">Günün Görevi</span>
   </button>
 </nav>
 
@@ -1354,7 +1748,7 @@ a { color:inherit; text-decoration:none }
     <div class="auth-logo">
       <div class="auth-logo-icon">🇪🇸</div>
     </div>
-    <h2 class="auth-title">VerbEspañol A1</h2>
+    <h2 class="auth-title">esracademiapp</h2>
     <p class="auth-sub">Kayıt ol ve ilerlемeni tüm cihazlarında kaydet · Regístrate y guarda tu progreso</p>
     <div class="auth-tabs">
       <button class="auth-tab active" id="tab-login" onclick="switchAuthTab('login')">🔑 Giriş Yap</button>
@@ -1409,7 +1803,7 @@ a { color:inherit; text-decoration:none }
    ============================================================ */
 const SUPA_URL = 'https://wmttlpnjryoqvfjsekur.supabase.co';
 const SUPA_KEY = 'sb_publishable_8mysW0_5Zzcc6E6NeoaIRQ_ZxXoYvB8';
-const supa = supabase.createClient(SUPA_URL, SUPA_KEY);
+let supa = null; // initSupabase() tarafından CDN yüklendikten sonra atanır
 
 let currentUser = null;
 
@@ -1417,6 +1811,8 @@ let currentUser = null;
 function openAuthModal() {
   document.getElementById('auth-modal').classList.remove('hidden');
   clearAuthMessages();
+  // Supabase'i sadece giriş modalı açıldığında yükle
+  if (!supa) initSupabase();
 }
 function closeAuthModal() {
   document.getElementById('auth-modal').classList.add('hidden');
@@ -1437,6 +1833,7 @@ function switchAuthTab(tab) {
 }
 
 async function handleLogin() {
+  if(!supa) { showAuthError('Bağlantı kurulamadı. Sayfayı yenile.'); return; }
   const email = document.getElementById('login-email').value.trim();
   const password = document.getElementById('login-password').value;
   const btn = document.getElementById('login-btn');
@@ -1450,6 +1847,7 @@ async function handleLogin() {
 }
 
 async function handleSignup() {
+  if(!supa) { showAuthError('Bağlantı kurulamadı. Sayfayı yenile.'); return; }
   const name = document.getElementById('signup-name').value.trim();
   const email = document.getElementById('signup-email').value.trim();
   const password = document.getElementById('signup-password').value;
@@ -1467,17 +1865,17 @@ async function handleSignup() {
 }
 
 async function handleGoogleLogin() {
+  if(!supa) { showAuthError('Bağlantı kurulamadı. Sayfayı yenile.'); return; }
   const { error } = await supa.auth.signInWithOAuth({
     provider: 'google',
-    options: {
-      redirectTo: window.location.href
-    }
+    options: { redirectTo: window.location.href }
   });
   if(error) showAuthError('Google ile giriş başlatılamadı: ' + error.message);
 }
 
 function showAuthError(msg) {
-  el.textContent = '❌ ' + msg; el.classList.add('visible');
+  const el = document.getElementById('auth-error');
+  if(el) { el.textContent = '❌ ' + msg; el.classList.add('visible'); }
 }
 function showAuthSuccess(msg) {
   const el = document.getElementById('auth-success');
@@ -1485,7 +1883,7 @@ function showAuthSuccess(msg) {
 }
 
 async function handleLogout() {
-  await supa.auth.signOut();
+  if(supa) await supa.auth.signOut();
   currentUser = null;
   updateAuthButton(null);
 }
@@ -1501,27 +1899,35 @@ function updateAuthButton(user) {
   if(!wrap) return;
   if(user) {
     const name = user.user_metadata?.display_name || user.email.split('@')[0];
-    wrap.innerHTML = `<div class="user-avatar" onclick="handleLogout()" title="Çıkış yap">
-      <span class="user-avatar-icon">👤</span>
-      <span>${name}</span>
-    </div>`;
+    wrap.innerHTML = `
+      <div style="display:flex;align-items:center;gap:6px">
+        <div class="user-avatar" style="cursor:default">
+          <span class="user-avatar-icon">👤</span>
+          <span>${name}</span>
+        </div>
+        <button onclick="handleLogout()" style="padding:6px 10px;border-radius:20px;border:2px solid var(--border);background:var(--bg);color:var(--text-muted);font-size:1rem;font-weight:700;cursor:pointer;font-family:'Nunito',system-ui,'Segoe UI',Arial,sans-serif" title="Çıkış yap">Çıkış</button>
+      </div>`;
   } else {
     wrap.innerHTML = `<button class="btn-login" onclick="openAuthModal()">👤 Giriş Yap</button>`;
   }
 }
 
+function showUserOptions() {}
+function toggleUserMenu(e) {}
+
+
+
+
 async function syncProgressToCloud() {
-  if(!currentUser) return;
+  if(!currentUser || !supa) return;
   try {
     const xp = parseInt(localStorage.getItem('vesp-xp')) || 0;
     const streak = parseInt(localStorage.getItem('vesp-streak')) || 0;
-    // Upsert profile
     await supa.from('profiles').upsert({
       id: currentUser.id,
       email: currentUser.email,
       display_name: currentUser.user_metadata?.display_name || currentUser.email.split('@')[0]
     });
-    // Upsert progress for each unit
     for(let u = 1; u <= 3; u++) {
       await supa.from('user_progress').upsert({
         user_id: currentUser.id,
@@ -1534,25 +1940,51 @@ async function syncProgressToCloud() {
   } catch(e) { console.warn('Sync failed:', e); }
 }
 
-/* ── Oturum kontrolü — sayfa açılınca ── */
-(async function checkSession() {
-  const { data } = await supa.auth.getSession();
-  if(data?.session?.user) {
-    onUserLogin(data.session.user);
+/* ── Supabase — CDN yüklendikten sonra güvenle başlat ── */
+function initSupabase(callback) {
+  // Zaten yüklendiyse hemen çalıştır
+  if (supa) { if(callback) callback(true); return; }
+  // Supabase tanımlıysa (CDN dışarıdan yüklendi) direkt başlat
+  if (typeof supabase !== 'undefined') {
+    try {
+      supa = supabase.createClient(SUPA_URL, SUPA_KEY);
+      supa.auth.getSession().then(function(r) {
+        if (r.data && r.data.session && r.data.session.user) onUserLogin(r.data.session.user);
+      }).catch(function(){});
+      supa.auth.onAuthStateChange(function(event, session) {
+        if (session && session.user) { onUserLogin(session.user); }
+        else { currentUser = null; updateAuthButton(null); }
+      });
+      if(callback) callback(true);
+    } catch(e) { supa = null; if(callback) callback(false); }
+    return;
   }
-  // Auth state değişimlerini dinle
-  supa.auth.onAuthStateChange((event, session) => {
-    if(session?.user) { onUserLogin(session.user); }
-    else { currentUser = null; updateAuthButton(null); }
-  });
-})();
+  // CDN'den yükle — sadece kullanıcı istediğinde
+  var s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+  s.onload = function() {
+    try {
+      supa = supabase.createClient(SUPA_URL, SUPA_KEY);
+      supa.auth.getSession().then(function(r) {
+        if (r.data && r.data.session && r.data.session.user) onUserLogin(r.data.session.user);
+      }).catch(function(){});
+      supa.auth.onAuthStateChange(function(event, session) {
+        if (session && session.user) { onUserLogin(session.user); }
+        else { currentUser = null; updateAuthButton(null); }
+      });
+      if(callback) callback(true);
+    } catch(e) { supa = null; if(callback) callback(false); }
+  };
+  s.onerror = function() { if(callback) callback(false); };
+  document.head.appendChild(s);
+}
 
 /* ============================================================
    BILINGUAL UI TEXTS
    ============================================================ */
 const T = {
   es: {
-    appTitle:'VerbEspañol A1',
+    appTitle:'esracademiapp',
     appSub:'Español · Türkçe',
     nivel1:'Nivel 1', nivel2:'Nivel 2', nivel3:'Nivel 3',
     u1:'Presente', u2:'Perfecto', u3:'Estar+Ger',
@@ -1568,7 +2000,7 @@ const T = {
     practicaTitle:'Ejercicios — próximamente',
     modelo:'Modelo', allVerbs:'Todos los verbos',
     clickHint:'Haz clic en un verbo para ver su conjugación completa',
-    pronombres:['yo','tú','él/ella','nosotros','vosotros','ellos/ellas'],
+    pronombres:['Yo','Tú','Él/ella/usted','Nosotros/nosotras','Vosotros/vosotras','Ellos/ellas/ustedes'],
     terminacion:'Terminación', forma:'Forma conjugada', traduccion:'Traducción',
     t1title:'Verbos Regulares — AR',
     t1sub:'Terminan en -AR · El más común en español',
@@ -1606,7 +2038,7 @@ const T = {
     // ── Exercises ──
     exTitle:'Ejercicios — Unidad 1',
     exSub:'Elige un tipo de ejercicio para practicar',
-    exTypeA_name:'A — Escribir la forma',
+    exTypeA_name:'A — Escribe la conjugación',
     exTypeA_desc:'Escribe la conjugación correcta del verbo',
     exTypeA_badge:'20 preguntas',
     exTypeB_name:'B — ¿Qué significa?',
@@ -1618,6 +2050,18 @@ const T = {
     exTypeD_name:'D — Traducir frases',
     exTypeD_desc:'Traduce frases simples entre español y turco',
     exTypeD_badge:'20 frases',
+    exTypeE_name:'E — Completa la frase',
+    exTypeE_desc:'Escribe la forma correcta del verbo en la frase',
+    exTypeE_badge:'20 frases',
+    exTypeF_name:'F — Persona → Conjugación',
+    exTypeF_desc:'Relaciona el pronombre con la forma verbal correcta (yo→hablo)',
+    exTypeF_badge:'3 rondas',
+    exTypeG_name:'G — Conjugación → Persona',
+    exTypeG_desc:'Relaciona la forma verbal con el pronombre correcto (hablo→yo)',
+    exTypeG_badge:'3 rondas',
+    exTypeH_name:'H — Español ↔ Turco',
+    exTypeH_desc:'Relaciona el verbo español con su significado en turco',
+    exTypeH_badge:'3 rondas',
     exConjuga:'Conjuga el verbo:',
     exMeaning:'¿Qué significa esta forma verbal?',
     exTranslate:'Traduce la frase:',
@@ -1744,7 +2188,7 @@ const T = {
     practicaTitle:'Alıştırmalar — yakında',
     modelo:'Model Fiil', allVerbs:'Tüm fiiller',
     clickHint:'Tam çekimini görmek için bir fiile tıklayın',
-    pronombres:['yo','tú','él/ella','nosotros','vosotros','ellos/ellas'],
+    pronombres:['Yo','Tú','Él/ella/usted','Nosotros/nosotras','Vosotros/vosotras','Ellos/ellas/ustedes'],
     terminacion:'Ek', forma:'Çekimli form', traduccion:'Türkçe',
     t1title:'Düzenli Fiiller — AR',
     t1sub:'-AR ile biten fiiller · En yaygın grup',
@@ -1782,7 +2226,7 @@ const T = {
     // ── Exercises ──
     exTitle:'Alıştırmalar — 1. Ünite',
     exSub:'Pratik yapmak için bir alıştırma türü seçin',
-    exTypeA_name:'A — Formu Yaz',
+    exTypeA_name:'A — Fiil Çekimini Yaz',
     exTypeA_desc:'Fiilin doğru çekimini yaz',
     exTypeA_badge:'20 soru',
     exTypeB_name:'B — Ne Anlama Gelir?',
@@ -1794,6 +2238,18 @@ const T = {
     exTypeD_name:'D — Cümle Çevir',
     exTypeD_desc:'Basit cümleleri İspanyolca ve Türkçe arasında çevir',
     exTypeD_badge:'20 cümle',
+    exTypeE_name:'E — Cümleyi Tamamla',
+    exTypeE_desc:'Cümledeki boşluğa doğru fiil çekimini yaz',
+    exTypeE_badge:'20 cümle',
+    exTypeF_name:'F — Zamir → Çekim',
+    exTypeF_desc:'Zamiri doğru fiil çekimiyle eşleştir (yo→hablo)',
+    exTypeF_badge:'3 tur',
+    exTypeG_name:'G — Çekim → Zamir',
+    exTypeG_desc:'Fiil çekimini doğru zamirle eşleştir (hablo→yo)',
+    exTypeG_badge:'3 tur',
+    exTypeH_name:'H — İspanyolca ↔ Türkçe',
+    exTypeH_desc:'İspanyolca fiili Türkçe anlamıyla eşleştir',
+    exTypeH_badge:'3 tur',
     exConjuga:'Fiili çekimle:',
     exMeaning:'Bu fiil formu ne anlama gelir?',
     exTranslate:'Cümleyi çevir:',
@@ -2218,6 +2674,60 @@ const VERBOS = [
 ];
 
 /* ============================================================
+   TURKISH CONJUGATION — Present Progressive (-iyor)
+   ============================================================ */
+function conjugarTR(trInf, pronIdx) {
+  // Take first meaning if multiple (e.g. "taşımak / götürmek")
+  let inf = trInf.split('/')[0].trim();
+  // Remove parenthetical notes (e.g. "olmak (kalıcı)")
+  inf = inf.split('(')[0].trim();
+
+  // Compound verbs: conjugate only the last word (e.g. "dans etmek" → "dans ediyorum")
+  const parts = inf.split(' ');
+  const lastWord = parts[parts.length - 1];
+  const prefix = parts.slice(0, -1).join(' ');
+
+  // Get stem by removing -mak / -mek
+  let stem;
+  if (lastWord.endsWith('mak'))      stem = lastWord.slice(0, -3);
+  else if (lastWord.endsWith('mek')) stem = lastWord.slice(0, -3);
+  else return inf; // fallback — return unchanged
+
+  // Consonant softening: final t → d before vowel (gitmek→gidiyor, etmek→ediyor)
+  if (stem.endsWith('t') && stem.length > 1) stem = stem.slice(0, -1) + 'd';
+
+  const VOWELS = 'aeıioöuü';
+  const IYOR_MAP = { a:'ı', ı:'ı', e:'i', i:'i', o:'u', u:'u', ö:'ü', ü:'ü' };
+
+  // Determine harmony vowel and build base
+  let harmV, base;
+  if (VOWELS.includes(stem[stem.length - 1])) {
+    // Stem ends in vowel → harmony from the PRECEDING vowel (e.g. söyle→ö→ü)
+    let prevV = null;
+    for (let j = stem.length - 2; j >= 0; j--) {
+      if (VOWELS.includes(stem[j])) { prevV = stem[j]; break; }
+    }
+    harmV = IYOR_MAP[prevV || stem[stem.length - 1]];
+    base  = stem.slice(0, -1) + harmV; // replace final vowel
+  } else {
+    // Stem ends in consonant → harmony from last vowel in stem
+    let lv = 'a';
+    for (const c of stem) { if (VOWELS.includes(c)) lv = c; }
+    harmV = IYOR_MAP[lv];
+    base  = stem + harmV;
+  }
+
+  const root = base + 'yor'; // e.g. konuşuyor, gidiyor
+
+  // After -yor: 1st sg/pl always -um/-uz; only 3rd pl harmonizes (lar/ler)
+  const LERI = { ı:'lar', i:'ler', u:'lar', ü:'ler' };
+  const sfx  = ['um', 'sun', '', 'uz', 'sunuz', LERI[harmV] || 'lar'];
+
+  const conj = root + sfx[pronIdx];
+  return prefix ? prefix + ' ' + conj : conj;
+}
+
+/* ============================================================
    CONJUGATION ENGINE
    ============================================================ */
 function conjugar(verb) {
@@ -2479,7 +2989,7 @@ function buildUnit1Theory() {
   // TABLE 8 — Completamente irregulares (ser/estar/ir/haber) + tener/venir
   const compModels = [ser,estar,ir,haber,tener,venir].map(v=>`
     <div class="model-block">
-      <div class="model-label" style="font-size:.68rem">${L.modelo}: <strong style="color:var(--hl-comp);font-family:'Lora',serif">${v.inf}</strong> <em style="color:var(--text-muted);font-size:.7rem">${v.tr}</em></div>
+      <div class="model-label" style="font-size:1.09rem">${L.modelo}: <strong style="color:var(--hl-comp);font-family:'Lora',serif">${v.inf}</strong> <em style="color:var(--text-muted);font-size:.84rem">${v.tr}</em></div>
       ${renderConjTable(v, v.tipo)}
     </div>`).join('');
   const body8 = `
@@ -2540,6 +3050,24 @@ function buildUnitPage(unitNum) {
   const desc  = descs[unitNum];
   const tagHtml = (tags[unitNum]||[]).map(t=>`<span class="tag">${t}</span>`).join('');
 
+  // Step strip data (same as dashboard n1Units)
+  const stripUnits = [
+    { num:1, emoji:'🟢', name: lang==='es'?'Presente':'Geniş Zaman',      pct:5  },
+    { num:2, emoji:'🔵', name: lang==='es'?'P. Perfecto':'Geçmiş Zaman',  pct:0  },
+    { num:3, emoji:'🟣', name: lang==='es'?'Estar+Ger.':'Şimdiki Zaman',  pct:0  },
+  ];
+  const stripHtml = `
+    <div class="unit-step-strip">
+      ${stripUnits.map(u=>`
+        <div class="unit-step-item ${u.num===unitNum?'strip-active':''}" onclick="selectUnit(${u.num})">
+          <div class="step-num">${u.num}</div>
+          <div class="strip-body">
+            <div class="strip-name">${u.emoji} ${u.name}</div>
+          </div>
+          <div class="strip-pct">${u.pct}%</div>
+        </div>`).join('')}
+    </div>`;
+
   // Theory content per unit
   let teoriaContent = '';
   if (unitNum === 1) teoriaContent = buildUnit1Theory();
@@ -2570,6 +3098,7 @@ function buildUnitPage(unitNum) {
   }
 
   return `
+    ${stripHtml}
     <div class="unit-header">
       <div class="unit-header-top">
         <div>
@@ -2700,11 +3229,15 @@ function applyLang() {
 }
 
 /* ── Page router ── */
-function showPage(page) {
+function showPage(page, pushHistory=true) {
   currentPage = page;
+  // Browser history — enables Safari/Chrome back button
+  if(pushHistory) {
+    history.pushState({page}, '', '#'+page);
+  }
   // Update nav pills
-  ['home','unit','flashcards','logros'].forEach(p => {
-    const map = {home:'nav-niveles', unit:'nav-conjugar', flashcards:'nav-flashcards', logros:'nav-logros'};
+  ['home','unit','flashcards','logros','daily'].forEach(p => {
+    const map = {home:'nav-niveles', unit:'nav-conjugar', flashcards:'nav-flashcards', logros:'nav-logros', daily:'nav-daily'};
     const btn = document.getElementById(map[p]);
     if(btn) btn.classList.toggle('active', p===page);
   });
@@ -2712,9 +3245,16 @@ function showPage(page) {
   window.scrollTo(0,0);
   if(page==='home')       { mc.innerHTML = buildHomePage(); loadProgress(); }
   else if(page==='unit')  { mc.innerHTML = buildUnitViewPage(); initUnitContent(); }
-  else if(page==='flashcards') { mc.innerHTML = buildPlaceholderPage('flashcards'); }
+  else if(page==='flashcards') { mc.innerHTML = buildFlashcardsPage(); initFlashcards(); }
   else if(page==='logros')     { mc.innerHTML = buildPlaceholderPage('logros'); }
+  else if(page==='daily')      { mc.innerHTML = buildDailyPage(); }
 }
+
+// Handle browser back/forward (Safari, Chrome, etc.)
+window.addEventListener('popstate', function(e) {
+  const page = e.state?.page || 'home';
+  showPage(page, false);
+});
 
 /* ── HOME — Dashboard with level cards ── */
 function buildHomePage() {
@@ -2727,10 +3267,10 @@ function buildHomePage() {
     : xp<300 ? (lang==='es'?'📗 Intermedio':'📗 Orta Seviye')
     : (lang==='es'?'⭐ Avanzado':'⭐ İleri Seviye');
 
-  const heroTitle = lang==='es' ? '¡Aprende Español! 🎉' : 'İspanyolca Öğren! 🎉';
+  const heroTitle = lang==='es' ? '¡Domina los verbos! 💥' : 'Fiillere Hükmet! 💥';
   const heroSub   = lang==='es'
-    ? '3 niveles · 7 unidades · 150 verbos · ¡Tú puedes! 💪'
-    : '3 seviye · 7 ünite · 150 fiil · Başarabilirsin! 💪';
+    ? '150 verbos · Presente · Perfecto · Gerundio — cada conjugación te acerca a la fluidez'
+    : '150 fiil · Her çekim seni akıcılığa bir adım daha yaklaştırıyor';
   const xpLabel   = lang==='es' ? 'XP' : 'XP';
   const rachaLabel= lang==='es' ? '🔥 Racha' : '🔥 Seri';
   const rangoLabel= lang==='es' ? '🏅 Rango' : '🏅 Rütbe';
@@ -2744,24 +3284,40 @@ function buildHomePage() {
 
   // N1 units
   const n1Units = [
-    { name: lang==='es'?'🟢 Presente':'🟢 Geniş Zaman', pct:5 },
-    { name: lang==='es'?'🔵 P. Perfecto':'🔵 Geçmiş Zaman', pct:0 },
-    { name: lang==='es'?'🟣 Estar+Ger.':'🟣 Şimdiki Zaman', pct:0 },
+    { num:1, name: lang==='es'?'Presente':'Geniş Zaman',         emoji:'🟢', pct:5,  desc: lang==='es'?'Acciones habituales':'Alışkanlıklar' },
+    { num:2, name: lang==='es'?'P. Perfecto':'Geçmiş Zaman',     emoji:'🔵', pct:0,  desc: lang==='es'?'Acciones pasadas':'Geçmiş eylemler' },
+    { num:3, name: lang==='es'?'Estar+Ger.':'Şimdiki Zaman',     emoji:'🟣', pct:0,  desc: lang==='es'?'Acción en progreso':'Devam eden eylem' },
   ];
   const n2Units = [
-    { name: lang==='es'?'🔴 Indefinido':'🔴 Belirsiz Geçmiş', pct:0 },
-    { name: lang==='es'?'🟡 Imperfecto':'🟡 Süregelen Geçmiş', pct:0 },
+    { num:1, emoji:'🔴', name: lang==='es'?'P. Indefinido':'Belirsiz Geçmiş', pct:0, desc: lang==='es'?'Acciones pasadas':'Geçmiş eylemler' },
+    { num:2, emoji:'🟡', name: lang==='es'?'Imperfecto':'Süregelen Geçmiş',  pct:0, desc: lang==='es'?'Acciones habituales en el pasado':'Geçmişteki alışkanlıklar' },
   ];
   const n3Units = [
-    { name: lang==='es'?'🌀 Futuro':'🌀 Gelecek Zaman', pct:0 },
-    { name: lang==='es'?'✨ Condicional':'✨ Koşul Kipi', pct:0 },
+    { num:1, emoji:'🌀', name: lang==='es'?'Futuro Simple':'Gelecek Zaman',  pct:0, desc: lang==='es'?'Acciones futuras':'Gelecek eylemler' },
+    { num:2, emoji:'✨', name: lang==='es'?'Condicional':'Koşul Kipi',        pct:0, desc: lang==='es'?'Posibilidad / hipótesis':'Olasılık / varsayım' },
   ];
 
-  const barRow = (u, fillClass) => `
-    <div class="level-unit-row">
-      <span class="level-unit-name">${u.name}</span>
-      <div class="level-unit-track"><div class="level-unit-fill ${fillClass}" style="width:${u.pct}%"></div></div>
-      <span class="level-unit-pct">${u.pct}%</span>
+  // Daily challenge seed (changes each day)
+  const today = new Date();
+  const dayIdx = (today.getFullYear()*10000 + (today.getMonth()+1)*100 + today.getDate()) % VERBOS.length;
+  const dcVerb = VERBOS[dayIdx];
+  const dcForms = dcVerb ? conjugar(dcVerb) : [];
+  const dcCompleted = localStorage.getItem('vesp-dc-' + today.toDateString());
+  const dcLabel = lang==='es' ? 'Desafío del día' : 'Günün Görevi';
+  const dcSub   = lang==='es' ? 'Conjuga el verbo del día en todas sus formas' : 'Günün fiilin tüm kişilerde çekimle';
+  const dcBtnLabel = dcCompleted
+    ? (lang==='es' ? '✅ Completado' : '✅ Tamamlandı')
+    : (lang==='es' ? '▶ Empezar desafío' : '▶ Göreve Başla');
+
+  const stepRow = (u, fillClass, lockClass='') => `
+    <div class="level-step ${u.pct>0?'step-active':''} ${lockClass}">
+      <div class="step-num">${u.num}</div>
+      <div class="step-body">
+        <div class="step-name">${u.emoji} ${u.name}</div>
+        <div class="step-desc">${u.desc}</div>
+        <div class="step-track"><div class="step-fill ${fillClass}" style="width:${u.pct}%"></div></div>
+      </div>
+      <div class="step-pct">${u.pct}%</div>
     </div>`;
 
   return `
@@ -2787,6 +3343,35 @@ function buildHomePage() {
       </div>
     </div>
 
+    <!-- Quick actions row -->
+    <div class="home-quick-row">
+      <button class="quick-btn quick-search" onclick="showVerbSearch()">
+        <span class="quick-btn-icon">🔍</span>
+        <span class="quick-btn-label">${lang==='es'?'Buscar verbo':'Fiil Ara'}</span>
+      </button>
+      <button class="quick-btn quick-flash" onclick="showPage('flashcards')">
+        <span class="quick-btn-icon">🃏</span>
+        <span class="quick-btn-label">${lang==='es'?'Flashcards':'Kelime Kartları'}</span>
+      </button>
+      <button class="quick-btn quick-logros" onclick="showPage('logros')">
+        <span class="quick-btn-icon">🏆</span>
+        <span class="quick-btn-label">${lang==='es'?'Logros':'Başarılar'}</span>
+      </button>
+    </div>
+
+    <!-- Daily Challenge -->
+    <div class="daily-challenge" onclick="startDailyChallenge()">
+      <div class="dc-left">
+        <div class="dc-icon">🔥</div>
+        <div class="dc-body">
+          <div class="dc-label">${dcLabel}</div>
+          <div class="dc-verb">${dcVerb ? dcVerb.inf : '—'} <span class="dc-tr">${dcVerb ? '· '+dcVerb.tr : ''}</span></div>
+          <div class="dc-sub">${dcSub}</div>
+        </div>
+      </div>
+      <button class="dc-btn ${dcCompleted?'dc-done':''}" onclick="event.stopPropagation();startDailyChallenge()">${dcBtnLabel}</button>
+    </div>
+
     <!-- Level Cards -->
     <div class="levels-grid">
 
@@ -2795,12 +3380,14 @@ function buildHomePage() {
         <div class="level-card-accent n1-accent"></div>
         <div class="level-card-body">
           <span class="level-num-badge n1-badge">✅ ${lang==='es'?'NIVEL 1 — ACTIVO':'SEVİYE 1 — AKTİF'}</span>
-          <div class="level-card-title">🟢 ${lang==='es'?'Tiempos del Presente':'Şimdiki & Geçmiş Zamanlar'}</div>
+          <div class="level-card-title"><strong>🟢 ${lang==='es'?'Tiempos del Presente':'Şimdiki & Geçmiş Zamanlar'}</strong></div>
           <div class="level-card-desc">${lang==='es'
             ? 'Presente · Pretérito Perfecto · Estar + Gerundio — los fundamentos de la comunicación'
             : 'Geniş Zaman · Geçmiş Zaman · Şimdiki Zaman — iletişimin temelleri'}</div>
           <div class="level-stars">${starsHtml(n1StarsFilled)}</div>
-          <div class="level-units">${n1Units.map(u=>barRow(u,'n1-fill')).join('')}</div>
+          <div class="level-steps">
+            ${n1Units.map(u=>stepRow(u,'n1-fill')).join('')}
+          </div>
           <button class="level-cta level-cta-n1" onclick="event.stopPropagation();enterLevel(1)">
             ${startText}
           </button>
@@ -2811,15 +3398,15 @@ function buildHomePage() {
       <div class="level-card locked-card" onclick="showLockModal(2)">
         <div class="level-card-accent n2-accent"></div>
         <div class="level-card-body">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between">
-            <span class="level-num-badge n2-badge">🔒 ${lang==='es'?'NIVEL 2':'SEVİYE 2'}</span>
-          </div>
-          <div class="level-card-title">🔵 ${lang==='es'?'Tiempos del Pasado':'Geçmiş Zaman Kipler'}</div>
+          <span class="level-num-badge n2-badge">🔒 ${lang==='es'?'NIVEL 2':'SEVİYE 2'}</span>
+          <div class="level-card-title"><strong>🔵 ${lang==='es'?'Tiempos del Pasado':'Geçmiş Zaman Kipler'}</strong></div>
           <div class="level-card-desc">${lang==='es'
             ? 'Pretérito Indefinido · Pretérito Imperfecto — narra el pasado con precisión'
             : 'Belirsiz Geçmiş · Süregelen Geçmiş — geçmişi kesin ifade et'}</div>
           <div class="level-stars">${starsHtml(0)}</div>
-          <div class="level-units">${n2Units.map(u=>barRow(u,'n2-fill')).join('')}</div>
+          <div class="level-steps">
+            ${n2Units.map(u=>stepRow(u,'n2-fill','step-locked')).join('')}
+          </div>
           <button class="level-cta level-cta-locked" disabled>🔒 ${completeN1}</button>
         </div>
       </div>
@@ -2828,19 +3415,33 @@ function buildHomePage() {
       <div class="level-card locked-card" onclick="showLockModal(3)">
         <div class="level-card-accent n3-accent"></div>
         <div class="level-card-body">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between">
-            <span class="level-num-badge n3-badge">🔒 ${lang==='es'?'NIVEL 3':'SEVİYE 3'}</span>
-          </div>
-          <div class="level-card-title">🌟 ${lang==='es'?'Tiempos del Futuro':'Gelecek & Koşul Kipler'}</div>
+          <span class="level-num-badge n3-badge">🔒 ${lang==='es'?'NIVEL 3':'SEVİYE 3'}</span>
+          <div class="level-card-title"><strong>🌟 ${lang==='es'?'Tiempos del Futuro':'Gelecek & Koşul Kipler'}</strong></div>
           <div class="level-card-desc">${lang==='es'
             ? 'Futuro Simple · Condicional Simple — habla sobre lo que vendrá'
             : 'Gelecek Zaman · Koşul Kipi — geleceği ve hayalleri anlat'}</div>
           <div class="level-stars">${starsHtml(0)}</div>
-          <div class="level-units">${n3Units.map(u=>barRow(u,'n3-fill')).join('')}</div>
+          <div class="level-steps">
+            ${n3Units.map(u=>stepRow(u,'n3-fill','step-locked')).join('')}
+          </div>
           <button class="level-cta level-cta-locked" disabled>🔒 ${completeN1}</button>
         </div>
       </div>
 
+    </div>
+
+    <!-- Verb Search Modal -->
+    <div id="verb-search-modal" class="modal-overlay" style="display:none" onclick="if(event.target===this)hideVerbSearch()">
+      <div class="modal-box verb-search-box">
+        <div class="modal-header">
+          <strong>${lang==='es'?'Buscar verbo':'Fiil Ara'}</strong>
+          <button class="modal-close" onclick="hideVerbSearch()">✕</button>
+        </div>
+        <input id="verb-search-inp" class="verb-search-input" type="text"
+          placeholder="${lang==='es'?'Escribe un verbo en español o turco...':'İspanyolca veya Türkçe bir fiil yaz...'}"
+          oninput="renderVerbSearch(this.value)" autocomplete="off" autocorrect="off" spellcheck="false"/>
+        <div id="verb-search-results" class="verb-search-results"></div>
+      </div>
     </div>
   </div>`;
 }
@@ -2858,7 +3459,6 @@ function buildUnitViewPage() {
   <div class="page-wrap">
     <div class="unit-back-bar">
       <button class="btn-back" onclick="showPage('home')">${backLabel}</button>
-      <div class="unit-nav-pills">${unitPills}</div>
     </div>
     <div id="unit-inner">${buildUnitPage(currentUnit)}</div>
   </div>`;
@@ -2895,20 +3495,739 @@ function enterLevel(n) {
 }
 
 /* ── PLACEHOLDER PAGES ── */
-function buildPlaceholderPage(type) {
+/* ── Flashcard State ── */
+let FC = {
+  deck: [], index: 0, flipped: false,
+  mode: 'es-tr', // 'es-tr' | 'tr-es'
+  filter: 'all', // 'all' | 'ar' | 'er' | 'ir' | 'ref'
+  known: new Set(), unknown: new Set(),
+};
+
+function buildFlashcardsPage() {
+  const isEs = lang === 'es';
+  return `
+  <div class="page-wrap">
+    <div class="fc-wrap">
+      <div class="fc-header">
+        <h2 class="fc-title">🃏 ${isEs ? 'Flashcards' : 'Kelime Kartları'}</h2>
+        <div class="fc-controls">
+          <select id="fc-filter" onchange="fcSetFilter(this.value)" class="fc-select">
+            <option value="all">${isEs ? 'Todos (134)' : 'Tümü (134)'}</option>
+            <option value="ar">-AR ${isEs ? 'verbos' : 'fiiller'} (48)</option>
+            <option value="er">-ER ${isEs ? 'verbos' : 'fiiller'} (31)</option>
+            <option value="ir">-IR ${isEs ? 'verbos' : 'fiiller'} (25)</option>
+            <option value="ref">${isEs ? 'Reflexivos' : 'Dönüşlü'} (30)</option>
+          </select>
+          <select id="fc-mode" onchange="fcSetMode(this.value)" class="fc-select">
+            <option value="es-tr">🇪🇸 → 🇹🇷</option>
+            <option value="tr-es">🇹🇷 → 🇪🇸</option>
+          </select>
+          <button class="fc-btn-shuffle" onclick="fcShuffle()">🔀 ${isEs ? 'Mezclar' : 'Karıştır'}</button>
+        </div>
+      </div>
+
+      <div class="fc-progress-row">
+        <span class="fc-badge fc-badge-total" id="fc-badge-total">📚 150</span>
+        <span class="fc-badge fc-badge-known" id="fc-badge-known">✅ 0</span>
+        <span class="fc-badge fc-badge-unknown" id="fc-badge-unknown">🔄 0</span>
+        <span class="fc-counter" id="fc-counter">1 / 150</span>
+      </div>
+
+      <div class="fc-progress-bar-wrap">
+        <div class="fc-progress-bar" id="fc-progress-bar" style="width:0%"></div>
+      </div>
+
+      <div class="fc-card-area">
+        <button class="fc-nav fc-nav-prev" onclick="fcPrev()">‹</button>
+        <div class="fc-card" id="fc-card" onclick="fcFlip()">
+          <div class="fc-card-inner" id="fc-card-inner">
+            <div class="fc-card-front" id="fc-front">
+              <div class="fc-card-tipo" id="fc-tipo"></div>
+              <div class="fc-card-word" id="fc-word"></div>
+              <div class="fc-card-hint">${isEs ? 'Toca para ver' : 'Görmek için dokun'} 👆</div>
+            </div>
+            <div class="fc-card-back" id="fc-back">
+              <div class="fc-card-translation" id="fc-translation"></div>
+              <div class="fc-card-hint2" id="fc-hint2"></div>
+            </div>
+          </div>
+        </div>
+        <button class="fc-nav fc-nav-next" onclick="fcNext()">›</button>
+      </div>
+
+      <div class="fc-actions" id="fc-actions" style="display:none">
+        <button class="fc-action-unknown" onclick="fcMark('unknown')">🔄 ${isEs ? 'Repasar' : 'Tekrar'}</button>
+        <button class="fc-action-known" onclick="fcMark('known')">✅ ${isEs ? 'Lo sé' : 'Biliyorum'}</button>
+      </div>
+
+      <div class="fc-done" id="fc-done" style="display:none">
+        <div class="fc-done-emoji">🎉</div>
+        <div class="fc-done-title">${isEs ? '¡Completado!' : 'Tamamlandı!'}</div>
+        <div class="fc-done-sub" id="fc-done-sub"></div>
+        <button class="fc-btn-restart" onclick="fcRestart()">${isEs ? '🔁 Repetir' : '🔁 Tekrar'}</button>
+        <button class="fc-btn-unknown" onclick="fcRestartUnknown()" id="fc-btn-unknown"></button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function initFlashcards() {
+  fcBuildDeck();
+  fcRender();
+}
+
+function fcBuildDeck() {
+  FC.deck = VERBOS.filter(v => verbEndFilter(v, FC.filter));
+  FC.index = 0;
+  FC.flipped = false;
+  FC.known = new Set();
+  FC.unknown = new Set();
+}
+
+function fcRender() {
+  const card = FC.deck[FC.index];
+  if (!card) return;
+  const inner = document.getElementById('fc-card-inner');
+  if (inner) { inner.style.transform = 'rotateY(0deg)'; }
+  FC.flipped = false;
+
+  const isTrEs = FC.mode === 'tr-es';
+  document.getElementById('fc-word').textContent = isTrEs ? card.tr : card.inf;
+  document.getElementById('fc-translation').textContent = isTrEs ? card.inf : card.tr;
+  document.getElementById('fc-tipo').textContent = card.tipo === 'rar' ? '-AR' : card.tipo === 'rer' ? '-ER' : '-IR';
+  document.getElementById('fc-hint2').textContent = isTrEs ? card.tipo.replace('r','').toUpperCase() + ' fiili' : '';
+  document.getElementById('fc-counter').textContent = `${FC.index + 1} / ${FC.deck.length}`;
+  document.getElementById('fc-badge-total').textContent = `📚 ${FC.deck.length}`;
+  document.getElementById('fc-badge-known').textContent = `✅ ${FC.known.size}`;
+  document.getElementById('fc-badge-unknown').textContent = `🔄 ${FC.unknown.size}`;
+  const pct = FC.deck.length ? Math.round((FC.index / FC.deck.length) * 100) : 0;
+  document.getElementById('fc-progress-bar').style.width = pct + '%';
+  document.getElementById('fc-actions').style.display = 'none';
+  document.getElementById('fc-done').style.display = 'none';
+  document.getElementById('fc-card').style.display = '';
+}
+
+function fcFlip() {
+  const inner = document.getElementById('fc-card-inner');
+  if (!inner) return;
+  FC.flipped = !FC.flipped;
+  inner.style.transform = FC.flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+  document.getElementById('fc-actions').style.display = FC.flipped ? 'flex' : 'none';
+}
+
+function fcNext() {
+  if (FC.index < FC.deck.length - 1) {
+    FC.index++;
+    fcRender();
+  } else {
+    fcShowDone();
+  }
+}
+
+function fcPrev() {
+  if (FC.index > 0) {
+    FC.index--;
+    fcRender();
+  }
+}
+
+function fcMark(result) {
+  const card = FC.deck[FC.index];
+  if (result === 'known') FC.known.add(card.id);
+  else FC.unknown.add(card.id);
+  fcNext();
+}
+
+function fcShowDone() {
+  document.getElementById('fc-card').style.display = 'none';
+  document.getElementById('fc-actions').style.display = 'none';
+  document.getElementById('fc-done').style.display = 'flex';
+  const isEs = lang === 'es';
+  document.getElementById('fc-done-sub').textContent =
+    `✅ ${FC.known.size} ${isEs ? 'conocidas' : 'bilinen'} · 🔄 ${FC.unknown.size} ${isEs ? 'para repasar' : 'tekrar'}`;
+  const btnUnknown = document.getElementById('fc-btn-unknown');
+  if (FC.unknown.size > 0) {
+    btnUnknown.style.display = '';
+    btnUnknown.textContent = `🔄 ${isEs ? 'Solo repasar' : 'Sadece tekrar'} (${FC.unknown.size})`;
+  } else {
+    btnUnknown.style.display = 'none';
+  }
+}
+
+function fcRestart() {
+  fcBuildDeck();
+  document.getElementById('fc-card').style.display = '';
+  document.getElementById('fc-done').style.display = 'none';
+  fcRender();
+}
+
+function fcRestartUnknown() {
+  const unknownVerbs = VERBOS.filter(v => FC.unknown.has(v.id));
+  FC.deck = unknownVerbs;
+  FC.index = 0;
+  FC.flipped = false;
+  FC.known = new Set();
+  FC.unknown = new Set();
+  document.getElementById('fc-card').style.display = '';
+  document.getElementById('fc-done').style.display = 'none';
+  fcRender();
+}
+
+function fcShuffle() {
+  for (let i = FC.deck.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [FC.deck[i], FC.deck[j]] = [FC.deck[j], FC.deck[i]];
+  }
+  FC.index = 0;
+  FC.flipped = false;
+  fcRender();
+}
+
+function fcSetFilter(val) {
+  FC.filter = val;
+  fcBuildDeck();
+  fcRender();
+}
+
+function fcSetMode(val) {
+  FC.mode = val;
+  fcRender();
+}
+
+function showVerbSearch() {
+  const m = document.getElementById('verb-search-modal');
+  if(m){ m.style.display='flex'; setTimeout(()=>document.getElementById('verb-search-inp')?.focus(),100); }
+  renderVerbSearch('');
+}
+function hideVerbSearch() {
+  const m = document.getElementById('verb-search-modal');
+  if(m) m.style.display='none';
+}
+
+/* ── Extra tense conjugators ── */
+function conjugarIndefinido(verb) {
+  const inf = verb.inf;
+  // Irregular indefinido
+  const IRR = {
+    ser:'fui fuiste fue fuimos fuisteis fueron',
+    ir:'fui fuiste fue fuimos fuisteis fueron',
+    tener:'tuve tuviste tuvo tuvimos tuvisteis tuvieron',
+    estar:'estuve estuviste estuvo estuvimos estuvisteis estuvieron',
+    poder:'pude pudiste pudo pudimos pudisteis pudieron',
+    poner:'puse pusiste puso pusimos pusisteis pusieron',
+    querer:'quise quisiste quiso quisimos quisisteis quisieron',
+    saber:'supe supiste supo supimos supisteis supieron',
+    venir:'vine viniste vino vinimos vinisteis vinieron',
+    hacer:'hice hiciste hizo hicimos hicisteis hicieron',
+    decir:'dije dijiste dijo dijimos dijisteis dijeron',
+    traer:'traje trajiste trajo trajimos trajisteis trajeron',
+    ver:'vi viste vio vimos visteis vieron',
+    dar:'di diste dio dimos disteis dieron',
+    haber:'hube hubiste hubo hubimos hubisteis hubieron',
+    ir:'fui fuiste fue fuimos fuisteis fueron',
+  };
+  if(IRR[inf]) return IRR[inf].split(' ');
+  // Stem changes in 3rd person: -ir verbs e→i, o→u
+  const stem = inf.slice(0,-2);
+  if(inf.endsWith('ar')){
+    return [stem+'é',stem+'aste',stem+'ó',stem+'amos',stem+'asteis',stem+'aron'];
+  } else if(inf.endsWith('er')||inf.endsWith('ir')){
+    // e→i stem changers (3rd persons)
+    let s3=stem, s3pl=stem;
+    const EI_VERBS=['pedir','repetir','seguir','servir','vestir','dormir','morir','mentir','sentir','preferir','sugerir'];
+    if(EI_VERBS.includes(inf)){
+      // stem change in 3rd persons
+      s3=stem.replace(/e([^aeiou]*)$/,'i$1').replace(/o([^aeiou]*)$/,'u$1');
+      s3pl=s3;
+    }
+    if(inf.endsWith('er')) return [stem+'í',stem+'iste',stem+'ió',stem+'imos',stem+'isteis',stem+'ieron'];
+    return [stem+'í',stem+'iste',s3+'ió',stem+'imos',stem+'isteis',s3pl+'ieron'];
+  }
+  return Array(6).fill('—');
+}
+
+function conjugarImperfecto(verb) {
+  const inf = verb.inf;
+  const IRR = {
+    ser:'era eras era éramos erais eran',
+    ir:'iba ibas iba íbamos ibais iban',
+    ver:'veía veías veía veíamos veíais veían',
+  };
+  if(IRR[inf]) return IRR[inf].split(' ');
+  const stem = inf.slice(0,-2);
+  if(inf.endsWith('ar')){
+    return [stem+'aba',stem+'abas',stem+'aba',stem+'ábamos',stem+'abais',stem+'aban'];
+  } else {
+    return [stem+'ía',stem+'ías',stem+'ía',stem+'íamos',stem+'íais',stem+'ían'];
+  }
+}
+
+function conjugarFuturo(verb) {
+  const inf = verb.inf;
+  const IRR_STEM = {
+    tener:'tendr',haber:'habr',poder:'podr',poner:'pondr',
+    querer:'querr',saber:'sabr',venir:'vendr',hacer:'har',
+    decir:'dir',salir:'saldr',valer:'valdr',
+  };
+  const stem = IRR_STEM[inf] || inf;
+  return [stem+'é',stem+'ás',stem+'á',stem+'emos',stem+'éis',stem+'án'];
+}
+
+function conjugarCondicional(verb) {
+  const inf = verb.inf;
+  const IRR_STEM = {
+    tener:'tendr',haber:'habr',poder:'podr',poner:'pondr',
+    querer:'querr',saber:'sabr',venir:'vendr',hacer:'har',
+    decir:'dir',salir:'saldr',valer:'valdr',
+  };
+  const stem = IRR_STEM[inf] || inf;
+  return [stem+'ía',stem+'ías',stem+'ía',stem+'íamos',stem+'íais',stem+'ían'];
+}
+
+function renderVerbSearch(q) {
+  const box = document.getElementById('verb-search-results');
+  if(!box) return;
   const isEs = lang==='es';
+  const term = q.toLowerCase().trim();
+  const results = term.length < 1
+    ? VERBOS.slice(0, 20)
+    : VERBOS.filter(v => v.inf.includes(term) || v.tr.toLowerCase().includes(term)).slice(0, 20);
+  if(!results.length){
+    box.innerHTML=`<p style="text-align:center;color:var(--text-muted);padding:24px">${isEs?'Sin resultados':'Sonuç bulunamadı'}</p>`;
+    return;
+  }
+  const prons = T[lang].pronombres;
+  const haber = ['he','has','ha','hemos','habéis','han'];
+
+  const TENSES = [
+    { key:'pres',   label: isEs?'Presente':'Geniş Zaman',           color:'var(--primary)',  fn: v=>conjugar(v) },
+    { key:'perf',   label: isEs?'Pret. Perfecto':'Pretérito Perfecto', color:'var(--blue-dark)', fn: v=>prons.map((_,i)=>haber[i]+' '+getParticipioDisplay(v)) },
+    { key:'ger',    label: isEs?'Estar+Gerundio':'Estar+Gerundio',  color:'var(--purple-dark)', fn: v=>{ const eV=VERBOS.find(x=>x.id===61); const eF=eV?conjugar(eV):['estoy','estás','está','estamos','estáis','están']; const g=getGerundioDisplay(v); return eF.map(e=>e+' '+g); } },
+    { key:'indef',  label: isEs?'Pret. Indefinido':'Belirsiz Geçmiş', color:'var(--coral-dark)', fn: v=>conjugarIndefinido(v) },
+    { key:'imp',    label: isEs?'Imperfecto':'Süregelen Geçmiş',    color:'var(--gold-dark)',   fn: v=>conjugarImperfecto(v) },
+    { key:'fut',    label: isEs?'Futuro Simple':'Gelecek Zaman',    color:'var(--mint-dark)',   fn: v=>conjugarFuturo(v) },
+    { key:'cond',   label: isEs?'Condicional':'Koşul Kipi',         color:'var(--orange-dark)', fn: v=>conjugarCondicional(v) },
+  ];
+
+  // When results is ONE verb, show full detail view
+  // When multiple, show compact card per verb
+  const isDetail = results.length === 1 && term.length >= 3;
+
+  if(isDetail) {
+    const v = results[0];
+    const tipoLabel = v.tipo.replace('rar','AR reg.').replace('rer','ER reg.').replace('rir','IR reg.')
+      .replace('eie','e→ie').replace('oue','o→ue').replace('ei','e→i')
+      .replace('yo','yo-irr').replace('comp','irregular').replace('ref-','refl. ');
+    box.style.gridTemplateColumns = '1fr';
+    box.innerHTML = `
+      <div class="vsearch-detail">
+        <div class="vsearch-detail-head">
+          <span class="vsearch-detail-inf">${v.inf}</span>
+          <span class="vsearch-detail-tr">${v.tr}</span>
+          <span class="vsearch-tipo">${tipoLabel}</span>
+        </div>
+        <div class="vsearch-tense-grid">
+          ${TENSES.map(t => {
+            const forms = t.fn(v);
+            return `<div class="vsearch-tense-block">
+              <div class="vsearch-tense-label" style="background:${t.color}">${t.label}</div>
+              ${prons.map((p,i)=>`<div class="vsearch-pair"><span class="vsearch-pron">${p}</span><span class="vsearch-form">${forms[i]||'—'}</span></div>`).join('')}
+            </div>`;
+          }).join('')}
+        </div>
+      </div>`;
+  } else {
+    box.style.gridTemplateColumns = '';
+    box.innerHTML = results.map(v => {
+      const f = conjugar(v);
+      return `<div class="vsearch-card" onclick="document.getElementById('verb-search-inp').value='${v.inf}';renderVerbSearch('${v.inf}')">
+        <div class="vsearch-head">
+          <strong class="vsearch-inf">${v.inf}</strong>
+          <span class="vsearch-tr">${v.tr}</span>
+        </div>
+        <div class="vsearch-forms">
+          ${prons.map((p,i)=>`<div class="vsearch-pair"><span class="vsearch-pron">${p}</span><span class="vsearch-form">${f[i]}</span></div>`).join('')}
+        </div>
+      </div>`;
+    }).join('');
+  }
+}
+
+/* ── DAILY CHALLENGE ── */
+function startDailyChallenge() {
+  const isEs = lang==='es';
+  const today = new Date();
+  const dayIdx = (today.getFullYear()*10000+(today.getMonth()+1)*100+today.getDate()) % VERBOS.length;
+  const dcVerb = VERBOS[dayIdx];
+  if(!dcVerb) return;
+
+  // Build modal overlay
+  const existing = document.getElementById('dc-modal');
+  if(existing) existing.remove();
+
+  const prons  = T[lang].pronombres;
+  const forms  = conjugar(dcVerb);
+  const haber  = ['he','has','ha','hemos','habéis','han'];
+  const eV     = VERBOS.find(v=>v.id===61);
+  const eF     = eV ? conjugar(eV) : ['estoy','estás','está','estamos','estáis','están'];
+  const part   = getParticipioDisplay(dcVerb);
+  const ger    = getGerundioDisplay(dcVerb);
+
+  // 10 questions: pick 10 random (pronoun, expected form, tense label)
+  const pool = [];
+  forms.forEach((f,i)=> pool.push({ pron:prons[i], ans:f, tense:isEs?'Presente':'Geniş Zaman' }));
+  haber.forEach((h,i)=> pool.push({ pron:prons[i], ans:h+' '+part, tense:isEs?'Pret. Perfecto':'P. Perfecto' }));
+  eF.forEach((e,i)=>    pool.push({ pron:prons[i], ans:e+' '+ger,  tense:isEs?'Estar+Ger.':'Estar+Ger.' }));
+
+  // Shuffle & pick 10
+  const qs = pool.sort(()=>Math.random()-.5).slice(0,10);
+  let qi=0, correct=0;
+
+  function renderQ() {
+    const q = qs[qi];
+    modal.querySelector('.dc-q-num').textContent = (qi+1)+'/'+qs.length;
+    modal.querySelector('.dc-q-pron').textContent = q.pron;
+    modal.querySelector('.dc-q-tense').textContent = q.tense;
+    modal.querySelector('.dc-q-inf').textContent = dcVerb.inf+' ('+dcVerb.tr+')';
+    const inp = modal.querySelector('.dc-q-input');
+    inp.value=''; inp.className='dc-q-input'; inp.disabled=false; inp.focus();
+    modal.querySelector('.dc-q-feedback').textContent='';
+    modal.querySelector('.dc-q-next').style.display='none';
+  }
+
+  function checkAnswer() {
+    const inp = modal.querySelector('.dc-q-input');
+    const q = qs[qi];
+    const val = inp.value.trim().toLowerCase();
+    const ok = val === q.ans.toLowerCase();
+    inp.className = 'dc-q-input '+(ok?'dc-inp-ok':'dc-inp-err');
+    inp.disabled = true;
+    modal.querySelector('.dc-q-feedback').innerHTML = ok
+      ? `<span style="color:#15803d;font-weight:700">✅ ${isEs?'¡Correcto!':'Doğru!'}</span>`
+      : `<span style="color:var(--coral-dark);font-weight:700">❌ ${q.ans}</span>`;
+    if(ok) correct++;
+    modal.querySelector('.dc-q-next').style.display='';
+  }
+
+  function nextQ() {
+    qi++;
+    if(qi >= qs.length) {
+      // Results
+      const pct = Math.round(correct/qs.length*100);
+      if(pct>=70){ localStorage.setItem('vesp-dc-'+today.toDateString(),'1'); addXP(20); }
+      if(pct>=100) runConfetti();
+      modal.querySelector('.dc-quiz').innerHTML = `
+        <div style="text-align:center;padding:30px 20px">
+          <div style="font-size:3rem;margin-bottom:12px">${pct>=90?'🏆':pct>=70?'💪':'📚'}</div>
+          <div style="font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:8px">
+            ${pct>=90?(isEs?'¡Perfecto!':'Mükemmel!'):pct>=70?(isEs?'¡Bien hecho!':'Harika!'):isEs?'¡Sigue practicando!':'Pratik yapmaya devam!'}
+          </div>
+          <div style="font-size:1.1rem;color:var(--text-muted);margin-bottom:18px">${correct}/${qs.length} ${isEs?'correctas':'doğru'} · ${pct}%</div>
+          ${pct>=70?`<div style="color:var(--primary-dark);font-weight:700;margin-bottom:18px">⭐ +20 XP</div>`:''}
+          <button class="btn-primary" onclick="document.getElementById('dc-modal').remove();showPage('home')">${isEs?'Cerrar':'Kapat'}</button>
+        </div>`;
+    } else {
+      renderQ();
+    }
+  }
+
+  const modal = document.createElement('div');
+  modal.id='dc-modal';
+  modal.className='modal-overlay';
+  modal.style.cssText='display:flex;z-index:9999';
+  modal.innerHTML=`
+    <div class="modal-box" style="width:min(480px,95vw);padding:0;overflow:hidden">
+      <div style="background:linear-gradient(135deg,#FF9600,#FF4B4B);padding:16px 20px;display:flex;align-items:center;justify-content:space-between">
+        <div style="font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;font-size:1rem;font-weight:800;color:#fff">🔥 ${isEs?'Desafío del día':'Günün Görevi'}</div>
+        <button onclick="document.getElementById('dc-modal').remove()" style="background:rgba(255,255,255,.25);border:none;color:#fff;border-radius:50%;width:28px;height:28px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+      </div>
+      <div class="dc-quiz" style="padding:22px 20px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+          <div class="dc-q-inf" style="font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;font-size:1rem;font-weight:700;color:var(--text)"></div>
+          <div class="dc-q-num" style="font-size:.9rem;font-weight:700;color:var(--text-muted)"></div>
+        </div>
+        <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:14px;text-align:center">
+          <div class="dc-q-tense" style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:4px"></div>
+          <div class="dc-q-pron" style="font-family:'Baloo 2',system-ui,'Segoe UI',Arial,sans-serif;font-size:1.5rem;font-weight:800;color:var(--primary)"></div>
+        </div>
+        <input class="dc-q-input" type="text" placeholder="${isEs?'Escribe la forma correcta...':'Doğru çekimi yaz...'}"
+          style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:var(--radius-sm);border:2px solid var(--border);font-size:1.05rem;font-weight:600;font-family:'Nunito',sans-serif;outline:none;background:var(--bg-card);color:var(--text)"
+          onkeydown="if(event.key==='Enter')document.querySelector('.dc-q-check')?.click()"
+        />
+        <div class="dc-q-feedback" style="min-height:24px;margin:8px 0;font-size:1rem;text-align:center"></div>
+        <div style="display:flex;gap:10px;margin-top:4px">
+          <button class="btn-primary dc-q-check" style="flex:1" onclick="
+            const inp=this.closest('.modal-box').querySelector('.dc-q-input');
+            if(!inp.disabled) { const checkFn=window._dcCheck; if(checkFn) checkFn(); }
+          ">${isEs?'Comprobar':'Kontrol Et'}</button>
+          <button class="btn-secondary dc-q-next" style="display:none;flex:1" onclick="
+            const nFn=window._dcNext; if(nFn) nFn();
+          ">${isEs?'Siguiente →':'Sonraki →'}</button>
+        </div>
+      </div>
+    </div>`;
+
+  window._dcCheck = checkAnswer;
+  window._dcNext  = nextQ;
+  // Also fix input focus styling
+  modal.querySelector('.dc-q-input').addEventListener('focus', function(){ this.style.borderColor='var(--primary)'; });
+
+  document.body.appendChild(modal);
+  renderQ();
+}
+
+
+// Add green/red input styles injected via CSS block in <style> section
+
+function buildLogrosPage() {
+  const isEs = lang==='es';
+  const xp = parseInt(localStorage.getItem('vesp-xp')||'0');
+  const streak = parseInt(localStorage.getItem('vesp-streak')||'0');
+
+  const ACHIEVEMENTS = [
+    { id:'first_xp',    icon:'⭐', title:isEs?'Primera estrella':'İlk Yıldız',         desc:isEs?'Gana tus primeros 10 XP':'İlk 10 XP\'ini kazan',         check:()=>xp>=10 },
+    { id:'xp50',        icon:'🌟', title:isEs?'¡En marcha!':'Yola Çıktın!',              desc:isEs?'Alcanza 50 XP':'50 XP\'e ulaş',                          check:()=>xp>=50 },
+    { id:'xp200',       icon:'💎', title:isEs?'Estudiante dedicado':'Kararlı Öğrenci', desc:isEs?'Alcanza 200 XP':'200 XP\'e ulaş',                         check:()=>xp>=200 },
+    { id:'xp500',       icon:'🏆', title:isEs?'Maestro de verbos':'Fiil Ustası',        desc:isEs?'Alcanza 500 XP':'500 XP\'e ulaş',                         check:()=>xp>=500 },
+    { id:'streak3',     icon:'🔥', title:isEs?'¡En racha!':'Seride!',                   desc:isEs?'Mantén 3 días seguidos':'3 gün arka arkaya çalış',        check:()=>streak>=3 },
+    { id:'streak7',     icon:'🔥', title:isEs?'Semana perfecta':'Mükemmel Hafta',       desc:isEs?'7 días de racha':'7 gün arka arkaya',                     check:()=>streak>=7 },
+    { id:'flashcard10', icon:'🃏', title:isEs?'Memorizador':'Ezberci',                  desc:isEs?'Completa 10 flashcards':'10 flashcard tamamla',           check:()=>parseInt(localStorage.getItem('vesp-fc-known')||'0')>=10 },
+    { id:'flashcard50', icon:'🃏', title:isEs?'¡Vocabulario!':'Kelime Hazinesi!',       desc:isEs?'Completa 50 flashcards':'50 flashcard tamamla',           check:()=>parseInt(localStorage.getItem('vesp-fc-known')||'0')>=50 },
+    { id:'unit1done',   icon:'🎓', title:isEs?'Presente dominado':'Geniş Zaman Ustası',  desc:isEs?'Completa la Unidad 1':'Ünite 1\'i tamamla',              check:()=>xp>=100 },
+    { id:'perfect',     icon:'💯', title:isEs?'¡Perfecto!':'Mükemmel!',                 desc:isEs?'10 respuestas seguidas sin error':'10 doğru üst üste',    check:()=>parseInt(localStorage.getItem('vesp-perfect')||'0')>=10 },
+    { id:'night_owl',   icon:'🦉', title:isEs?'Búho nocturno':'Gece Kuşu',              desc:isEs?'Estudia después de las 22:00':'22:00\'den sonra çalış',    check:()=>new Date().getHours()>=22 },
+    { id:'early_bird',  icon:'🌅', title:isEs?'Madrugador':'Sabah Kuşu',               desc:isEs?'Estudia antes de las 08:00':'08:00\'den önce çalış',       check:()=>new Date().getHours()<8 },
+  ];
+
+  const unlocked = ACHIEVEMENTS.filter(a=>a.check());
+  const locked   = ACHIEVEMENTS.filter(a=>!a.check());
+
+  const card = a => `
+    <div class="logro-card ${a.check()?'logro-unlocked':'logro-locked'}">
+      <div class="logro-icon">${a.icon}</div>
+      <div class="logro-body">
+        <div class="logro-title"><strong>${a.title}</strong></div>
+        <div class="logro-desc">${a.desc}</div>
+      </div>
+      ${a.check()?'<div class="logro-check">✅</div>':'<div class="logro-lock">🔒</div>'}
+    </div>`;
+
+  return `
+  <div class="page-wrap">
+    <div class="logros-header">
+      <h2 class="logros-title">🏆 ${isEs?'Logros':'Başarılar'}</h2>
+      <div class="logros-meta">${unlocked.length} / ${ACHIEVEMENTS.length} ${isEs?'desbloqueados':'açık'}</div>
+    </div>
+    <div class="logros-progress-bar"><div class="logros-progress-fill" style="width:${Math.round(unlocked.length/ACHIEVEMENTS.length*100)}%"></div></div>
+
+    ${unlocked.length ? `<div class="logros-section-label">${isEs?'✅ Desbloqueados':'✅ Kazanıldı'}</div><div class="logros-grid">${unlocked.map(card).join('')}</div>` : ''}
+    <div class="logros-section-label">${isEs?'🔒 Por desbloquear':'🔒 Kilitli'}</div>
+    <div class="logros-grid">${locked.map(card).join('')}</div>
+  </div>`;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GÜNÜN GÖREVİ — 365 GÜN TAKİP SAYFASI
+   ═══════════════════════════════════════════════════════════════ */
+function getDailyData() {
+  try { return JSON.parse(localStorage.getItem('vesp-daily-done')||'[]'); }
+  catch(e){ return []; }
+}
+function markTodayDone() {
+  const key = new Date().toDateString();
+  const data = getDailyData();
+  if(!data.includes(key)){ data.push(key); localStorage.setItem('vesp-daily-done', JSON.stringify(data)); }
+}
+function buildDailyPage() {
+  const isEs = lang==='es';
+  const done = getDailyData();
+  const doneSet = new Set(done);
+  const today = new Date(); today.setHours(0,0,0,0);
+
+  // Streak calc
+  let streak = 0;
+  for(let i=0; i<365; i++){
+    const d=new Date(today); d.setDate(d.getDate()-i);
+    if(doneSet.has(d.toDateString())) streak++;
+    else if(i>0) break;
+  }
+  let longestStreak=0, cur=0;
+  for(let i=364; i>=0; i--){
+    const d=new Date(today); d.setDate(d.getDate()-i);
+    if(doneSet.has(d.toDateString())){ cur++; longestStreak=Math.max(longestStreak,cur); }
+    else cur=0;
+  }
+  const totalDone = doneSet.size;
+  const todayDone = doneSet.has(today.toDateString());
+
+  // Daily verb
+  const dayIdx = (today.getFullYear()*10000+(today.getMonth()+1)*100+today.getDate()) % VERBOS.length;
+  const dcVerb = VERBOS[dayIdx];
+
+  const MONTHS = isEs
+    ? ['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara']
+    : ['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'];
+  const DAYS_SHORT = ['P','S','Ç','P','C','C','P'];
+
+  // Build 365 cells
+  const cells = [];
+  for(let i=364; i>=0; i--){
+    const d=new Date(today); d.setDate(d.getDate()-i);
+    cells.push({ date:d, done:doneSet.has(d.toDateString()), isToday:i===0 });
+  }
+
+  // Pad to start on Monday
+  const startPad = (cells[0].date.getDay()+6)%7;
+  const weeks=[];
+  let week=Array(startPad).fill(null);
+  cells.forEach(c=>{ week.push(c); if(week.length===7){weeks.push(week);week=[];} });
+  if(week.length) while(week.length<7) week.push(null);
+  if(week.length) weeks.push(week);
+
+  // Month labels
+  const monthLabels=Array(weeks.length).fill('');
+  let lastMonth=-1;
+  weeks.forEach((w,wi)=>{
+    const first=w.find(c=>c);
+    if(first && first.date.getMonth()!==lastMonth){
+      monthLabels[wi]=MONTHS[first.date.getMonth()];
+      lastMonth=first.date.getMonth();
+    }
+  });
+
+  const cellHtml=(c)=>{
+    if(!c) return `<div class="dc-cell dc-cell-empty"></div>`;
+    const cls=c.done?'dc-cell-done':c.isToday?'dc-cell-today':'';
+    const title=c.date.toLocaleDateString('tr-TR')+(c.done?' ✅':'')+(c.isToday?' (Bugün)':'');
+    return `<div class="dc-cell ${cls}" title="${title}"></div>`;
+  };
+
+  const streakEmoji = streak>=365?'👑':streak>=180?'🌟':streak>=100?'🚀':streak>=60?'💎':streak>=30?'🏆':streak>=14?'🔥':streak>=7?'💪':streak>=3?'⭐':'🌱';
+  const MILESTONES=[
+    {days:1,icon:'🌱',label:'İlk Gün'},
+    {days:3,icon:'⭐',label:'3 Gün'},
+    {days:7,icon:'🔥',label:'1 Hafta'},
+    {days:14,icon:'💪',label:'2 Hafta'},
+    {days:30,icon:'🏆',label:'1 Ay'},
+    {days:60,icon:'💎',label:'2 Ay'},
+    {days:100,icon:'🚀',label:'100 Gün'},
+    {days:180,icon:'🌟',label:'6 Ay'},
+    {days:365,icon:'👑',label:'1 Yıl!'},
+  ];
+
+  return `
+  <div class="page-wrap">
+
+    <!-- Hero banner -->
+    <div class="dp-hero">
+      <div class="dp-hero-left">
+        <div class="dp-hero-title">🔥 Günün Görevi</div>
+        <div class="dp-hero-sub">Her gün bir fiil · Serinizi kırma</div>
+      </div>
+      <div class="dp-hero-streak">
+        <div class="dp-streak-circle ${streak>0?'dp-streak-active':''}">
+          <span class="dp-streak-num">${streak}</span>
+          <span class="dp-streak-lbl">gün</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="dp-stats-row">
+      <div class="dp-stat">
+        <div class="dp-stat-icon">${streakEmoji}</div>
+        <div class="dp-stat-val">${streak}</div>
+        <div class="dp-stat-lbl">Mevcut Seri</div>
+      </div>
+      <div class="dp-stat">
+        <div class="dp-stat-icon">🏅</div>
+        <div class="dp-stat-val">${longestStreak}</div>
+        <div class="dp-stat-lbl">En Uzun Seri</div>
+      </div>
+      <div class="dp-stat">
+        <div class="dp-stat-icon">📅</div>
+        <div class="dp-stat-val">${totalDone}</div>
+        <div class="dp-stat-lbl">Tamamlanan Gün</div>
+      </div>
+      <div class="dp-stat">
+        <div class="dp-stat-icon">🎯</div>
+        <div class="dp-stat-val">${Math.round(totalDone/365*100)}%</div>
+        <div class="dp-stat-lbl">365 Günlük Hedef</div>
+      </div>
+    </div>
+
+    <!-- Today card -->
+    <div class="dp-today ${todayDone?'dp-today-done':'dp-today-pending'}">
+      <div class="dp-today-left">
+        <div class="dp-today-badge">${todayDone?'✅':'🎯'}</div>
+        <div>
+          <div class="dp-today-label">Bugünün Fiili</div>
+          <div class="dp-today-verb">${dcVerb?dcVerb.inf:'—'} <span class="dp-today-tr">${dcVerb?'· '+dcVerb.tr:''}</span></div>
+          <div class="dp-today-status">${todayDone?'Bugün tamamlandı! 🎉':'Bekliyor — şimdi başla!'}</div>
+        </div>
+      </div>
+      ${!todayDone?`<button class="dp-today-btn" onclick="startDailyChallenge()">▶ Başla</button>`:''}
+    </div>
+
+    <!-- 365-day calendar -->
+    <div class="dp-cal-section">
+      <div class="dp-cal-header">
+        <strong>📆 Son 365 Gün — Aktivite Takvimi</strong>
+        <span class="dp-cal-legend">
+          <span class="dc-cell"></span>
+          <span class="dc-cell dc-cell-done" style="opacity:.35"></span>
+          <span class="dc-cell dc-cell-done" style="opacity:.65"></span>
+          <span class="dc-cell dc-cell-done"></span>
+          <span style="font-size:.75rem;color:var(--text-muted)">Daha çok</span>
+        </span>
+      </div>
+      <div class="dp-cal-scroll">
+        <div class="dc365-month-row">
+          ${monthLabels.map(m=>`<div class="dc365-month-lbl">${m}</div>`).join('')}
+        </div>
+        <div class="dc365-grid-row">
+          <div class="dc365-day-labels">
+            ${DAYS_SHORT.map((d,i)=>`<div class="dc365-day-lbl">${i%2===0?d:''}</div>`).join('')}
+          </div>
+          <div class="dc365-cols">
+            ${weeks.map(w=>`<div class="dc365-col">${w.map(cellHtml).join('')}</div>`).join('')}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Milestone timeline -->
+    <div class="dp-miles-section">
+      <div class="dp-miles-title"><strong>🏅 Seri Kilometre Taşları</strong></div>
+      <div class="dp-miles-track">
+        <div class="dp-miles-line"></div>
+        ${MILESTONES.map((m,mi)=>{
+          const reached = streak>=m.days || longestStreak>=m.days;
+          const isCurrent = streak>=m.days && (mi===MILESTONES.length-1 || streak<MILESTONES[mi+1].days);
+          const pct = Math.min(100, Math.round(streak/m.days*100));
+          return `<div class="dp-mile ${reached?'dp-mile-done':''} ${isCurrent?'dp-mile-current':''}">
+            <div class="dp-mile-dot">${reached?m.icon:'○'}</div>
+            <div class="dp-mile-info">
+              <div class="dp-mile-days">${m.days}${m.days===365?'':' gün'}</div>
+              <div class="dp-mile-label">${m.label}</div>
+              ${!reached?`<div class="dp-mile-progress"><div class="dp-mile-fill" style="width:${pct}%"></div></div>`:''}
+            </div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>
+
+  </div>`;
+}
+
+function buildPlaceholderPage(type) {
+  if(type==='logros') return buildLogrosPage();
   const pages = {
     flashcards:{
       icon:'🃏',
       title: isEs?'Flashcards':'Kelime Kartları',
       sub: isEs?'Repasa los 150 verbos con tarjetas interactivas. Próximamente.'
                :'150 fiili interaktif kartlarla tekrar et. Yakında.',
-    },
-    logros:{
-      icon:'🏆',
-      title: isEs?'Logros':'Başarılar',
-      sub: isEs?'Desbloquea medallas completando ejercicios y manteniendo tu racha diaria. Próximamente.'
-               :'Alıştırmaları tamamlayarak ve günlük serinizi koruyarak madalyalar kazan. Yakında.',
     },
   };
   const p = pages[type] || {icon:'🚧',title:'Próximamente',sub:'Esta sección estará disponible pronto.'};
@@ -3241,13 +4560,14 @@ const EX = {
       const forms = conjugar(v);
       const form = forms[pronIdx];
       const pron = T[lang].pronombres[pronIdx];
-      // 3 distractors: other verbs' TR
+      // 3 distractors: conjugated in the SAME person
       const others = shuffle(pool.filter(x=>x.id!==v.id)).slice(0,3);
+      const correctTR = conjugarTR(v.tr, pronIdx);
       const opts = shuffle([
-        {text: v.tr, correct: true},
-        ...others.map(o => ({text: o.tr, correct: false}))
+        {text: correctTR, correct: true},
+        ...others.map(o => ({text: conjugarTR(o.tr, pronIdx), correct: false}))
       ]);
-      qs.push({verbId:v.id, form, pron, opts, correctTR:v.tr, verbInf:v.inf});
+      qs.push({verbId:v.id, form, pron, opts, correctTR, verbInf:v.inf, pronIdx});
     }
     return qs;
   },
@@ -3264,7 +4584,7 @@ const EX = {
         return {
           verbId: v.id,
           es: forms[pronIdx] + ' (' + T[lang].pronombres[pronIdx] + ')',
-          tr: v.tr,
+          tr: conjugarTR(v.tr, pronIdx),  // conjugated in same person
           pronIdx,
         };
       });
@@ -3276,6 +4596,90 @@ const EX = {
   genTypeD(n=20) {
     const all = shuffle(FRASES_U1);
     return all.slice(0, n);
+  },
+
+  // E — Boşluğu doldur: cümlede fiil formu eksik
+  genTypeE(n=20) {
+    const sentences = FRASES_U1.filter(f => f.dir === 'es-tr').slice(0, 30);
+    const shuffled = shuffle(sentences);
+    const qs = [];
+    for (let i = 0; i < n && i < shuffled.length; i++) {
+      const f = shuffled[i];
+      // Find the verb form in the sentence and blank it out
+      const words = f.es.split(' ');
+      // Pick a verb word (not first word if it's a pronoun, not punctuation)
+      let blankIdx = -1;
+      for (let w = 0; w < words.length; w++) {
+        const clean = words[w].replace(/[¿?.,!]/g,'').toLowerCase();
+        // Check if this word is a conjugated verb form
+        for (const v of VERBOS) {
+          const forms = conjugar(v);
+          if (forms.includes(clean)) { blankIdx = w; break; }
+        }
+        if (blankIdx >= 0) break;
+      }
+      if (blankIdx < 0) continue;
+      const answer = words[blankIdx].replace(/[¿?.,!]/g,'').toLowerCase();
+      const blanked = words.map((w,i) => i===blankIdx ? '___' : w).join(' ');
+      qs.push({ blanked, answer, full: f.es, tr: f.tr });
+    }
+    return qs.slice(0, n);
+  },
+
+  // F — Zamir → Çekim (yo→hablo, tú→hablas...)
+  genMatchF() {
+    const pool = shuffle(VERBOS.filter(v => !v.tipo.startsWith('ref')));
+    const rounds = [];
+    for (let r = 0; r < 3; r++) {
+      const verb = pool[r];
+      const forms = conjugar(verb);
+      const prons = T[lang].pronombres;
+      // All 6 pronoun → form pairs
+      const pairs = prons.map((p, i) => ({
+        left: p,         // pronoun
+        right: forms[i], // conjugated form
+        id: i,
+      }));
+      rounds.push({ verb, pairs: shuffle(pairs) });
+    }
+    return rounds;
+  },
+
+  // G — Çekim → Zamir (hablo→yo, comes→tú — different verbs mixed)
+  genMatchG() {
+    const pool = shuffle(VERBOS.filter(v => !v.tipo.startsWith('ref')));
+    const rounds = [];
+    const prons = T[lang].pronombres;
+    for (let r = 0; r < 3; r++) {
+      // Pick 6 different verbs, one per pronoun
+      const verbs = pool.slice(r*6, r*6+6);
+      const pairs = verbs.map((v, i) => {
+        const forms = conjugar(v);
+        return {
+          left: forms[i],  // conjugated form
+          right: prons[i], // correct pronoun
+          id: i,
+        };
+      });
+      rounds.push({ pairs: shuffle(pairs) });
+    }
+    return rounds;
+  },
+
+  // H — ES fiil ↔ TR anlam
+  genMatchH() {
+    const pool = shuffle(VERBOS.filter(v => !v.tipo.startsWith('ref')));
+    const rounds = [];
+    for (let r = 0; r < 3; r++) {
+      const verbs = pool.slice(r*6, r*6+6);
+      const pairs = verbs.map(v => ({
+        left: v.inf,
+        right: v.tr,
+        id: v.id,
+      }));
+      rounds.push({ pairs: shuffle(pairs) });
+    }
+    return rounds;
   },
 
   /* ─── Start ─── */
@@ -3304,6 +4708,41 @@ const EX = {
       return;
     } else if (type === 'D') {
       this.questions = this.genTypeD(20);
+    } else if (type === 'E') {
+      this.questions = this.genTypeE(20);
+    } else if (type === 'F') {
+      this.matchRounds = this.genMatchF();
+      this.matchRound = 0;
+      this.matchSelected = null;
+      this.matchMatched = [];
+      this.matchWrong = [];
+      this.matchRoundScore = 0;
+      this.matchTotalScore = 0;
+      this._fghLeftOrder = null; this._fghRightOrder = null;
+      this.renderMatchFGH('F');
+      return;
+    } else if (type === 'G') {
+      this.matchRounds = this.genMatchG();
+      this.matchRound = 0;
+      this.matchSelected = null;
+      this.matchMatched = [];
+      this.matchWrong = [];
+      this.matchRoundScore = 0;
+      this.matchTotalScore = 0;
+      this._fghLeftOrder = null; this._fghRightOrder = null;
+      this.renderMatchFGH('G');
+      return;
+    } else if (type === 'H') {
+      this.matchRounds = this.genMatchH();
+      this.matchRound = 0;
+      this.matchSelected = null;
+      this.matchMatched = [];
+      this.matchWrong = [];
+      this.matchRoundScore = 0;
+      this.matchTotalScore = 0;
+      this._fghLeftOrder = null; this._fghRightOrder = null;
+      this.renderMatchFGH('H');
+      return;
     }
     this.renderQuestion();
   },
@@ -3376,9 +4815,26 @@ const EX = {
         </div>
         <div class="feedback-line" id="feedback"></div>
         <button class="btn-next" id="btn-next" onclick="EX.next()">${L.exBtnNext}</button>`;
+    } else if (this.type === 'E') {
+      qBody = `
+        <div class="q-card">
+          <div class="q-label">${lang==='es'?'Completa la frase:':'Cümleyi tamamla:'}</div>
+          <div class="q-sentence" style="font-size:1.1rem;margin:10px 0">${q.blanked}</div>
+          <div class="q-tr" style="font-size:1.08rem;color:var(--text-muted)">${q.tr}</div>
+        </div>
+        <div class="write-input-wrap">
+          <input id="write-inp" class="write-input" type="text"
+            placeholder="${lang==='es'?'Escribe el verbo...':'Fiili yaz...'}"
+            autocomplete="off" autocorrect="off" spellcheck="false"
+            onkeydown="if(event.key==='Enter')EX.checkE()"
+            aria-label="Tu respuesta"/>
+          <button class="btn-check" id="btn-check" onclick="EX.checkE()">${L.exBtnCheck}</button>
+        </div>
+        <div class="feedback-line" id="feedback"></div>
+        <button class="btn-next" id="btn-next" onclick="EX.next()">${L.exBtnNext}</button>`;
     }
 
-    const typeNames = {A:L.exTypeA_name, B:L.exTypeB_name, C:L.exTypeC_name, D:L.exTypeD_name};
+    const typeNames = {A:L.exTypeA_name, B:L.exTypeB_name, C:L.exTypeC_name, D:L.exTypeD_name, E:L.exTypeE_name, F:L.exTypeF_name, G:L.exTypeG_name, H:L.exTypeH_name};
     area.innerHTML = `
       <div class="ex-header">
         <div>
@@ -3523,7 +4979,210 @@ const EX = {
     }
   },
 
-  /* ─── TYPE C — Matching ─── */
+  /* ─── TYPE E — Boşluğu Doldur ─── */
+  checkE() {
+    if (this.answered) return;
+    const L = T[lang];
+    const q = this.questions[this.current];
+    const inp = document.getElementById('write-inp');
+    const fb = document.getElementById('feedback');
+    const btn = document.getElementById('btn-check');
+    const nxt = document.getElementById('btn-next');
+    if (!inp || !fb) return;
+    const val = inp.value.trim();
+    if (!val) { inp.focus(); return; }
+    const correct = normalizeAnswer(val) === normalizeAnswer(q.answer);
+    this.answered = true;
+    inp.disabled = true;
+    if(btn) btn.disabled = true;
+    if (correct) {
+      inp.className = 'write-input correct';
+      fb.className = 'feedback-line correct';
+      fb.innerHTML = `${L.exCorrect} — <em>${q.full}</em>`;
+      this.score++; addXP(10);
+    } else {
+      inp.className = 'write-input wrong';
+      fb.className = 'feedback-line wrong';
+      fb.innerHTML = `${L.exWrong} <span class="feedback-correct-form">${q.answer}</span> — <em>${q.full}</em>`;
+      this.errors.push({given:val, correct:q.answer, verb:q.blanked, pron:''});
+    }
+    if(nxt) {
+      nxt.classList.add('visible');
+      if (this.current === this.questions.length-1) nxt.textContent = L.exBtnFinish;
+    }
+  },
+
+  /* ─── TYPES F, G, H — Matching variants ─── */
+  renderMatchFGH(type) {
+    const L = T[lang];
+    const area = document.getElementById('ex-area');
+    if (!area) return;
+    const roundData = this.matchRounds[this.matchRound];
+    const total = this.matchRounds.length;
+    const pct = (this.matchRound / total) * 100;
+    const pairs = roundData.pairs;
+
+    // Shuffle display order independently for each column
+    const leftOrder  = this._fghLeftOrder  || (this._fghLeftOrder  = shuffle([...Array(pairs.length).keys()]));
+    const rightOrder = this._fghRightOrder || (this._fghRightOrder = shuffle([...Array(pairs.length).keys()]));
+
+    const esCards = leftOrder.map(i => {
+      const p = pairs[i];
+      const isMatched  = this.matchMatched.includes(p.id);
+      const isWrong    = this.matchWrong.includes('L'+p.id);
+      const isSelected = this.matchSelected && this.matchSelected.side==='L' && this.matchSelected.id===p.id;
+      const cls = isMatched ? 'matched' : isWrong ? 'wrong-flash' : isSelected ? 'selected' : '';
+      return `<button class="match-card ${cls}" onclick="EX.fghClickLeft(${p.id},'${type}')" ${isMatched?'disabled':''}><strong>${p.left}</strong></button>`;
+    }).join('');
+
+    const trCards = rightOrder.map(i => {
+      const p = pairs[i];
+      const isMatched  = this.matchMatched.includes(p.id);
+      const isWrong    = this.matchWrong.includes('R'+p.id);
+      const isSelected = this.matchSelected && this.matchSelected.side==='R' && this.matchSelected.id===p.id;
+      const cls = isMatched ? 'matched' : isWrong ? 'wrong-flash' : isSelected ? 'selected' : '';
+      return `<button class="match-card ${cls}" onclick="EX.fghClickRight(${p.id},'${type}')" ${isMatched?'disabled':''}>${p.right}</button>`;
+    }).join('');
+
+    const subtitle = type==='F'
+      ? (lang==='es'?'Pronombre → Conjugación':'Zamir → Fiil Çekimi')
+      : type==='G'
+        ? (lang==='es'?'Conjugación → Pronombre':'Fiil Çekimi → Zamir')
+        : (lang==='es'?'Español ↔ Turco':'İspanyolca ↔ Türkçe');
+
+    const verbInfo = type==='F' && roundData.verb ? ` — <em>${roundData.verb.inf}</em>` : '';
+    const typeName = L['exType'+type+'_name'] || type;
+    const colLeft  = type==='F' ? (lang==='es'?'Pronombre':'Zamir')
+                   : type==='G' ? (lang==='es'?'Conjugación':'Çekim')
+                   : (lang==='es'?'Español':'İspanyolca');
+    const colRight = type==='F' ? (lang==='es'?'Conjugación':'Çekim')
+                   : type==='G' ? (lang==='es'?'Pronombre':'Zamir')
+                   : (lang==='es'?'Turco':'Türkçe');
+
+    const allMatched = this.matchMatched.length === pairs.length;
+
+    area.innerHTML = `
+      <div class="ex-header">
+        <div>
+          <div class="ex-title">${typeName}</div>
+          <div class="ex-sub">${subtitle}${verbInfo}</div>
+        </div>
+        <div class="ex-stats">
+          <div class="ex-stat">
+            <div class="ex-stat-val">${L.exRound||'Ronda'} ${this.matchRound+1}${L.exOf||'/'}${total}</div>
+            <div class="ex-stat-lbl">${L.matchPairs||'Eşler'}</div>
+          </div>
+          <div class="ex-stat">
+            <div class="ex-stat-val" style="color:var(--success)">${this.matchTotalScore}</div>
+            <div class="ex-stat-lbl">${L.matchCorrect||'Doğru'}</div>
+          </div>
+        </div>
+      </div>
+      <div class="ex-body">
+        <div class="ex-progress-row">
+          <div class="ex-progress-track"><div class="ex-progress-fill" style="width:${pct}%"></div></div>
+          <div class="ex-progress-label">${this.matchRound+1}/${total}</div>
+        </div>
+        <p class="q-label" style="margin-bottom:14px">${L.exMatchLabel||'Eşleştir:'}</p>
+        <div class="match-grid">
+          <div class="match-col">
+            <div class="match-col-label">${colLeft}</div>
+            ${esCards}
+          </div>
+          <div class="match-col">
+            <div class="match-col-label">${colRight}</div>
+            ${trCards}
+          </div>
+        </div>
+        <div class="feedback-line" id="feedback"></div>
+        ${allMatched ? `
+          <div class="match-next-row">
+            <button class="btn-next visible" onclick="EX.fghNextRound('${type}')">
+              ${this.matchRound < total-1 ? (L.exBtnNext||'İleri') : (L.exBtnFinish||'Bitir')}
+            </button>
+          </div>` : ''}
+      </div>`;
+  },
+
+  fghNextRound(type) {
+    this.matchRound++;
+    this.matchMatched = [];
+    this.matchWrong   = [];
+    this._fghLeftOrder  = null;
+    this._fghRightOrder = null;
+    if (this.matchRound >= this.matchRounds.length) {
+      this.showMatchResults(type);
+    } else {
+      this.renderMatchFGH(type);
+    }
+  },
+
+  fghClickLeft(id, type) {
+    if (this.matchMatched.includes(id)) return;
+    if (this.matchSelected && this.matchSelected.side === 'R') {
+      this.fghCheck(id, this.matchSelected.id, type);
+    } else {
+      this.matchSelected = {side:'L', id};
+      this.renderMatchFGH(type);
+    }
+  },
+
+  fghClickRight(id, type) {
+    if (this.matchMatched.includes(id)) return;
+    if (this.matchSelected && this.matchSelected.side === 'L') {
+      this.fghCheck(this.matchSelected.id, id, type);
+    } else {
+      this.matchSelected = {side:'R', id};
+      this.renderMatchFGH(type);
+    }
+  },
+
+  fghCheck(leftId, rightId, type) {
+    const correct = leftId === rightId;
+    if (correct) {
+      this.matchMatched.push(leftId);
+      this.matchRoundScore++;
+      this.matchTotalScore++;
+      addXP(5);
+    } else {
+      this.matchWrong = ['L'+leftId, 'R'+rightId];
+    }
+    this.matchSelected = null;
+    this.renderMatchFGH(type);
+    if (correct) this.matchWrong = [];
+    // Auto-advance if round complete
+    const roundData = this.matchRounds[this.matchRound];
+    if (this.matchMatched.length === roundData.pairs.length) {
+      // Show next button — handled in renderMatchFGH via allMatched flag
+    }
+  },
+
+  showMatchResults(type) {
+    const L = T[lang];
+    const area = document.getElementById('ex-area');
+    const total = this.matchRounds.reduce((s,r)=>s+r.pairs.length,0);
+    const pct = Math.round((this.matchTotalScore/total)*100);
+    if(pct>=80) runConfetti();
+    const typeName = L['exType'+type+'_name'] || type;
+    area.innerHTML = `
+      <div class="ex-header"><div><div class="ex-title">${typeName}</div></div></div>
+      <div class="ex-body">
+        <div class="results-screen">
+          <div class="results-emoji">${pct>=80?'🎉':'💪'}</div>
+          <div class="results-score-ring">${pct}%</div>
+          <div class="results-meta">
+            <div class="results-meta-item"><div class="results-meta-val">${this.matchTotalScore}/${total}</div><div class="results-meta-lbl">${L.matchCorrect}</div></div>
+          </div>
+          <div class="results-xp">⭐ +${this.matchTotalScore*5} ${L.resXPearned}</div>
+          <div class="results-actions">
+            <button class="btn-secondary" onclick="EX.start('${type}',1)">${L.resBtnRetry}</button>
+            <button class="btn-primary" onclick="buildPracticaU1()">${L.resBtnBack}</button>
+          </div>
+        </div>
+      </div>`;
+  },
+
+
   renderMatch() {
     const L = T[lang];
     const area = document.getElementById('ex-area');
@@ -3786,14 +5445,37 @@ function buildPracticaU1() {
   const L = T[lang];
   const area = document.getElementById('ex-area');
   if(!area) return;
+  const isEs = lang==='es';
   area.innerHTML = `
     <div class="ex-header">
       <div>
-        <div class="ex-title">${L.exTitle}</div>
+        <div class="ex-title"><strong>${L.exTitle}</strong></div>
         <div class="ex-sub">${L.exSub}</div>
       </div>
     </div>
     <div class="ex-body">
+
+      <!-- Verb Cards Strip -->
+      <div class="vc-section">
+        <div class="vc-section-head">
+          <div class="vc-section-title">📚 ${isEs?'150 verbos — Presente de Indicativo':'150 Fiil — Geniş Zaman Çekimleri'}</div>
+          <div class="vc-controls">
+            <select class="vc-filter" id="vc1-filter" onchange="renderVerbCards1()">
+              <option value="all">${isEs?'Todos':'Tümü'}</option>
+              <option value="ar">-AR</option>
+              <option value="er">-ER</option>
+              <option value="ir">-IR</option>
+              <option value="ref">${isEs?'Reflexivos':'Dönüşlü'}</option>
+            </select>
+            <input class="vc-search" id="vc1-search" type="text" placeholder="${isEs?'Buscar...':'Ara...'}"
+              oninput="renderVerbCards1()" autocomplete="off"/>
+          </div>
+        </div>
+        <div class="vc-grid" id="vc1-grid"></div>
+      </div>
+
+      <!-- Exercises -->
+      <div class="vc-section-title" style="margin:24px 0 12px"><strong>🎯 ${isEs?'Elige un ejercicio':'Bir Alıştırma Seç'}</strong></div>
       <div class="ex-selector">
         <button class="ex-type-card" onclick="EX.start('A',1)">
           <div class="ex-type-icon">✍️</div>
@@ -3819,8 +5501,60 @@ function buildPracticaU1() {
           <div class="ex-type-desc">${L.exTypeD_desc}</div>
           <div class="ex-type-meta"><span class="ex-type-badge">${L.exTypeD_badge}</span></div>
         </button>
+        <button class="ex-type-card" onclick="EX.start('E',1)">
+          <div class="ex-type-icon">📝</div>
+          <div class="ex-type-name">${L.exTypeE_name}</div>
+          <div class="ex-type-desc">${L.exTypeE_desc}</div>
+          <div class="ex-type-meta"><span class="ex-type-badge">${L.exTypeE_badge}</span></div>
+        </button>
+        <button class="ex-type-card" onclick="EX.start('F',1)">
+          <div class="ex-type-icon">👤</div>
+          <div class="ex-type-name">${L.exTypeF_name}</div>
+          <div class="ex-type-desc">${L.exTypeF_desc}</div>
+          <div class="ex-type-meta"><span class="ex-type-badge">${L.exTypeF_badge}</span></div>
+        </button>
+        <button class="ex-type-card" onclick="EX.start('G',1)">
+          <div class="ex-type-icon">🔄</div>
+          <div class="ex-type-name">${L.exTypeG_name}</div>
+          <div class="ex-type-desc">${L.exTypeG_desc}</div>
+          <div class="ex-type-meta"><span class="ex-type-badge">${L.exTypeG_badge}</span></div>
+        </button>
+        <button class="ex-type-card" onclick="EX.start('H',1)">
+          <div class="ex-type-icon">🇪🇸</div>
+          <div class="ex-type-name">${L.exTypeH_name}</div>
+          <div class="ex-type-desc">${L.exTypeH_desc}</div>
+          <div class="ex-type-meta"><span class="ex-type-badge">${L.exTypeH_badge}</span></div>
+        </button>
       </div>
     </div>`;
+  renderVerbCards1();
+}
+
+function verbEndFilter(v, filter) {
+  if(filter==='all') return true;
+  const inf = v.inf;
+  const isRef = v.tipo.startsWith('ref') || inf.endsWith('se');
+  if(filter==='ref') return isRef;
+  if(isRef) return false; // reflexivos only shown in 'ref' tab
+  const end = inf.endsWith('se') ? inf.slice(-4,-2) : inf.slice(-2);
+  return end === filter;
+}
+
+function renderVerbCards1() {
+  const grid = document.getElementById('vc1-grid');
+  if(!grid) return;
+  const filter = document.getElementById('vc1-filter')?.value || 'all';
+  const search = (document.getElementById('vc1-search')?.value||'').toLowerCase().trim();
+  const prons = T[lang].pronombres;
+  let pool = VERBOS.filter(v => verbEndFilter(v, filter));
+  if(search) pool = pool.filter(v=>v.inf.includes(search)||v.tr.toLowerCase().includes(search));
+  grid.innerHTML = pool.slice(0,80).map(v=>{
+    const f=conjugar(v);
+    return `<div class="vc-card">
+      <div class="vc-card-head"><span class="vc-inf">${v.inf}</span><span class="vc-tr">${v.tr}</span></div>
+      <div class="vc-card-forms">${prons.map((p,i)=>`<div class="vc-row"><span class="vc-pron">${p}</span><span class="vc-form">${f[i]}</span></div>`).join('')}</div>
+    </div>`;
+  }).join('');
 }
 
 // Called after tab switch to practica in unit 1
@@ -3938,41 +5672,41 @@ function buildUnit2Theory() {
   const arRows = PART_REG_EXAMPLES.filter(v=>v.tipo==='ar').map(v=>`
     <tr>
       <td class="pron-cell" style="font-weight:700">${v.inf}</td>
-      <td style="color:var(--text-muted);font-style:italic;font-size:.8rem">${v.tr}</td>
-      <td><span style="font-size:.78rem;color:var(--text-muted)">-ar → </span><strong style="color:var(--hl-yo)">${v.part}</strong></td>
+      <td style="color:var(--text-muted);font-style:italic;font-size:1.08rem">${v.tr}</td>
+      <td><span style="font-size:1.06rem;color:var(--text-muted)">-ar → </span><strong style="color:var(--hl-yo)">${v.part}</strong></td>
       <td><button class="speak-btn" onclick="speak('${v.part}','rp${v.inf}')" aria-label="Escuchar">🔊</button></td>
     </tr>`).join('');
   const erRows = PART_REG_EXAMPLES.filter(v=>v.tipo==='er').map(v=>`
     <tr>
       <td class="pron-cell" style="font-weight:700">${v.inf}</td>
-      <td style="color:var(--text-muted);font-style:italic;font-size:.8rem">${v.tr}</td>
-      <td><span style="font-size:.78rem;color:var(--text-muted)">-er → </span><strong style="color:var(--hl-ei)">${v.part}</strong></td>
+      <td style="color:var(--text-muted);font-style:italic;font-size:1.08rem">${v.tr}</td>
+      <td><span style="font-size:1.06rem;color:var(--text-muted)">-er → </span><strong style="color:var(--hl-ei)">${v.part}</strong></td>
       <td><button class="speak-btn" onclick="speak('${v.part}','rp${v.inf}')" aria-label="Escuchar">🔊</button></td>
     </tr>`).join('');
   const irRows = PART_REG_EXAMPLES.filter(v=>v.tipo==='ir').map(v=>`
     <tr>
       <td class="pron-cell" style="font-weight:700">${v.inf}</td>
-      <td style="color:var(--text-muted);font-style:italic;font-size:.8rem">${v.tr}</td>
-      <td><span style="font-size:.78rem;color:var(--text-muted)">-ir → </span><strong style="color:var(--hl-oue)">${v.part}</strong></td>
+      <td style="color:var(--text-muted);font-style:italic;font-size:1.08rem">${v.tr}</td>
+      <td><span style="font-size:1.06rem;color:var(--text-muted)">-ir → </span><strong style="color:var(--hl-oue)">${v.part}</strong></td>
       <td><button class="speak-btn" onclick="speak('${v.part}','rp${v.inf}')" aria-label="Escuchar">🔊</button></td>
     </tr>`).join('');
 
   const body2 = `
     <div class="models-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
       <div class="model-block">
-        <div class="model-label" style="font-size:.68rem">-AR → <strong style="color:var(--hl-yo)">-ado</strong></div>
+        <div class="model-label" style="font-size:1.09rem">-AR → <strong style="color:var(--hl-yo)">-ado</strong></div>
         <div class="conj-table-wrap">
           <table class="conj-table"><tbody>${arRows}</tbody></table>
         </div>
       </div>
       <div class="model-block">
-        <div class="model-label" style="font-size:.68rem">-ER → <strong style="color:var(--hl-ei)">-ido</strong></div>
+        <div class="model-label" style="font-size:1.09rem">-ER → <strong style="color:var(--hl-ei)">-ido</strong></div>
         <div class="conj-table-wrap">
           <table class="conj-table"><tbody>${erRows}</tbody></table>
         </div>
       </div>
       <div class="model-block">
-        <div class="model-label" style="font-size:.68rem">-IR → <strong style="color:var(--hl-oue)">-ido</strong></div>
+        <div class="model-label" style="font-size:1.09rem">-IR → <strong style="color:var(--hl-oue)">-ido</strong></div>
         <div class="conj-table-wrap">
           <table class="conj-table"><tbody>${irRows}</tbody></table>
         </div>
@@ -3983,9 +5717,9 @@ function buildUnit2Theory() {
   const irrRows = PART_IRR.map(v=>`
     <tr>
       <td class="pron-cell" style="font-weight:700">${v.inf}</td>
-      <td style="color:var(--text-muted);font-style:italic;font-size:.8rem">${v.tr}</td>
-      <td><strong style="color:var(--hl-comp);font-size:.95rem">${v.part}</strong></td>
-      <td style="font-size:.78rem;color:var(--text-muted)">he ${v.part}</td>
+      <td style="color:var(--text-muted);font-style:italic;font-size:1.08rem">${v.tr}</td>
+      <td><strong style="color:var(--hl-comp);font-size:1.08rem">${v.part}</strong></td>
+      <td style="font-size:1.06rem;color:var(--text-muted)">he ${v.part}</td>
       <td><button class="speak-btn" onclick="speak('${v.part}','ip${v.inf}')" aria-label="Escuchar">🔊</button></td>
     </tr>`).join('');
 
@@ -4009,11 +5743,11 @@ function buildUnit2Theory() {
   // ── Table 4: Temporal Markers ──
   const markerRows = MARKERS_PP.map(m=>`
     <tr>
-      <td><strong style="color:var(--primary);font-size:.95rem">${m.word}</strong></td>
-      <td style="font-style:italic;color:var(--text-muted);font-size:.82rem">${m.tr}</td>
-      <td style="font-size:.82rem">
+      <td><strong style="color:var(--primary);font-size:1.08rem">${m.word}</strong></td>
+      <td style="font-style:italic;color:var(--text-muted);font-size:1.09rem">${m.tr}</td>
+      <td style="font-size:1.09rem">
         <div style="color:var(--text);font-weight:500">${m.ex.es}</div>
-        <div style="color:var(--text-muted);font-size:.75rem;margin-top:2px">${m.ex.tr}</div>
+        <div style="color:var(--text-muted);font-size:1.05rem;margin-top:2px">${m.ex.tr}</div>
       </td>
       <td><button class="speak-btn" onclick="speak('${m.ex.es.replace(/'/g,"\\'")}','mk${m.word}')" aria-label="Escuchar">🔊</button></td>
     </tr>`).join('');
@@ -4197,7 +5931,7 @@ const EX2 = {
             <span class="q-pron">${q.pronEs}</span>
           </div>
           <div class="q-tr">${q.verbTR}</div>
-          <div style="margin-top:10px;font-size:.78rem;color:var(--text-muted)">
+          <div style="margin-top:10px;font-size:1.06rem;color:var(--text-muted)">
             💡 ${q.pronEs} → <strong>${q.correctHaber}</strong> + participio
           </div>
         </div>
@@ -4531,41 +6265,76 @@ const EX2 = {
 function buildPracticaU2() {
   const L=T[lang];
   const area=document.getElementById('ex-area'); if(!area) return;
+  const isEs=lang==='es';
+  const haber=['he','has','ha','hemos','habéis','han'];
   area.innerHTML=`
     <div class="ex-header">
       <div>
-        <div class="ex-title">${L.u2exTitle}</div>
+        <div class="ex-title"><strong>${L.u2exTitle}</strong></div>
         <div class="ex-sub">${L.u2exSub}</div>
       </div>
     </div>
     <div class="ex-body">
+
+      <!-- Verb Cards Strip -->
+      <div class="vc-section">
+        <div class="vc-section-head">
+          <div class="vc-section-title">📚 ${isEs?'150 verbos — Pretérito Perfecto':'150 Fiil — Pretérito Perfecto Çekimleri'}</div>
+          <div class="vc-controls">
+            <input class="vc-search" id="vc2-search" type="text" placeholder="${isEs?'Buscar...':'Ara...'}"
+              oninput="renderVerbCards2()" autocomplete="off"/>
+          </div>
+        </div>
+        <div class="vc-grid" id="vc2-grid"></div>
+      </div>
+
+      <!-- Exercises -->
+      <div class="vc-section-title" style="margin:24px 0 12px"><strong>🎯 ${isEs?'Elige un ejercicio':'Bir Alıştırma Seç'}</strong></div>
       <div class="ex-selector">
         <button class="ex-type-card" onclick="EX2.start('A')">
           <div class="ex-type-icon">✍️</div>
           <div class="ex-type-name">${L.u2exTypeA_name}</div>
           <div class="ex-type-desc">${L.u2exTypeA_desc}</div>
-          <div class="ex-type-meta"><span class="ex-type-badge">20 ${lang==='es'?'preguntas':'soru'}</span></div>
+          <div class="ex-type-meta"><span class="ex-type-badge">20 ${isEs?'preguntas':'soru'}</span></div>
         </button>
         <button class="ex-type-card" onclick="EX2.start('B')">
           <div class="ex-type-icon">💡</div>
           <div class="ex-type-name">${L.u2exTypeB_name}</div>
           <div class="ex-type-desc">${L.u2exTypeB_desc}</div>
-          <div class="ex-type-meta"><span class="ex-type-badge">20 ${lang==='es'?'preguntas':'soru'}</span></div>
+          <div class="ex-type-meta"><span class="ex-type-badge">20 ${isEs?'preguntas':'soru'}</span></div>
         </button>
         <button class="ex-type-card" onclick="EX2.start('C')">
           <div class="ex-type-icon">🔗</div>
           <div class="ex-type-name">${L.u2exTypeC_name}</div>
           <div class="ex-type-desc">${L.u2exTypeC_desc}</div>
-          <div class="ex-type-meta"><span class="ex-type-badge">3 ${lang==='es'?'rondas':'tur'}</span></div>
+          <div class="ex-type-meta"><span class="ex-type-badge">3 ${isEs?'rondas':'tur'}</span></div>
         </button>
         <button class="ex-type-card" onclick="EX2.start('D')">
           <div class="ex-type-icon">🌍</div>
           <div class="ex-type-name">${L.u2exTypeD_name}</div>
           <div class="ex-type-desc">${L.u2exTypeD_desc}</div>
-          <div class="ex-type-meta"><span class="ex-type-badge">20 ${lang==='es'?'frases':'cümle'}</span></div>
+          <div class="ex-type-meta"><span class="ex-type-badge">20 ${isEs?'frases':'cümle'}</span></div>
         </button>
       </div>
     </div>`;
+  renderVerbCards2();
+}
+
+function renderVerbCards2() {
+  const grid = document.getElementById('vc2-grid');
+  if(!grid) return;
+  const search = (document.getElementById('vc2-search')?.value||'').toLowerCase().trim();
+  const prons = T[lang].pronombres;
+  const haber=['he','has','ha','hemos','habéis','han'];
+  let pool = VERBOS.slice();
+  if(search) pool=pool.filter(v=>v.inf.includes(search)||v.tr.toLowerCase().includes(search));
+  grid.innerHTML = pool.slice(0,80).map(v=>{
+    const part=getParticipioDisplay(v);
+    return `<div class="vc-card">
+      <div class="vc-card-head"><span class="vc-inf">${v.inf}</span><span class="vc-tr">${v.tr}</span><span class="vc-part">${part}</span></div>
+      <div class="vc-card-forms">${prons.map((p,i)=>`<div class="vc-row"><span class="vc-pron">${p}</span><span class="vc-form">${haber[i]} ${part}</span></div>`).join('')}</div>
+    </div>`;
+  }).join('');
 }
 
 function initPracticaU2() {
@@ -4657,7 +6426,7 @@ function buildUnit3Theory() {
       <td class="pron-cell">${p}</td>
       <td class="form-cell"><span class="hl hl-comp">${estarForms[i]}</span></td>
       <td style="color:var(--accent);font-weight:600">+ gerundio</td>
-      <td style="color:var(--text-muted);font-size:.8rem;font-style:italic">
+      <td style="color:var(--text-muted);font-size:1.08rem;font-style:italic">
         ${estarForms[i]} trabajando
       </td>
       <td><button class="speak-btn" onclick="speak('${estarForms[i]} trabajando','eg${i}')" aria-label="Escuchar">🔊</button></td>
@@ -4684,7 +6453,7 @@ function buildUnit3Theory() {
   const mkRegRows = (tipo) => GER_REG.filter(v=>v.tipo===tipo).map(v=>`
     <tr>
       <td class="pron-cell" style="font-weight:700">${v.inf}</td>
-      <td style="color:var(--text-muted);font-style:italic;font-size:.78rem">${v.tr}</td>
+      <td style="color:var(--text-muted);font-style:italic;font-size:1.06rem">${v.tr}</td>
       <td><strong style="color:var(--hl-yo)">${v.ger}</strong></td>
       <td><button class="speak-btn" onclick="speak('${v.ger}','rg${v.inf}')" aria-label="Escuchar">🔊</button></td>
     </tr>`).join('');
@@ -4692,15 +6461,15 @@ function buildUnit3Theory() {
   const body2 = `
     <div class="models-grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr))">
       <div class="model-block">
-        <div class="model-label" style="font-size:.68rem">-AR → <strong style="color:var(--hl-yo)">-ando</strong></div>
+        <div class="model-label" style="font-size:1.09rem">-AR → <strong style="color:var(--hl-yo)">-ando</strong></div>
         <div class="conj-table-wrap"><table class="conj-table"><tbody>${mkRegRows('ar')}</tbody></table></div>
       </div>
       <div class="model-block">
-        <div class="model-label" style="font-size:.68rem">-ER → <strong style="color:var(--hl-ei)">-iendo</strong></div>
+        <div class="model-label" style="font-size:1.09rem">-ER → <strong style="color:var(--hl-ei)">-iendo</strong></div>
         <div class="conj-table-wrap"><table class="conj-table"><tbody>${mkRegRows('er')}</tbody></table></div>
       </div>
       <div class="model-block">
-        <div class="model-label" style="font-size:.68rem">-IR → <strong style="color:var(--hl-oue)">-iendo</strong></div>
+        <div class="model-label" style="font-size:1.09rem">-IR → <strong style="color:var(--hl-oue)">-iendo</strong></div>
         <div class="conj-table-wrap"><table class="conj-table"><tbody>${mkRegRows('ir')}</tbody></table></div>
       </div>
     </div>`;
@@ -4716,9 +6485,9 @@ function buildUnit3Theory() {
   const irrRows = GER_IRR.map(v=>`
     <tr>
       <td class="pron-cell" style="font-weight:700">${v.inf}</td>
-      <td style="color:var(--text-muted);font-style:italic;font-size:.78rem">${v.tr}</td>
+      <td style="color:var(--text-muted);font-style:italic;font-size:1.06rem">${v.tr}</td>
       <td><strong class="hl ${changeColors[v.tipo]}">${v.ger}</strong></td>
-      <td><span style="font-size:.72rem;font-weight:700;padding:2px 7px;border-radius:8px;background:var(--border);color:var(--text-muted)">${changeLabels[v.tipo]}</span></td>
+      <td><span style="font-size:1rem;font-weight:700;padding:2px 7px;border-radius:8px;background:var(--border);color:var(--text-muted)">${changeLabels[v.tipo]}</span></td>
       <td><button class="speak-btn" onclick="speak('${v.ger}','ig${v.inf}')" aria-label="Escuchar">🔊</button></td>
     </tr>`).join('');
 
@@ -4738,12 +6507,12 @@ function buildUnit3Theory() {
   const contrastRows = CONTRASTE_U3.map((c,i)=>`
     <tr style="${i%2===0?'':'background:var(--bg)'}">
       <td style="padding:10px 14px;vertical-align:top">
-        <div style="font-weight:600;color:var(--text-muted);font-size:.9rem">${c.simple.es}</div>
-        <div style="font-size:.75rem;color:var(--text-muted);font-style:italic;margin-top:3px">${c.simple.tr}</div>
+        <div style="font-weight:600;color:var(--text-muted);font-size:1.05rem">${c.simple.es}</div>
+        <div style="font-size:1.05rem;color:var(--text-muted);font-style:italic;margin-top:3px">${c.simple.tr}</div>
       </td>
       <td style="padding:10px 14px;vertical-align:top">
-        <div style="font-weight:700;color:var(--secondary);font-size:.9rem">${c.progr.es}</div>
-        <div style="font-size:.75rem;color:var(--text-muted);font-style:italic;margin-top:3px">${c.progr.tr}</div>
+        <div style="font-weight:700;color:var(--secondary);font-size:1.05rem">${c.progr.es}</div>
+        <div style="font-size:1.05rem;color:var(--text-muted);font-style:italic;margin-top:3px">${c.progr.tr}</div>
       </td>
     </tr>`).join('');
 
@@ -4908,7 +6677,7 @@ const EX3 = {
             <span class="q-pron">${q.pronEs}</span>
           </div>
           <div class="q-tr">${q.verbTR}</div>
-          <div style="margin-top:10px;font-size:.78rem;color:var(--text-muted)">
+          <div style="margin-top:10px;font-size:1.06rem;color:var(--text-muted)">
             💡 ${q.pronEs} → <strong>${q.correctEstar}</strong> + gerundio
           </div>
         </div>
@@ -5240,41 +7009,78 @@ const EX3 = {
 function buildPracticaU3(){
   const L=T[lang];
   const area=document.getElementById('ex-area'); if(!area) return;
+  const isEs=lang==='es';
+  const estarV=VERBOS.find(v=>v.id===61);
+  const estarF=estarV?conjugar(estarV):['estoy','estás','está','estamos','estáis','están'];
   area.innerHTML=`
     <div class="ex-header">
       <div>
-        <div class="ex-title">${L.u3exTitle}</div>
+        <div class="ex-title"><strong>${L.u3exTitle}</strong></div>
         <div class="ex-sub">${L.u3exSub}</div>
       </div>
     </div>
     <div class="ex-body">
+
+      <!-- Verb Cards Strip -->
+      <div class="vc-section">
+        <div class="vc-section-head">
+          <div class="vc-section-title">📚 ${isEs?'150 verbos — Estar + Gerundio':'150 Fiil — Estar + Gerundio Çekimleri'}</div>
+          <div class="vc-controls">
+            <input class="vc-search" id="vc3-search" type="text" placeholder="${isEs?'Buscar...':'Ara...'}"
+              oninput="renderVerbCards3()" autocomplete="off"/>
+          </div>
+        </div>
+        <div class="vc-grid" id="vc3-grid"></div>
+      </div>
+
+      <!-- Exercises -->
+      <div class="vc-section-title" style="margin:24px 0 12px"><strong>🎯 ${isEs?'Elige un ejercicio':'Bir Alıştırma Seç'}</strong></div>
       <div class="ex-selector">
         <button class="ex-type-card" onclick="EX3.start('A')">
           <div class="ex-type-icon">✍️</div>
           <div class="ex-type-name">${L.u3exTypeA_name}</div>
           <div class="ex-type-desc">${L.u3exTypeA_desc}</div>
-          <div class="ex-type-meta"><span class="ex-type-badge">20 ${lang==='es'?'preguntas':'soru'}</span></div>
+          <div class="ex-type-meta"><span class="ex-type-badge">20 ${isEs?'preguntas':'soru'}</span></div>
         </button>
         <button class="ex-type-card" onclick="EX3.start('B')">
           <div class="ex-type-icon">💡</div>
           <div class="ex-type-name">${L.u3exTypeB_name}</div>
           <div class="ex-type-desc">${L.u3exTypeB_desc}</div>
-          <div class="ex-type-meta"><span class="ex-type-badge">20 ${lang==='es'?'preguntas':'soru'}</span></div>
+          <div class="ex-type-meta"><span class="ex-type-badge">20 ${isEs?'preguntas':'soru'}</span></div>
         </button>
         <button class="ex-type-card" onclick="EX3.start('C')">
           <div class="ex-type-icon">🔗</div>
           <div class="ex-type-name">${L.u3exTypeC_name}</div>
           <div class="ex-type-desc">${L.u3exTypeC_desc}</div>
-          <div class="ex-type-meta"><span class="ex-type-badge">3 ${lang==='es'?'rondas':'tur'}</span></div>
+          <div class="ex-type-meta"><span class="ex-type-badge">3 ${isEs?'rondas':'tur'}</span></div>
         </button>
         <button class="ex-type-card" onclick="EX3.start('D')">
           <div class="ex-type-icon">🌍</div>
           <div class="ex-type-name">${L.u3exTypeD_name}</div>
           <div class="ex-type-desc">${L.u3exTypeD_desc}</div>
-          <div class="ex-type-meta"><span class="ex-type-badge">20 ${lang==='es'?'frases':'cümle'}</span></div>
+          <div class="ex-type-meta"><span class="ex-type-badge">20 ${isEs?'frases':'cümle'}</span></div>
         </button>
       </div>
     </div>`;
+  renderVerbCards3();
+}
+
+function renderVerbCards3() {
+  const grid = document.getElementById('vc3-grid');
+  if(!grid) return;
+  const search = (document.getElementById('vc3-search')?.value||'').toLowerCase().trim();
+  const prons = T[lang].pronombres;
+  const estarV=VERBOS.find(v=>v.id===61);
+  const estarF=estarV?conjugar(estarV):['estoy','estás','está','estamos','estáis','están'];
+  let pool = VERBOS.filter(v=>!v.tipo.startsWith('ref'));
+  if(search) pool=pool.filter(v=>v.inf.includes(search)||v.tr.toLowerCase().includes(search));
+  grid.innerHTML = pool.slice(0,60).map(v=>{
+    const ger=getGerundioDisplay(v);
+    return `<div class="vc-card">
+      <div class="vc-card-head"><span class="vc-inf">${v.inf}</span><span class="vc-tr">${v.tr}</span><span class="vc-part">${ger}</span></div>
+      <div class="vc-card-forms">${prons.map((p,i)=>`<div class="vc-row"><span class="vc-pron">${p}</span><span class="vc-form">${estarF[i]} ${ger}</span></div>`).join('')}</div>
+    </div>`;
+  }).join('');
 }
 
 function initPracticaU3(){
@@ -5289,7 +7095,11 @@ function initPracticaU3(){
 (function init() {
   applyTheme();
   applyLang();
-  showPage('home');
+  const hashPage = location.hash.replace('#','');
+  const validPages = ['home','unit','flashcards','logros','daily'];
+  const startPage = validPages.includes(hashPage) ? hashPage : 'home';
+  history.replaceState({page: startPage}, '', '#' + startPage);
+  showPage(startPage, false);
   loadProgress();
 })();
 </script>
