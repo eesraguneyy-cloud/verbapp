@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>esracademiapp — Dil Seçimi</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0 }
+  body {
+    font-family:'Nunito',sans-serif;
+    min-height:100vh;
+    background:linear-gradient(135deg,#4F6AF5 0%,#7C3AED 100%);
+    display:flex; align-items:center; justify-content:center;
+    padding:24px;
+  }
+  .wrap {
+    max-width:560px; width:100%; text-align:center;
+  }
+  .logo {
+    font-family:'Baloo 2',cursive; font-size:2.2rem; font-weight:800;
+    color:#fff; margin-bottom:6px; letter-spacing:-.5px;
+  }
+  .tagline {
+    font-size:1rem; color:rgba(255,255,255,.8); margin-bottom:48px;
+    font-weight:600;
+  }
+  .question {
+    font-family:'Baloo 2',cursive; font-size:1.25rem; font-weight:800;
+    color:#fff; margin-bottom:20px;
+  }
+  .cards {
+    display:grid; grid-template-columns:1fr 1fr; gap:16px;
+  }
+  @media(max-width:400px){ .cards { grid-template-columns:1fr } }
+  .card {
+    background:#fff; border-radius:20px; padding:32px 20px;
+    cursor:pointer; text-decoration:none; display:block;
+    transition:transform .18s, box-shadow .18s;
+    box-shadow:0 4px 20px rgba(0,0,0,.15);
+  }
+  .card:hover, .card:active {
+    transform:translateY(-6px);
+    box-shadow:0 12px 32px rgba(0,0,0,.25);
+  }
+  .card-flag  { font-size:3.5rem; margin-bottom:12px; display:block }
+  .card-title { font-family:'Baloo 2',cursive; font-size:1.4rem; font-weight:800; color:#1e1b4b; margin-bottom:6px }
+  .card-sub   { font-size:.88rem; color:#6b7280; line-height:1.5 }
+  .card-sub em { font-style:italic; color:#9ca3af }
+  .card-arrow { font-size:1.4rem; margin-top:14px; color:#4F6AF5 }
+  .footer {
+    margin-top:40px; font-size:.8rem; color:rgba(255,255,255,.5);
+  }
+  .footer a { color:rgba(255,255,255,.7); text-decoration:none }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">esracademiapp</div>
+  <div class="tagline">Fiil Çekimleri · Conjugación de Verbos</div>
+  <div class="question">Hangi dili öğrenmek istiyorsun?</div>
+  <div class="cards">
+    <a class="card" href="verbapp_es.html">
+      <span class="card-flag">🇪🇸</span>
+      <div class="card-title">Español</div>
+      <div class="card-sub">
+        İspanyolca öğrenmek istiyorum<br>
+        <em>150 fiil · 3 zaman</em>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a class="card" href="verbapp_tr.html">
+      <span class="card-flag">🇹🇷</span>
+      <div class="card-title">Türkçe</div>
+      <div class="card-sub">
+        Quiero aprender turco<br>
+        <em>100 verbos · 3 tiempos</em>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+  </div>
+  <div class="footer">
+    <a href="https://esracademia.com">esracademia.com</a>
+  </div>
+</div>
+</body>
+</html>

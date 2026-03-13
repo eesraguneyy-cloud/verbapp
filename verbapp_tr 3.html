@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>esracademiapp — Verbos Turcos 🇹🇷</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Variables ── */
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0 }
+:root {
+  --primary:#4F6AF5; --primary-dark:#3451d1; --primary-bg:#eef1ff;
+  --purple:#7C3AED; --coral:#FF4B4B; --blue:#1CB0F6; --gold:#FFC800;
+  --mint:#00CD9C; --orange:#FF9600;
+  --bg:#f8f9ff; --bg-card:#ffffff; --text:#1e1b4b; --text-muted:#6b7280;
+  --border:#e5e7eb; --border-light:#f3f4f6;
+  --radius:16px; --radius-sm:10px; --radius-pill:999px;
+  --shadow:0 2px 12px rgba(79,106,245,.1);
+}
+[data-theme="dark"] {
+  --bg:#0f0f1a; --bg-card:#1a1a2e; --text:#e8e8f0; --text-muted:#9ca3af;
+  --border:#2d2d44; --border-light:#22223a; --primary-bg:#1a1a35;
+}
+body { font-family:'Nunito',sans-serif; background:var(--bg); color:var(--text); font-size:16px; line-height:1.5 }
+
+/* ── Header ── */
+header {
+  background:var(--bg-card); border-bottom:2px solid var(--border);
+  padding:10px 16px; display:flex; align-items:center; justify-content:space-between;
+  position:sticky; top:0; z-index:100;
+}
+.header-left { display:flex; align-items:center; gap:10px; cursor:pointer }
+.app-logo { width:32px; height:32px; border-radius:8px; background:linear-gradient(135deg,#4F6AF5,#7C3AED); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:1rem }
+.app-title { font-family:'Baloo 2',cursive; font-size:1.1rem; font-weight:800; color:var(--text) }
+.app-subtitle { font-size:.72rem; color:var(--text-muted) }
+.header-right { display:flex; align-items:center; gap:8px }
+.btn-icon { background:var(--bg); border:2px solid var(--border); border-radius:var(--radius-pill); padding:6px 12px; cursor:pointer; font-size:.82rem; font-weight:700; color:var(--text); white-space:nowrap }
+.btn-icon:hover { border-color:var(--primary); color:var(--primary) }
+
+/* ── Nav ── */
+nav {
+  background:var(--bg-card); border-bottom:2px solid var(--border);
+  display:flex; overflow-x:auto; position:sticky; top:58px; z-index:99;
+}
+nav::-webkit-scrollbar { display:none }
+.nav-tab {
+  flex:1; min-width:70px; padding:10px 6px 8px;
+  display:flex; flex-direction:column; align-items:center; gap:2px;
+  border:none; background:none; cursor:pointer; color:var(--text-muted);
+  font-size:.68rem; font-weight:700; white-space:nowrap; border-bottom:3px solid transparent;
+  transition:all .15s;
+}
+.nav-tab.active { color:var(--primary); border-bottom-color:var(--primary) }
+.nav-tab-icon { font-size:1.2rem }
+
+/* ── Page wrap ── */
+.page-wrap { max-width:800px; margin:0 auto; padding:16px }
+
+/* ── Hero ── */
+.home-hero {
+  background:linear-gradient(135deg,#4F6AF5 0%,#7C3AED 100%);
+  border-radius:var(--radius); padding:24px 20px; margin-bottom:16px; color:#fff;
+}
+.home-hero-flag { font-size:1.5rem }
+.home-hero-title { font-family:'Baloo 2',cursive; font-size:1.6rem; font-weight:800; margin:6px 0 4px }
+.home-hero-sub { font-size:.88rem; opacity:.9; margin-bottom:14px }
+.hero-xp-bar-wrap { margin-bottom:14px }
+.hero-xp-label { display:flex; justify-content:space-between; font-size:.78rem; font-weight:700; margin-bottom:4px }
+.hero-xp-track { height:10px; background:rgba(255,255,255,.3); border-radius:999px; overflow:hidden }
+.hero-xp-fill  { height:100%; background:#fff; border-radius:999px; transition:width .4s }
+.hero-stats { display:flex; gap:12px }
+.hero-stat { text-align:center; flex:1 }
+.hero-stat-val { font-family:'Baloo 2',cursive; font-size:1.2rem; font-weight:800 }
+.hero-stat-lbl { font-size:.7rem; opacity:.8 }
+
+/* ── Quick buttons ── */
+.home-quick-row { display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap }
+.quick-btn { flex:1; min-width:90px; padding:10px 8px; border-radius:var(--radius-sm); border:2px solid var(--border); background:var(--bg-card); font-size:.82rem; font-weight:700; cursor:pointer; color:var(--text); transition:all .15s }
+.quick-btn:hover { border-color:var(--primary); color:var(--primary) }
+
+/* ── Daily challenge banner ── */
+.dc-banner { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius); padding:14px 16px; display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; cursor:pointer; gap:10px }
+.dc-banner:hover { border-color:var(--primary) }
+.dc-banner-title { font-weight:800; font-size:.95rem; color:var(--text) }
+.dc-banner-verb  { font-size:.82rem; color:var(--text-muted); margin-top:2px }
+.dc-banner-btn   { padding:8px 16px; border-radius:var(--radius-pill); background:var(--primary); color:#fff; border:none; font-weight:800; font-size:.85rem; cursor:pointer; white-space:nowrap }
+.dc-banner-btn.completed { background:var(--mint) }
+
+/* ── Level cards ── */
+.levels-grid { display:grid; gap:14px }
+.level-card { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius); padding:18px }
+.level-card.active { border-color:var(--primary) }
+.level-card.locked { opacity:.6 }
+.level-card-head { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:14px }
+.level-badge { display:inline-block; padding:3px 10px; border-radius:var(--radius-pill); font-weight:800; font-size:.78rem; background:var(--primary); color:#fff }
+.level-badge.n2 { background:var(--purple) }
+.level-title { font-family:'Baloo 2',cursive; font-size:1.05rem; font-weight:800; color:var(--text); margin-top:4px }
+.level-sub { font-size:.78rem; color:var(--text-muted) }
+.level-steps { display:flex; flex-direction:column; gap:8px; margin-bottom:14px }
+.level-step { display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:var(--radius-sm); border:2px solid var(--border); background:var(--bg) }
+.level-step.step-active { border-color:var(--primary); background:var(--primary-bg) }
+.step-num { width:28px; height:28px; border-radius:50%; background:var(--border); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.85rem; flex-shrink:0; color:var(--text-muted) }
+.step-active .step-num { background:var(--primary); color:#fff }
+.step-body { flex:1 }
+.step-name { font-weight:800; font-size:.88rem; color:var(--text) }
+.step-desc { font-size:.75rem; color:var(--text-muted) }
+.step-track { height:5px; background:var(--border); border-radius:999px; overflow:hidden; margin-top:4px }
+.step-fill { height:100%; background:var(--primary); border-radius:999px }
+.step-pct { font-size:.75rem; font-weight:700; color:var(--text-muted); min-width:32px; text-align:right }
+.level-start-btn { width:100%; padding:11px; border-radius:var(--radius-pill); background:var(--primary); color:#fff; border:none; font-weight:800; font-size:.95rem; cursor:pointer }
+
+/* ── Unit view ── */
+.unit-back-bar { display:flex; align-items:center; gap:10px; margin-bottom:14px }
+.btn-back { padding:7px 14px; border-radius:var(--radius-pill); border:2px solid var(--border); background:var(--bg-card); font-weight:700; font-size:.85rem; cursor:pointer; color:var(--text) }
+.unit-pills { display:flex; gap:6px; margin-bottom:16px; flex-wrap:wrap }
+.unit-pill { padding:7px 16px; border-radius:var(--radius-pill); border:2px solid var(--border); background:var(--bg); font-weight:700; font-size:.85rem; cursor:pointer; color:var(--text-muted) }
+.unit-pill.active { background:var(--primary); border-color:var(--primary); color:#fff }
+.unit-tabs { display:flex; gap:6px; margin-bottom:16px }
+.tab-btn { padding:8px 18px; border-radius:var(--radius-pill); border:2px solid var(--border); background:var(--bg); font-weight:700; font-size:.88rem; cursor:pointer; color:var(--text-muted) }
+.tab-btn.active { background:var(--primary); border-color:var(--primary); color:#fff }
+.hidden { display:none !important }
+
+/* ── Theory ── */
+.theory-section { display:flex; flex-direction:column; gap:14px }
+.theory-section-title { font-family:'Baloo 2',cursive; font-size:1.2rem; font-weight:800; color:var(--text) }
+.theory-note-box { background:var(--primary-bg); border-left:4px solid var(--primary); border-radius:var(--radius-sm); padding:14px 16px; font-size:.9rem; color:var(--text) }
+.tr-theory-box { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius); padding:18px 20px }
+.tr-theory-title { font-family:'Baloo 2',cursive; font-size:1rem; font-weight:800; color:var(--text); margin-bottom:12px }
+.theory-table-wrap { overflow-x:auto }
+.theory-table { border-collapse:collapse; width:100%; font-size:.85rem }
+.theory-table th { background:var(--bg); padding:8px 12px; text-align:left; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted); border-bottom:2px solid var(--border) }
+.theory-table td { padding:8px 12px; border-bottom:1px solid var(--border-light) }
+.theory-table tr:last-child td { border-bottom:none }
+.theory-table tr:hover td { background:var(--primary-bg) }
+
+/* ── Verb chips (unit cards) ── */
+.vc-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:8px; padding:4px }
+.verb-chip { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius-sm); overflow:hidden; cursor:pointer; transition:all .15s }
+.verb-chip:hover { border-color:var(--primary); transform:translateY(-2px); box-shadow:var(--shadow) }
+.vc-head { display:flex; align-items:center; gap:6px; padding:8px 10px; flex-wrap:nowrap }
+.vc-inf  { font-family:'Baloo 2',cursive; font-size:.9rem; font-weight:800; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex-shrink:0 }
+.vc-tr   { font-size:.72rem; color:rgba(255,255,255,.9); font-style:italic; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
+.vc-forms { padding:6px 8px }
+.vc-row  { display:flex; align-items:center; padding:2px 0; border-bottom:1px solid var(--border-light); gap:6px }
+.vc-row:last-child { border-bottom:none }
+.vc-pron { font-size:.72rem; font-weight:700; color:var(--text-muted); width:44px; flex-shrink:0 }
+.vc-form { font-size:.85rem; font-weight:700; color:var(--primary-dark) }
+
+/* ── Exercises ── */
+.ex-selector { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius); padding:18px; margin-bottom:16px }
+.ex-selector-title { font-family:'Baloo 2',cursive; font-size:1.1rem; font-weight:800; color:var(--text); margin-bottom:14px }
+.ex-type-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px }
+.ex-type-card { background:var(--bg); border:2px solid var(--border); border-radius:var(--radius-sm); padding:14px; cursor:pointer; transition:all .15s }
+.ex-type-card:hover { border-color:var(--primary); background:var(--primary-bg) }
+.ex-type-name { font-weight:800; font-size:.9rem; color:var(--text); margin-bottom:4px }
+.ex-type-desc { font-size:.78rem; color:var(--text-muted); margin-bottom:10px }
+.ex-type-btn  { padding:6px 14px; border-radius:var(--radius-pill); background:var(--primary); color:#fff; border:none; font-weight:700; font-size:.82rem; cursor:pointer }
+.ex-question-box { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius); padding:20px; margin-bottom:16px }
+.ex-progress-bar { height:6px; background:var(--border); border-radius:999px; overflow:hidden; margin-bottom:10px }
+.ex-progress-fill { height:100%; background:var(--primary); border-radius:999px; transition:width .3s }
+.ex-counter { font-size:.78rem; color:var(--text-muted); font-weight:700; margin-bottom:12px }
+.ex-prompt { font-size:.95rem; font-weight:700; color:var(--text); margin-bottom:10px }
+.ex-verb-display { background:var(--primary-bg); border-radius:var(--radius-sm); padding:12px 16px; margin-bottom:12px; display:flex; align-items:center; gap:10px; flex-wrap:wrap }
+.ex-verb-inf { font-family:'Baloo 2',cursive; font-size:1.3rem; font-weight:800; color:var(--primary-dark) }
+.ex-verb-tr  { font-size:.9rem; color:var(--text-muted); font-style:italic }
+.ex-pron-hint { font-size:.9rem; font-weight:700; color:var(--text); margin-bottom:10px }
+.ex-input { width:100%; padding:12px 14px; border-radius:var(--radius-sm); border:2px solid var(--border); background:var(--bg); font-size:.95rem; font-weight:700; color:var(--text); outline:none }
+.ex-input:focus { border-color:var(--primary) }
+.inp-correct { border-color:var(--mint) !important; background:#f0fdf4 !important }
+.inp-wrong   { border-color:var(--coral) !important; background:#fff5f5 !important }
+.ex-feedback { margin-top:8px; font-weight:700; font-size:.95rem; min-height:22px }
+.fb-ok  { color:#18A34A }
+.fb-err { color:var(--coral) }
+.ex-mc-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:6px }
+.ex-mc-btn  { padding:12px; border-radius:var(--radius-sm); border:2px solid var(--border); background:var(--bg-card); font-weight:700; font-size:.88rem; cursor:pointer; color:var(--text); transition:all .15s }
+.ex-mc-btn:hover { border-color:var(--primary); color:var(--primary) }
+.mc-correct { border-color:var(--mint) !important; background:#f0fdf4 !important; color:#18A34A !important }
+.mc-wrong   { border-color:var(--coral) !important; background:#fff5f5 !important; color:var(--coral) !important }
+.ex-match-wrap { display:flex; gap:16px; margin:12px 0 }
+.ex-match-col  { display:flex; flex-direction:column; gap:8px; flex:1 }
+.ex-match-card { padding:10px 14px; border-radius:var(--radius-sm); border:2px solid var(--border); background:var(--bg-card); font-weight:700; font-size:.88rem; cursor:pointer; color:var(--text); transition:all .15s; text-align:center }
+.ex-match-card.selected { border-color:var(--primary); background:var(--primary-bg); color:var(--primary) }
+.ex-match-card.paired   { border-color:var(--mint); background:#f0fdf4; color:#18A34A }
+.ex-result-box { text-align:center; padding:32px; background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius) }
+.ex-result-score { font-family:'Baloo 2',cursive; font-size:3rem; font-weight:800; color:var(--primary) }
+.ex-result-label { font-size:1.1rem; font-weight:800; color:var(--text); margin-bottom:6px }
+.btn-primary { padding:11px 24px; border-radius:var(--radius-pill); background:var(--primary); color:#fff; border:none; font-weight:800; font-size:.95rem; cursor:pointer }
+
+/* ── Flashcards ── */
+.fc-header { display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap }
+.fc-select { padding:8px 12px; border-radius:var(--radius-sm); border:2px solid var(--border); background:var(--bg-card); font-size:.85rem; font-weight:700; color:var(--text); cursor:pointer }
+.fc-btn-shuffle { padding:8px 16px; border-radius:var(--radius-pill); border:2px solid var(--border); background:var(--bg-card); font-weight:700; font-size:.85rem; cursor:pointer; color:var(--text) }
+.fc-stats-bar { font-size:.82rem; color:var(--text-muted); font-weight:700; margin-bottom:12px }
+.fc-card-wrap { display:flex; justify-content:center; margin-bottom:16px; perspective:1200px }
+.fc-card { width:100%; max-width:400px; height:200px; cursor:pointer }
+.fc-card-inner { width:100%; height:100%; position:relative; transform-style:preserve-3d; transition:transform .4s }
+.fc-card-front, .fc-card-back { position:absolute; inset:0; border-radius:var(--radius); backface-visibility:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; border:2px solid var(--border) }
+.fc-card-front { background:linear-gradient(135deg,var(--primary),var(--purple)); color:#fff }
+.fc-card-back  { background:var(--bg-card); transform:rotateY(180deg) }
+.fc-word { font-family:'Baloo 2',cursive; font-size:1.8rem; font-weight:800; text-align:center }
+.fc-tipo { font-size:.8rem; opacity:.8; margin-top:4px }
+.fc-card-hint { font-size:.75rem; opacity:.7; margin-top:12px }
+.fc-translation { font-family:'Baloo 2',cursive; font-size:1.5rem; font-weight:800; color:var(--primary-dark); text-align:center }
+.fc-actions { display:flex; justify-content:center; gap:12px; margin-bottom:14px }
+.fc-action-unknown { padding:10px 24px; border-radius:var(--radius-pill); background:#fff5f5; border:2px solid var(--coral); color:var(--coral); font-weight:800; cursor:pointer }
+.fc-action-known   { padding:10px 24px; border-radius:var(--radius-pill); background:#f0fdf4; border:2px solid var(--mint); color:#18A34A; font-weight:800; cursor:pointer }
+.fc-done-wrap { text-align:center; padding:20px }
+.fc-done-title { font-family:'Baloo 2',cursive; font-size:1.4rem; font-weight:800; color:var(--text); margin-bottom:12px }
+.fc-btn-restart { padding:10px 24px; border-radius:var(--radius-pill); background:var(--primary); color:#fff; border:none; font-weight:800; cursor:pointer }
+
+/* ── Verb search modal ── */
+.vsearch-card { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius-sm); overflow:hidden; cursor:pointer; margin-bottom:8px }
+.vsearch-card:hover { border-color:var(--primary) }
+.vsearch-head { display:flex; align-items:center; gap:8px; padding:10px 12px }
+.vsearch-inf  { font-family:'Baloo 2',cursive; font-size:1rem; font-weight:800; color:#fff }
+.vsearch-tr   { font-size:.82rem; color:rgba(255,255,255,.9); font-style:italic; flex:1 }
+.vsearch-tipo { font-size:.72rem; color:rgba(255,255,255,.7); margin-left:auto }
+.vsearch-forms { padding:8px 12px; display:flex; gap:16px; flex-wrap:wrap }
+.vsearch-pair { display:flex; gap:6px; align-items:center; font-size:.82rem }
+.vsearch-pron { color:var(--text-muted); font-weight:700; width:44px }
+.vsearch-form { color:var(--primary-dark); font-weight:700 }
+.vsearch-detail { }
+.vsearch-detail-head { padding:16px 18px; border-radius:var(--radius-sm); margin-bottom:12px }
+.vsearch-detail-inf { font-family:'Baloo 2',cursive; font-size:1.6rem; font-weight:800; color:#fff; display:block; margin-bottom:4px }
+.vsearch-detail-tr  { font-size:.95rem; color:rgba(255,255,255,.9); font-style:italic }
+.vsearch-tense-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px }
+.vsearch-tense-block { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius-sm); overflow:hidden }
+.vsearch-tense-label { padding:6px 12px; font-weight:800; font-size:.8rem; color:#fff }
+.vsearch-tense-block .vsearch-pair { padding:4px 12px; border-bottom:1px solid var(--border-light) }
+.vsearch-tense-block .vsearch-pair:last-child { border-bottom:none }
+
+/* ── Daily page ── */
+.dp-hero { background:linear-gradient(135deg,#FF9600,#FF4B4B); border-radius:var(--radius); padding:20px; display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; color:#fff }
+.dp-hero-title { font-family:'Baloo 2',cursive; font-size:1.2rem; font-weight:800 }
+.dp-hero-sub { font-size:.82rem; opacity:.85; margin-top:2px }
+.dp-streak-circle { width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,.2); display:flex; flex-direction:column; align-items:center; justify-content:center; border:3px solid rgba(255,255,255,.5) }
+.dp-streak-circle.dp-streak-active { background:rgba(255,255,255,.3); border-color:#fff }
+.dp-streak-num { font-family:'Baloo 2',cursive; font-size:1.4rem; font-weight:800; line-height:1 }
+.dp-streak-lbl { font-size:.62rem; opacity:.85 }
+.dp-stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:14px }
+.dp-stat { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius-sm); padding:12px 8px; text-align:center }
+.dp-stat-icon { font-size:1.3rem; margin-bottom:4px }
+.dp-stat-val  { font-family:'Baloo 2',cursive; font-size:1.1rem; font-weight:800; color:var(--text) }
+.dp-stat-lbl  { font-size:.65rem; color:var(--text-muted); font-weight:600 }
+.dp-today { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius); padding:16px; display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; gap:10px }
+.dp-today-done { border-color:var(--mint) }
+.dp-today-left { display:flex; align-items:center; gap:12px }
+.dp-today-badge { font-size:1.8rem }
+.dp-today-label { font-size:.78rem; color:var(--text-muted); font-weight:700 }
+.dp-today-verb  { font-family:'Baloo 2',cursive; font-size:1.05rem; font-weight:800; color:var(--text) }
+.dp-today-tr    { font-size:.82rem; color:var(--text-muted); font-style:italic }
+.dp-today-status{ font-size:.78rem; color:var(--text-muted); margin-top:2px }
+.dp-today-btn   { padding:9px 18px; border-radius:var(--radius-pill); background:var(--primary); color:#fff; border:none; font-weight:800; font-size:.85rem; cursor:pointer; white-space:nowrap }
+.dp-cal-section { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius); padding:18px; margin-bottom:14px }
+.cal-view-tabs { display:flex; gap:6px; margin-bottom:14px }
+.cal-view-tab  { padding:6px 16px; border-radius:var(--radius-pill); border:2px solid var(--border); background:var(--bg); font-size:.84rem; font-weight:700; cursor:pointer; color:var(--text-muted) }
+.cal-view-tab.active { background:var(--primary); border-color:var(--primary); color:#fff }
+.cal-week-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:6px }
+.cal-week-cell { border-radius:10px; border:2px solid var(--border); padding:8px 4px; text-align:center; background:var(--bg-card) }
+.cal-week-cell.done  { background:var(--primary); border-color:var(--primary) }
+.cal-week-cell.today { border-color:var(--coral); background:var(--primary-bg) }
+.cal-week-day  { font-size:.65rem; font-weight:700; color:var(--text-muted); margin-bottom:2px }
+.cal-week-cell.done .cal-week-day { color:rgba(255,255,255,.8) }
+.cal-week-date { font-size:1rem; font-weight:800; color:var(--text) }
+.cal-week-cell.done .cal-week-date { color:#fff }
+.cal-week-dot  { font-size:.9rem; margin-top:2px }
+.cal-month-nav { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px }
+.cal-month-nav-btn { padding:5px 14px; border-radius:var(--radius-pill); border:2px solid var(--border); background:var(--bg); cursor:pointer; font-weight:700 }
+.cal-month-name { font-family:'Baloo 2',cursive; font-weight:800; font-size:1rem; color:var(--text) }
+.cal-month-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:3px }
+.cal-month-hdr  { font-size:.65rem; font-weight:700; color:var(--text-muted); text-align:center; padding:3px 0 }
+.cal-month-cell { aspect-ratio:1; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:.8rem; font-weight:700; color:var(--text-muted); background:var(--bg) }
+.cal-month-cell.done  { background:var(--primary); color:#fff }
+.cal-month-cell.today { outline:2px solid var(--coral); outline-offset:1px; color:var(--coral) }
+.cal-month-cell.empty { background:transparent }
+.dc-cell       { width:13px; height:13px; border-radius:2px; background:var(--border); flex-shrink:0 }
+.dc-cell-empty { background:transparent }
+.dc-cell-done  { background:var(--primary) }
+.dc-cell-today { background:var(--border); outline:2px solid var(--primary); outline-offset:1px }
+.dc365-month-row { display:flex; margin-left:30px; margin-bottom:5px; gap:0 }
+.dc365-month-lbl { min-width:14px; font-size:.66rem; font-weight:700; color:var(--text-muted); flex:0 0 14px; white-space:nowrap }
+.dc365-grid-row  { display:flex; gap:4px; align-items:flex-start }
+.dc365-day-labels{ display:flex; flex-direction:column; gap:2px; margin-right:5px; padding-top:2px }
+.dc365-day-lbl   { height:13px; font-size:.62rem; font-weight:700; color:var(--text-muted); line-height:13px; width:20px }
+.dc365-cols      { display:flex; gap:2px }
+.dc365-col       { display:flex; flex-direction:column; gap:2px }
+.dp-cal-scroll   { overflow-x:auto; padding-bottom:4px }
+.dp-miles-section { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius); padding:18px; margin-bottom:14px }
+.dp-miles-title   { font-size:.95rem; font-weight:700; color:var(--text); margin-bottom:14px }
+.dp-miles-track   { display:grid; grid-template-columns:repeat(auto-fill,minmax(100px,1fr)); gap:10px }
+.dp-mile { background:var(--bg); border:2px solid var(--border); border-radius:var(--radius-sm); padding:10px; text-align:center }
+.dp-mile-done    { background:var(--primary-bg); border-color:var(--primary) }
+.dp-mile-current { background:linear-gradient(135deg,var(--primary-bg),#ede9fe); border-color:var(--purple) }
+.dp-mile-dot  { font-size:1.4rem; margin-bottom:4px }
+.dp-mile-days { font-family:'Baloo 2',cursive; font-size:.95rem; font-weight:800; color:var(--text) }
+.dp-mile-label { font-size:.72rem; color:var(--text-muted); font-weight:600 }
+.dp-mile-progress { height:4px; background:var(--border); border-radius:999px; margin-top:6px; overflow:hidden }
+.dp-mile-fill { height:100%; background:var(--primary); border-radius:999px }
+
+/* ── Logros ── */
+.logros-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px }
+.logro-card { background:var(--bg-card); border:2px solid var(--border); border-radius:var(--radius-sm); padding:16px; text-align:center }
+.logro-card.unlocked { border-color:var(--gold); background:linear-gradient(135deg,#fffbeb,#fef3c7) }
+.logro-icon  { font-size:2rem; margin-bottom:8px }
+.logro-name  { font-weight:800; font-size:.88rem; color:var(--text); margin-bottom:4px }
+.logro-desc  { font-size:.75rem; color:var(--text-muted) }
+
+/* ── Confetti canvas ── */
+#confetti-canvas { position:fixed; inset:0; pointer-events:none; z-index:9999 }
+
+@media(max-width:480px) {
+  .dp-stats-row { grid-template-columns:repeat(2,1fr) }
+  .ex-mc-grid { grid-template-columns:1fr }
+  .vsearch-tense-grid { grid-template-columns:1fr }
+}
+</style>
+</head>
+<body>
+
+<canvas id="confetti-canvas"></canvas>
+
+<header>
+  <div class="header-left" onclick="showPage('home')">
+    <div class="app-logo">E</div>
+    <div>
+      <div class="app-title">esracademiapp</div>
+      <div class="app-subtitle">Verbos Turcos · <a href="index.html" style="color:var(--primary);text-decoration:none;font-size:.72rem">← Volver al inicio</a></div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div style="background:var(--primary-bg);border:2px solid var(--primary);border-radius:var(--radius-pill);padding:5px 12px;font-size:.82rem;font-weight:700;color:var(--primary-dark)">⭐ <span id="xpVal">0</span> XP</div>
+    <button class="btn-icon" onclick="toggleTheme()" id="themeBtn">🌙</button>
+  </div>
+</header>
+
+<nav id="app-nav">
+  <button class="nav-tab active" id="nav-home" onclick="showPage('home')">
+    <span class="nav-tab-icon">🏠</span>
+    <span>Inicio</span>
+  </button>
+  <button class="nav-tab" id="nav-unit" onclick="showPage('unit')">
+    <span class="nav-tab-icon">📖</span>
+    <span>Verbos</span>
+  </button>
+  <button class="nav-tab" id="nav-flashcards" onclick="showPage('flashcards')">
+    <span class="nav-tab-icon">🃏</span>
+    <span>Flashcards</span>
+  </button>
+  <button class="nav-tab" id="nav-logros" onclick="showPage('logros')">
+    <span class="nav-tab-icon">🏆</span>
+    <span>Logros</span>
+  </button>
+  <button class="nav-tab" id="nav-daily" onclick="showPage('daily')">
+    <span class="nav-tab-icon">🔥</span>
+    <span>Desafío</span>
+  </button>
+</nav>
+
+<main id="main-content"></main>
+
+<script>
+/* ============================================================
+   VERSION
+   ============================================================ */
+const APP_VERSION = '2026.03.14.tr.001';
+(function() {
+  const stored = localStorage.getItem('vesp-tr-version');
+  if (stored !== APP_VERSION) {
+    localStorage.setItem('vesp-tr-version', APP_VERSION);
+    if (stored !== null) {
+      window.location.href = window.location.pathname + '?v=' + APP_VERSION;
+    }
+  }
+})();
+
+/* ============================================================
+   TURKISH VERB BANK — 100 verbos
+   ============================================================ */
+const VERBOS_TR = [
+  {id:1,  inf:'gelmek',      es:'venir',                 tipo:'mek'},
+  {id:2,  inf:'gitmek',      es:'ir',                    tipo:'mek'},
+  {id:3,  inf:'yapmak',      es:'hacer',                 tipo:'mak'},
+  {id:4,  inf:'vermek',      es:'dar',                   tipo:'mek'},
+  {id:5,  inf:'almak',       es:'tomar / coger',         tipo:'mak'},
+  {id:6,  inf:'bakmak',      es:'mirar / cuidar',        tipo:'mak'},
+  {id:7,  inf:'bilmek',      es:'saber / conocer',       tipo:'mek'},
+  {id:8,  inf:'bulmak',      es:'encontrar',             tipo:'mak'},
+  {id:9,  inf:'çalışmak',    es:'trabajar / estudiar',   tipo:'mak'},
+  {id:10, inf:'demek',       es:'decir',                 tipo:'mek'},
+  {id:11, inf:'duymak',      es:'oír / sentir',          tipo:'mak'},
+  {id:12, inf:'düşünmek',    es:'pensar',                tipo:'mek'},
+  {id:13, inf:'görmek',      es:'ver',                   tipo:'mek'},
+  {id:14, inf:'istemek',     es:'querer / desear',       tipo:'mek'},
+  {id:15, inf:'içmek',       es:'beber',                 tipo:'mek'},
+  {id:16, inf:'kalmak',      es:'quedarse / permanecer', tipo:'mak'},
+  {id:17, inf:'konuşmak',    es:'hablar / conversar',    tipo:'mak'},
+  {id:18, inf:'okumak',      es:'leer',                  tipo:'mak'},
+  {id:19, inf:'oturmak',     es:'sentarse / vivir',      tipo:'mak'},
+  {id:20, inf:'sevmek',      es:'amar / querer',         tipo:'mek'},
+  {id:21, inf:'söylemek',    es:'decir / contar',        tipo:'mek'},
+  {id:22, inf:'uyumak',      es:'dormir',                tipo:'mak'},
+  {id:23, inf:'yemek',       es:'comer',                 tipo:'mek'},
+  {id:24, inf:'yazmak',      es:'escribir',              tipo:'mak'},
+  {id:25, inf:'açmak',       es:'abrir',                 tipo:'mak'},
+  {id:26, inf:'binmek',      es:'subir / montar',        tipo:'mek'},
+  {id:27, inf:'çıkmak',      es:'salir / subir',         tipo:'mak'},
+  {id:28, inf:'dönmek',      es:'volver / girar',        tipo:'mek'},
+  {id:29, inf:'gezmek',      es:'pasear / viajar',       tipo:'mek'},
+  {id:30, inf:'girmek',      es:'entrar',                tipo:'mek'},
+  {id:31, inf:'kaçmak',      es:'escapar / huir',        tipo:'mak'},
+  {id:32, inf:'koşmak',      es:'correr',                tipo:'mak'},
+  {id:33, inf:'taşımak',     es:'llevar / transportar',  tipo:'mak'},
+  {id:34, inf:'uçmak',       es:'volar',                 tipo:'mak'},
+  {id:35, inf:'yürümek',     es:'caminar / andar',       tipo:'mek'},
+  {id:36, inf:'anlamak',     es:'entender / comprender', tipo:'mak'},
+  {id:37, inf:'anlatmak',    es:'explicar / contar',     tipo:'mak'},
+  {id:38, inf:'beklemek',    es:'esperar',               tipo:'mek'},
+  {id:39, inf:'dinlemek',    es:'escuchar',              tipo:'mek'},
+  {id:40, inf:'göndermek',   es:'enviar / mandar',       tipo:'mek'},
+  {id:41, inf:'hatırlamak',  es:'recordar',              tipo:'mak'},
+  {id:42, inf:'öğrenmek',    es:'aprender',              tipo:'mek'},
+  {id:43, inf:'sormak',      es:'preguntar',             tipo:'mak'},
+  {id:44, inf:'yanıtlamak',  es:'responder / contestar', tipo:'mak'},
+  {id:45, inf:'başlamak',    es:'empezar / comenzar',    tipo:'mak'},
+  {id:46, inf:'bitirmek',    es:'terminar / acabar',     tipo:'mek'},
+  {id:47, inf:'hazırlamak',  es:'preparar',              tipo:'mak'},
+  {id:48, inf:'kazanmak',    es:'ganar',                 tipo:'mak'},
+  {id:49, inf:'kaybetmek',   es:'perder',                tipo:'mek'},
+  {id:50, inf:'kullanmak',   es:'usar / utilizar',       tipo:'mak'},
+  {id:51, inf:'ödemek',      es:'pagar',                 tipo:'mek'},
+  {id:52, inf:'satmak',      es:'vender',                tipo:'mak'},
+  {id:53, inf:'seçmek',      es:'elegir / escoger',      tipo:'mek'},
+  {id:54, inf:'ağlamak',     es:'llorar',                tipo:'mak'},
+  {id:55, inf:'gülmek',      es:'reír',                  tipo:'mek'},
+  {id:56, inf:'korkmak',     es:'tener miedo',           tipo:'mak'},
+  {id:57, inf:'yorulmak',    es:'cansarse',              tipo:'mak'},
+  {id:58, inf:'şaşırmak',    es:'sorprenderse',          tipo:'mak'},
+  {id:59, inf:'üzülmek',     es:'entristecerse',         tipo:'mek'},
+  {id:60, inf:'giymek',      es:'ponerse (ropa)',         tipo:'mek'},
+  {id:61, inf:'yıkamak',     es:'lavar',                 tipo:'mak'},
+  {id:62, inf:'temizlemek',  es:'limpiar',               tipo:'mek'},
+  {id:63, inf:'pişirmek',    es:'cocinar',               tipo:'mek'},
+  {id:64, inf:'kalkmak',     es:'levantarse',            tipo:'mak'},
+  {id:65, inf:'basmak',      es:'pisar / presionar',     tipo:'mak'},
+  {id:66, inf:'çizmek',      es:'dibujar',               tipo:'mek'},
+  {id:67, inf:'dokunmak',    es:'tocar',                 tipo:'mak'},
+  {id:68, inf:'tatmak',      es:'probar / saborear',     tipo:'mak'},
+  {id:69, inf:'yardım etmek',es:'ayudar',                tipo:'mek'},
+  {id:70, inf:'devam etmek', es:'continuar',             tipo:'mek'},
+  {id:71, inf:'kabul etmek', es:'aceptar',               tipo:'mek'},
+  {id:72, inf:'kontrol etmek',es:'controlar / revisar',  tipo:'mek'},
+  {id:73, inf:'merak etmek', es:'tener curiosidad',      tipo:'mek'},
+  {id:74, inf:'özür dilemek',es:'disculparse',           tipo:'mek'},
+  {id:75, inf:'teşekkür etmek',es:'agradecer',           tipo:'mek'},
+  {id:76, inf:'tercih etmek',es:'preferir',              tipo:'mek'},
+  {id:77, inf:'ziyaret etmek',es:'visitar',              tipo:'mek'},
+  {id:78, inf:'düşmek',      es:'caer',                  tipo:'mek'},
+  {id:79, inf:'getirmek',    es:'traer',                 tipo:'mek'},
+  {id:80, inf:'götürmek',    es:'llevar (a alguien)',    tipo:'mek'},
+  {id:81, inf:'koymak',      es:'poner',                 tipo:'mak'},
+  {id:82, inf:'kesmek',      es:'cortar',                tipo:'mek'},
+  {id:83, inf:'tutmak',      es:'sostener / aguantar',   tipo:'mak'},
+  {id:84, inf:'çekmek',      es:'tirar / atraer',        tipo:'mek'},
+  {id:85, inf:'doldurmak',   es:'llenar',                tipo:'mak'},
+  {id:86, inf:'kurmak',      es:'establecer / montar',   tipo:'mak'},
+  {id:87, inf:'kırmak',      es:'romper',                tipo:'mak'},
+  {id:88, inf:'değiştirmek', es:'cambiar',               tipo:'mek'},
+  {id:89, inf:'kapamak',     es:'cerrar',                tipo:'mak'},
+  {id:90, inf:'toplamak',    es:'recoger / juntar',      tipo:'mak'},
+  {id:91, inf:'aramak',      es:'buscar / llamar',       tipo:'mak'},
+  {id:92, inf:'beklememek',  es:'no esperar',            tipo:'mek'},
+  {id:93, inf:'söz vermek',  es:'prometer',              tipo:'mek'},
+  {id:94, inf:'şikayet etmek',es:'quejarse',             tipo:'mek'},
+  {id:95, inf:'uyandırmak',  es:'despertar (a alguien)', tipo:'mak'},
+  {id:96, inf:'sinirmek',    es:'irritar / enfadar',     tipo:'mek'},
+  {id:97, inf:'sormak',      es:'preguntar',             tipo:'mak'},
+  {id:98, inf:'satın almak', es:'comprar',               tipo:'mak'},
+  {id:99, inf:'düşünmek',    es:'pensar / reflexionar',  tipo:'mek'},
+  {id:100,inf:'anlamak',     es:'entender',              tipo:'mak'},
+];
+
+const TR_PRONS = ['Ben','Sen','O','Biz','Siz','Onlar'];
+const TR_PRONS_ES = ['yo','tú','él/ella','nosotros','vosotros','ellos/ellas'];
+
+/* ============================================================
+   CONJUGATION ENGINES
+   ============================================================ */
+function conjugarTR_Simdiki(trInf, pronIdx) {
+  let inf = trInf.split('/')[0].trim().split('(')[0].trim();
+  const parts = inf.split(' ');
+  const lastWord = parts[parts.length-1];
+  const prefix = parts.slice(0,-1).join(' ');
+  let stem;
+  if(lastWord.endsWith('mak')) stem=lastWord.slice(0,-3);
+  else if(lastWord.endsWith('mek')) stem=lastWord.slice(0,-3);
+  else return inf;
+  if(stem.endsWith('t') && stem.length>1) stem=stem.slice(0,-1)+'d';
+  const VOWELS='aeıioöuü';
+  const IYOR_MAP={a:'ı',ı:'ı',e:'i',i:'i',o:'u',u:'u',ö:'ü',ü:'ü'};
+  let harmV, base;
+  if(VOWELS.includes(stem[stem.length-1])){
+    let prevV=null;
+    for(let j=stem.length-2;j>=0;j--){ if(VOWELS.includes(stem[j])){prevV=stem[j];break;} }
+    harmV=IYOR_MAP[prevV||stem[stem.length-1]];
+    base=stem.slice(0,-1)+harmV;
+  } else {
+    let lv='a';
+    for(const c of stem){if(VOWELS.includes(c))lv=c;}
+    harmV=IYOR_MAP[lv]; base=stem+harmV;
+  }
+  const root=base+'yor';
+  const LERI={ı:'lar',i:'ler',u:'lar',ü:'ler'};
+  const sfx=['um','sun','','uz','sunuz',LERI[harmV]||'lar'];
+  return (prefix?prefix+' ':'')+root+sfx[pronIdx];
+}
+
+function conjugarTR_Gecmis(trInf, pronIdx) {
+  let inf = trInf.split('/')[0].trim().split('(')[0].trim();
+  const parts = inf.split(' ');
+  const lastWord = parts[parts.length-1];
+  const prefix = parts.slice(0,-1).join(' ');
+  let stem;
+  if(lastWord.endsWith('mak')) stem=lastWord.slice(0,-3);
+  else if(lastWord.endsWith('mek')) stem=lastWord.slice(0,-3);
+  else return inf;
+  const VOWELS='aeıioöuü';
+  let lastV='a';
+  for(const c of stem){if(VOWELS.includes(c))lastV=c;}
+  const VOICELESS='çfhkpsşt';
+  const lastC=stem[stem.length-1];
+  const useT=VOICELESS.includes(lastC);
+  const HARM4={a:'ı',ı:'ı',e:'i',i:'i',o:'u',u:'u',ö:'ü',ü:'ü'};
+  const diV=HARM4[lastV]||'i';
+  const base=stem+(useT?'t':'d')+diV;
+  const NZ_MAP={ı:'nız',i:'niz',u:'nuz',ü:'nüz'};
+  const LAR_MAP={ı:'lar',i:'ler',u:'lar',ü:'ler'};
+  const sfx=['m','n','','k',NZ_MAP[diV]||'niz',LAR_MAP[diV]||'ler'];
+  return (prefix?prefix+' ':'')+base+sfx[pronIdx];
+}
+
+function conjugarTR_Genis(trInf, pronIdx) {
+  let inf = trInf.split('/')[0].trim().split('(')[0].trim();
+  const parts = inf.split(' ');
+  const lastWord = parts[parts.length-1];
+  const prefix = parts.slice(0,-1).join(' ');
+  let stem;
+  if(lastWord.endsWith('mak')) stem=lastWord.slice(0,-3);
+  else if(lastWord.endsWith('mek')) stem=lastWord.slice(0,-3);
+  else return inf;
+  const VOWELS='aeıioöuü';
+  let lastV='a';
+  for(const c of stem){if(VOWELS.includes(c))lastV=c;}
+  const HARM4={a:'ı',ı:'ı',e:'i',i:'i',o:'u',u:'u',ö:'ü',ü:'ü'};
+  function gelisSfx(base){
+    let bV='i';
+    for(const c of base){if(VOWELS.includes(c))bV=c;}
+    const hV=HARM4[bV]||'i';
+    const LAR=(hV==='ı'||hV==='u')?'lar':'ler';
+    return [hV+'m','s'+hV+'n','',hV+'z','s'+hV+'n'+hV+'z',LAR];
+  }
+  const IRRS={
+    'al':'alır','bil':'bilir','bul':'bulur','dur':'durur',
+    'gel':'gelir','git':'gider','gör':'görür','gül':'güler',
+    'kal':'kalır','ol':'olur','öl':'ölür',
+    'ver':'verir','vur':'vurur','duy':'duyar',
+    'iç':'içer','geç':'geçer','kaç':'kaçar',
+    'uç':'uçar','koş':'koşar','sat':'satar',
+    'sor':'sorar','yaz':'yazar','yap':'yapar','aç':'açar',
+    'kır':'kırar','giy':'giyer','bas':'basar','kes':'keser',
+    'koy':'koyar','çek':'çeker','tut':'tutar',
+    'dön':'döner','bin':'biner','çık':'çıkar',
+    'düş':'düşer','sev':'sever','bak':'bakar',
+  };
+  if(IRRS[stem]){
+    const base3=IRRS[stem];
+    const sfx=gelisSfx(base3);
+    return (prefix?prefix+' ':'')+base3+sfx[pronIdx];
+  }
+  const lastChar=stem[stem.length-1];
+  let base;
+  if(VOWELS.includes(lastChar)) base=stem+'r';
+  else { const hV=HARM4[lastV]||'i'; base=stem+hV+'r'; }
+  const sfx=gelisSfx(base);
+  return (prefix?prefix+' ':'')+base+sfx[pronIdx];
+}
+
+/* ============================================================
+   STATE
+   ============================================================ */
+let theme = localStorage.getItem('vesp-tr-theme') || 'light';
+let currentPage = 'home';
+let currentUnit = parseInt(localStorage.getItem('vesp-tr-unit')) || 1;
+let currentTab  = 'teoria';
+let xp = parseInt(localStorage.getItem('vesp-tr-xp')) || 0;
+
+function applyTheme() {
+  document.documentElement.setAttribute('data-theme', theme);
+  const btn = document.getElementById('themeBtn');
+  if(btn) btn.textContent = theme==='dark'?'☀️':'🌙';
+}
+function toggleTheme() {
+  theme = theme==='dark'?'light':'dark';
+  localStorage.setItem('vesp-tr-theme', theme);
+  applyTheme();
+}
+function addXP(n) {
+  xp += n;
+  localStorage.setItem('vesp-tr-xp', xp);
+  const el = document.getElementById('xpVal');
+  if(el) el.textContent = xp;
+}
+function getDailyData() {
+  try { return JSON.parse(localStorage.getItem('vesp-tr-daily')||'[]'); } catch(e){ return []; }
+}
+
+/* ── Confetti ── */
+function launchConfetti() {
+  const canvas = document.getElementById('confetti-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+  const pieces = Array.from({length:80},()=>({
+    x:Math.random()*canvas.width, y:-10,
+    r:Math.random()*6+3, vx:(Math.random()-.5)*4, vy:Math.random()*3+2,
+    color:['#4F6AF5','#7C3AED','#FF4B4B','#FFC800','#00CD9C'][Math.floor(Math.random()*5)],
+    angle:0, spin:(Math.random()-.5)*.2
+  }));
+  let frame=0;
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pieces.forEach(p=>{
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.angle);
+      ctx.fillStyle=p.color; ctx.fillRect(-p.r,-p.r,p.r*2,p.r*2);
+      ctx.restore();
+      p.x+=p.vx; p.y+=p.vy; p.angle+=p.spin; p.vy+=.05;
+    });
+    frame++;
+    if(frame<90) requestAnimationFrame(draw);
+    else ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
+  draw();
+}
+
+/* ============================================================
+   ROUTER
+   ============================================================ */
+function showPage(page, push=true) {
+  currentPage = page;
+  if(push) history.pushState({page},'','#'+page);
+  ['home','unit','flashcards','logros','daily'].forEach(p=>{
+    const ids={home:'nav-home',unit:'nav-unit',flashcards:'nav-flashcards',logros:'nav-logros',daily:'nav-daily'};
+    const btn=document.getElementById(ids[p]);
+    if(btn) btn.classList.toggle('active',p===page);
+  });
+  const mc=document.getElementById('main-content');
+  window.scrollTo(0,0);
+  if(page==='home')       mc.innerHTML=buildHome();
+  else if(page==='unit')  mc.innerHTML=buildUnitView();
+  else if(page==='flashcards') { mc.innerHTML=buildFlashcards(); initFC(); }
+  else if(page==='logros')     mc.innerHTML=buildLogros();
+  else if(page==='daily')      mc.innerHTML=buildDaily();
+}
+window.addEventListener('popstate',e=>showPage(e.state?.page||'home',false));
+
+/* ============================================================
+   HOME PAGE
+   ============================================================ */
+function buildHome() {
+  const xpMax=500, xpPct=Math.min(100,(xp/xpMax)*100);
+  const streak = getStreak();
+  const rank = xp<100?'🌱 Principiante':xp<300?'📗 Intermedio':'⭐ Avanzado';
+  const today = new Date();
+  const dayIdx=(today.getFullYear()*10000+(today.getMonth()+1)*100+today.getDate())%VERBOS_TR.length;
+  const dcVerb=VERBOS_TR[dayIdx];
+  const dcDone=localStorage.getItem('vesp-tr-dc-'+today.toDateString());
+
+  const units=[
+    {num:1,emoji:'🟢',name:'Presente Continuo',desc:'-iyor · estoy haciendo',pct:5},
+    {num:2,emoji:'🔵',name:'Pasado Simple',     desc:'-di/-ti · hice, fui', pct:0},
+    {num:3,emoji:'🟣',name:'Presente Habitual', desc:'-ir/-er · hago siempre',pct:0},
+  ];
+  const stepRow=u=>`
+    <div class="level-step ${u.pct>0?'step-active':''}">
+      <div class="step-num">${u.num}</div>
+      <div class="step-body">
+        <div class="step-name">${u.emoji} ${u.name}</div>
+        <div class="step-desc">${u.desc}</div>
+        <div class="step-track"><div class="step-fill" style="width:${u.pct}%"></div></div>
+      </div>
+      <div class="step-pct">${u.pct}%</div>
+    </div>`;
+
+  return `<div class="page-wrap">
+    <div class="home-hero">
+      <span class="home-hero-flag">🇪🇸 · 🇹🇷</span>
+      <h1 class="home-hero-title">¡Domina los verbos turcos! 💥</h1>
+      <p class="home-hero-sub">100 verbos · Presente · Pasado · Habitual — cada conjugación te acerca a la fluidez</p>
+      <div class="hero-xp-bar-wrap">
+        <div class="hero-xp-label"><span>XP</span><span>${xp} / ${xpMax}</span></div>
+        <div class="hero-xp-track"><div class="hero-xp-fill" style="width:${xpPct}%"></div></div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-val">${xp}</div><div class="hero-stat-lbl">XP</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">${streak}</div><div class="hero-stat-lbl">🔥 Racha</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">${rank}</div><div class="hero-stat-lbl">🏅 Rango</div></div>
+      </div>
+    </div>
+    <div class="home-quick-row">
+      <button class="quick-btn" onclick="showVerbSearch()">🔍 Buscar verbo</button>
+      <button class="quick-btn" onclick="showPage('flashcards')">🃏 Flashcards</button>
+      <button class="quick-btn" onclick="showPage('logros')">🏆 Logros</button>
+    </div>
+    <div class="dc-banner" onclick="startDailyChallenge()">
+      <div>
+        <div class="dc-banner-title">🔥 Desafío del día</div>
+        <div class="dc-banner-verb">${dcVerb?dcVerb.inf+' — '+dcVerb.es:''}</div>
+      </div>
+      <button class="dc-banner-btn ${dcDone?'completed':''}">${dcDone?'✅ Completado':'▶ Empezar'}</button>
+    </div>
+    <div class="levels-grid">
+      <div class="level-card active">
+        <div class="level-card-head">
+          <div>
+            <div class="level-badge">N1</div>
+            <div class="level-title">Verbos Turcos — Básico</div>
+            <div class="level-sub">3 tiempos verbales · 100 verbos</div>
+          </div>
+        </div>
+        <div class="level-steps">${units.map(stepRow).join('')}</div>
+        <button class="level-start-btn" onclick="showPage('unit')">▶ Empezar ahora</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ============================================================
+   UNIT PAGE
+   ============================================================ */
+function buildUnitView() {
+  currentTab = 'teoria';
+  return `<div class="page-wrap">
+    <div class="unit-back-bar">
+      <button class="btn-back" onclick="showPage('home')">← Volver</button>
+      <span style="font-weight:700;color:var(--text)">Verbos Turcos — N1</span>
+    </div>
+    <div class="unit-pills">
+      ${[1,2,3].map(n=>`<button class="unit-pill ${n===currentUnit?'active':''}" onclick="selectUnit(${n})" id="upill-${n}">
+        ${n===1?'🟢 Pres. Cont.':n===2?'🔵 Pasado':'🟣 Habitual'}
+      </button>`).join('')}
+    </div>
+    <div id="unit-inner">${buildUnitPage(currentUnit)}</div>
+  </div>`;
+}
+
+function selectUnit(n) {
+  currentUnit = n;
+  localStorage.setItem('vesp-tr-unit', n);
+  [1,2,3].forEach(i=>{const b=document.getElementById('upill-'+i);if(b)b.classList.toggle('active',i===n);});
+  document.getElementById('unit-inner').innerHTML = buildUnitPage(n);
+}
+
+function buildUnitPage(n) {
+  currentTab = 'teoria';
+  const tabs=(id,label,active)=>`<button class="tab-btn ${active?'active':''}" onclick="switchTab('${id}')">${label}</button>`;
+  const tId='t'+n, pId='p'+n;
+  return `
+  <div class="unit-tabs">
+    ${tabs(tId,'📖 Teoría',true)}
+    ${tabs(pId,'✏️ Práctica',false)}
+  </div>
+  <div id="tab-${tId}">${buildTheory(n)}</div>
+  <div id="tab-${pId}" class="hidden">${buildExArea(n)}</div>`;
+}
+
+function switchTab(id) {
+  currentTab = id;
+  document.querySelectorAll('[id^="tab-t"],[id^="tab-p"]').forEach(el=>{
+    el.classList.toggle('hidden', el.id!=='tab-'+id);
+  });
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.classList.toggle('active', btn.getAttribute('onclick')===`switchTab('${id}')`);
+  });
+}
+
+/* ── Theory content ── */
+function buildTheory(n) {
+  if(n===1) return theorySimdiki();
+  if(n===2) return theoryGecmis();
+  if(n===3) return theoryGenis();
+  return '';
+}
+
+function theorySimdiki() {
+  const tableRows = TR_PRONS.map((p,i)=>`
+    <tr>
+      <td style="font-weight:700">${p}</td>
+      <td style="font-size:.75rem;color:var(--text-muted)">${TR_PRONS_ES[i]}</td>
+      <td style="font-weight:700;color:var(--primary-dark)">${conjugarTR_Simdiki('gelmek',i)}</td>
+      <td style="font-weight:700;color:#7C3AED">${conjugarTR_Simdiki('çalışmak',i)}</td>
+      <td style="font-weight:700;color:var(--coral)">${conjugarTR_Simdiki('görmek',i)}</td>
+    </tr>`).join('');
+
+  const sampleVerbs = VERBOS_TR.slice(0,8).map(v=>`
+    <tr>
+      <td style="font-weight:700;color:var(--text)">${v.inf}</td>
+      <td style="font-style:italic;color:var(--text-muted)">${v.es}</td>
+      <td style="font-weight:700;color:var(--primary-dark)">${conjugarTR_Simdiki(v.inf,0)}</td>
+      <td style="font-weight:700;color:#7C3AED">${conjugarTR_Simdiki(v.inf,1)}</td>
+      <td style="font-weight:700;color:var(--coral)">${conjugarTR_Simdiki(v.inf,2)}</td>
+    </tr>`).join('');
+
+  return `<div class="theory-section">
+    <h2 class="theory-section-title">🟢 Presente Continuo — Şimdiki Zaman</h2>
+    <div class="theory-note-box">
+      <p>El <strong>presente continuo turco</strong> usa el sufijo <strong>-iyor</strong> con armonía vocálica + sufijo personal. Equivale a "estar + gerundio" en español.</p>
+      <p style="margin-top:6px"><em>Geliyorum = Estoy viniendo &nbsp;·&nbsp; Çalışıyorum = Estoy trabajando</em></p>
+    </div>
+    <div class="tr-theory-box">
+      <div class="tr-theory-title">📐 Formación: raíz + vocal harmonía + yor + sufijo</div>
+      <div style="background:var(--primary-bg);border-radius:8px;padding:12px 16px;margin-bottom:12px;font-family:'Baloo 2',cursive;font-size:1rem">
+        gel<span style="color:var(--coral)">-mek</span> → gel + <span style="color:var(--primary)">iyor</span> + <span style="color:#7C3AED">um</span> = <strong>geliyorum</strong>
+      </div>
+      <div class="theory-table-wrap"><table class="theory-table">
+        <thead><tr><th>Pronombre</th><th>Equiv. ES</th><th>gelmek (venir)</th><th>çalışmak (trabajar)</th><th>görmek (ver)</th></tr></thead>
+        <tbody>${tableRows}</tbody>
+      </table></div>
+    </div>
+    <div class="tr-theory-box">
+      <div class="tr-theory-title">🔤 Armonía vocálica — el sufijo cambia según la última vocal</div>
+      <div class="theory-table-wrap"><table class="theory-table">
+        <thead><tr><th>Última vocal</th><th>Sufijo</th><th>Ejemplo</th></tr></thead>
+        <tbody>
+          <tr><td>a, ı</td><td style="font-weight:700;color:var(--primary-dark)">-ıyor</td><td>yap<strong>ıyor</strong>um</td></tr>
+          <tr><td>e, i</td><td style="font-weight:700;color:var(--primary-dark)">-iyor</td><td>gel<strong>iyor</strong>um</td></tr>
+          <tr><td>o, u</td><td style="font-weight:700;color:var(--primary-dark)">-uyor</td><td>oku<strong>yuyor</strong>um</td></tr>
+          <tr><td>ö, ü</td><td style="font-weight:700;color:var(--primary-dark)">-üyor</td><td>gör<strong>üyor</strong>um</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="tr-theory-box">
+      <div class="tr-theory-title">📚 Ejemplos con distintos verbos</div>
+      <div class="theory-table-wrap"><table class="theory-table">
+        <thead><tr><th>Infinitivo</th><th>Significado</th><th>Ben (yo)</th><th>Sen (tú)</th><th>O (él/ella)</th></tr></thead>
+        <tbody>${sampleVerbs}</tbody>
+      </table></div>
+    </div>
+    <h3 style="font-family:'Baloo 2',cursive;margin:20px 0 12px">🃏 100 verbos — Şimdiki Zaman</h3>
+    <div class="vc-grid">
+      ${VERBOS_TR.map(v=>`
+      <div class="verb-chip" onclick="this.classList.toggle('flipped')">
+        <div class="vc-head" style="background:linear-gradient(135deg,#7C3AED,#4F6AF5)">
+          <span class="vc-inf">${v.inf}</span><span class="vc-tr">${v.es}</span>
+        </div>
+        <div class="vc-forms">
+          ${TR_PRONS.map((p,i)=>`<div class="vc-row"><span class="vc-pron">${p}</span><span class="vc-form">${conjugarTR_Simdiki(v.inf,i)}</span></div>`).join('')}
+        </div>
+      </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function theoryGecmis() {
+  const tableRows = TR_PRONS.map((p,i)=>`
+    <tr>
+      <td style="font-weight:700">${p}</td>
+      <td style="font-size:.75rem;color:var(--text-muted)">${TR_PRONS_ES[i]}</td>
+      <td style="font-weight:700;color:var(--blue,#1CB0F6)">${conjugarTR_Gecmis('gelmek',i)}</td>
+      <td style="font-weight:700;color:#7C3AED">${conjugarTR_Gecmis('yapmak',i)}</td>
+      <td style="font-weight:700;color:var(--coral)">${conjugarTR_Gecmis('gitmek',i)}</td>
+    </tr>`).join('');
+
+  return `<div class="theory-section">
+    <h2 class="theory-section-title">🔵 Pasado Simple — Geçmiş Zaman (-di/-ti)</h2>
+    <div class="theory-note-box">
+      <p>El <strong>pasado simple turco</strong> usa el sufijo <strong>-di/-ti</strong> (con armonía) + sufijo personal. Equivale al pretérito indefinido español.</p>
+      <p style="margin-top:6px"><em>Geldim = Vine/Llegué &nbsp;·&nbsp; Yaptım = Hice &nbsp;·&nbsp; Gittim = Fui</em></p>
+    </div>
+    <div class="tr-theory-box">
+      <div class="tr-theory-title">📐 Formación: raíz + -di/-ti + sufijo personal</div>
+      <div style="background:var(--primary-bg);border-radius:8px;padding:12px 16px;margin-bottom:12px;font-family:'Baloo 2',cursive;font-size:1rem">
+        gel<span style="color:var(--coral)">-mek</span> → gel + <span style="color:#1CB0F6">di</span> + <span style="color:#7C3AED">m</span> = <strong>geldim</strong>
+      </div>
+      <div class="theory-table-wrap"><table class="theory-table">
+        <thead><tr><th>Pronombre</th><th>Equiv. ES</th><th>gelmek (venir)</th><th>yapmak (hacer)</th><th>gitmek (ir)</th></tr></thead>
+        <tbody>${tableRows}</tbody>
+      </table></div>
+    </div>
+    <div class="tr-theory-box">
+      <div class="tr-theory-title">🔤 ¿-di o -ti? Depende de la consonante final</div>
+      <div class="theory-table-wrap"><table class="theory-table">
+        <thead><tr><th>Condición</th><th>Sufijo</th><th>Ejemplo</th></tr></thead>
+        <tbody>
+          <tr><td>Consonante sonora / vocal</td><td style="font-weight:700;color:#1CB0F6">-dı/di/du/dü</td><td>gel → gel<strong>dim</strong></td></tr>
+          <tr><td>Consonante sorda (ç,f,h,k,p,s,ş,t)</td><td style="font-weight:700;color:var(--coral)">-tı/ti/tu/tü</td><td>git → git<strong>tim</strong></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <h3 style="font-family:'Baloo 2',cursive;margin:20px 0 12px">🃏 100 verbos — Geçmiş Zaman</h3>
+    <div class="vc-grid">
+      ${VERBOS_TR.map(v=>`
+      <div class="verb-chip" onclick="this.classList.toggle('flipped')">
+        <div class="vc-head" style="background:linear-gradient(135deg,#1CB0F6,#0ea5e9)">
+          <span class="vc-inf">${v.inf}</span><span class="vc-tr">${v.es}</span>
+        </div>
+        <div class="vc-forms">
+          ${TR_PRONS.map((p,i)=>`<div class="vc-row"><span class="vc-pron">${p}</span><span class="vc-form">${conjugarTR_Gecmis(v.inf,i)}</span></div>`).join('')}
+        </div>
+      </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function theoryGenis() {
+  const tableRows = TR_PRONS.map((p,i)=>`
+    <tr>
+      <td style="font-weight:700">${p}</td>
+      <td style="font-size:.75rem;color:var(--text-muted)">${TR_PRONS_ES[i]}</td>
+      <td style="font-weight:700;color:#7C3AED">${conjugarTR_Genis('gelmek',i)}</td>
+      <td style="font-weight:700;color:var(--primary-dark)">${conjugarTR_Genis('yapmak',i)}</td>
+      <td style="font-weight:700;color:var(--coral)">${conjugarTR_Genis('çalışmak',i)}</td>
+    </tr>`).join('');
+
+  return `<div class="theory-section">
+    <h2 class="theory-section-title">🟣 Presente Habitual — Geniş Zaman (-ir/-er/-ar)</h2>
+    <div class="theory-note-box">
+      <p>El <strong>geniş zaman</strong> ("tiempo amplio") expresa hábitos, verdades generales y capacidades. Equivale al presente de indicativo para hábitos.</p>
+      <p style="margin-top:6px"><em>Her gün çalışırım = Trabajo todos los días &nbsp;·&nbsp; Türkçe bilirim = Sé turco</em></p>
+    </div>
+    <div class="tr-theory-box">
+      <div class="tr-theory-title">📐 Formación: raíz + -ir/-ır/-ur/-ür + sufijo personal</div>
+      <div class="theory-table-wrap"><table class="theory-table">
+        <thead><tr><th>Pronombre</th><th>Equiv. ES</th><th>gelmek (venir)</th><th>yapmak (hacer)</th><th>çalışmak (trabajar)</th></tr></thead>
+        <tbody>${tableRows}</tbody>
+      </table></div>
+    </div>
+    <div class="tr-theory-box">
+      <div class="tr-theory-title">🔤 Armonía vocálica — 4 variantes</div>
+      <div class="theory-table-wrap"><table class="theory-table">
+        <thead><tr><th>Última vocal</th><th>Sufijo</th><th>Ejemplo</th></tr></thead>
+        <tbody>
+          <tr><td>a, ı</td><td style="font-weight:700;color:#7C3AED">-ır</td><td>çalış → çalış<strong>ırım</strong></td></tr>
+          <tr><td>e, i</td><td style="font-weight:700;color:#7C3AED">-ir</td><td>gel → gel<strong>irim</strong></td></tr>
+          <tr><td>o, u</td><td style="font-weight:700;color:#7C3AED">-ur</td><td>bul → bul<strong>urum</strong></td></tr>
+          <tr><td>ö, ü</td><td style="font-weight:700;color:#7C3AED">-ür</td><td>gör → gör<strong>ürüm</strong></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <h3 style="font-family:'Baloo 2',cursive;margin:20px 0 12px">🃏 100 verbos — Geniş Zaman</h3>
+    <div class="vc-grid">
+      ${VERBOS_TR.map(v=>`
+      <div class="verb-chip" onclick="this.classList.toggle('flipped')">
+        <div class="vc-head" style="background:linear-gradient(135deg,#7C3AED,#a855f7)">
+          <span class="vc-inf">${v.inf}</span><span class="vc-tr">${v.es}</span>
+        </div>
+        <div class="vc-forms">
+          ${TR_PRONS.map((p,i)=>`<div class="vc-row"><span class="vc-pron">${p}</span><span class="vc-form">${conjugarTR_Genis(v.inf,i)}</span></div>`).join('')}
+        </div>
+      </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+/* ============================================================
+   EXERCISES
+   ============================================================ */
+function buildExArea(n) {
+  const tenseMap={1:'simdiki',2:'gecmis',3:'genis'};
+  const nameMap={1:'Presente Continuo (-iyor)',2:'Pasado Simple (-di/-ti)',3:'Presente Habitual (-ir/-er)'};
+  const tense=tenseMap[n];
+  return `
+  <div class="ex-selector">
+    <div class="ex-selector-title">✏️ Ejercicios — ${nameMap[n]}</div>
+    <div class="ex-type-grid">
+      ${[
+        {id:'A',name:'A — Escribe la forma',desc:'Conjuga el verbo correctamente'},
+        {id:'B',name:'B — ¿Qué significa?',desc:'Elige la traducción correcta al español'},
+        {id:'C',name:'C — Ben/Sen/O...',desc:'Dado el pronombre, conjuga el verbo'},
+        {id:'D',name:'D — Relacionar',desc:'Une pronombres con formas conjugadas'},
+      ].map(t=>`
+      <div class="ex-type-card" onclick="startEx('${tense}','${t.id}')">
+        <div class="ex-type-name">${t.name}</div>
+        <div class="ex-type-desc">${t.desc}</div>
+        <button class="ex-type-btn">▶ Empezar</button>
+      </div>`).join('')}
+    </div>
+  </div>
+  <div id="ex-area"></div>`;
+}
+
+let EX = {tense:'simdiki',type:'A',q:0,score:0,total:10,done:false,_verb:null,_pIdx:0,_correct:''};
+
+function startEx(tense, type) {
+  EX = {tense,type,q:0,score:0,total:10,done:false};
+  renderEx();
+}
+
+function getConjFn(tense) {
+  if(tense==='simdiki') return conjugarTR_Simdiki;
+  if(tense==='gecmis')  return conjugarTR_Gecmis;
+  return conjugarTR_Genis;
+}
+
+function renderEx() {
+  const area=document.getElementById('ex-area');
+  if(!area) return;
+  if(EX.done) {
+    const pct=Math.round(EX.score/EX.total*100);
+    area.innerHTML=`<div class="ex-result-box">
+      <div class="ex-result-score">${pct}%</div>
+      <div class="ex-result-label">${pct===100?'¡Perfecto! 🎉':pct>=70?'¡Bien hecho! 👍':'¡Sigue practicando! 💪'}</div>
+      <div style="color:var(--text-muted);margin-bottom:16px">${EX.score}/${EX.total} correctas</div>
+      <button class="btn-primary" onclick="startEx('${EX.tense}','${EX.type}')">🔄 Repetir</button>
+    </div>`;
+    if(pct===100){ addXP(10); launchConfetti(); }
+    return;
+  }
+
+  // Pick unique verb each time (avoid repeats in a row)
+  const verb = VERBOS_TR[Math.floor(Math.random()*VERBOS_TR.length)];
+  const pIdx  = Math.floor(Math.random()*6);
+  const fn    = getConjFn(EX.tense);
+  const correct = fn(verb.inf, pIdx);
+  EX._verb=verb; EX._pIdx=pIdx; EX._correct=correct;
+
+  const tLabel={simdiki:'Şimdiki Zaman',gecmis:'Geçmiş Zaman',genis:'Geniş Zaman'}[EX.tense];
+
+  let html=`<div class="ex-question-box">
+    <div class="ex-progress-bar"><div class="ex-progress-fill" style="width:${EX.q/EX.total*100}%"></div></div>
+    <div class="ex-counter">${EX.q+1} / ${EX.total}</div>`;
+
+  if(EX.type==='A' || EX.type==='C') {
+    html+=`
+    <div class="ex-prompt">${EX.type==='A'?'Escribe la forma correcta de':'Dado el pronombre, conjuga el verbo en'} <strong>${tLabel}</strong>:</div>
+    <div class="ex-verb-display">
+      <span class="ex-verb-inf">${verb.inf}</span>
+      <span class="ex-verb-tr">${verb.es}</span>
+    </div>
+    <div class="ex-pron-hint">Pronombre: <strong>${TR_PRONS[pIdx]}</strong> (${TR_PRONS_ES[pIdx]})</div>
+    <input id="ex-inp" class="ex-input" placeholder="Escribe aquí..." autocomplete="off" onkeydown="if(event.key==='Enter')checkEx()">
+    <button class="btn-primary" onclick="checkEx()" style="margin-top:10px">Comprobar</button>
+    <div id="ex-fb" class="ex-feedback"></div>`;
+
+  } else if(EX.type==='B') {
+    const wrongs=VERBOS_TR.filter(v=>v.inf!==verb.inf).sort(()=>Math.random()-.5).slice(0,3).map(v=>v.es);
+    const opts=[...wrongs,verb.es].sort(()=>Math.random()-.5);
+    html+=`
+    <div class="ex-prompt">¿Qué significa este verbo turco?</div>
+    <div class="ex-verb-display"><span class="ex-verb-inf" style="font-size:1.5rem">${verb.inf}</span></div>
+    <div class="ex-mc-grid">
+      ${opts.map(o=>`<button class="ex-mc-btn" onclick="checkMC(this,'${o.replace(/'/g,"\\'")}','${verb.es.replace(/'/g,"\\'")}')">${o}</button>`).join('')}
+    </div>`;
+
+  } else if(EX.type==='D') {
+    const idxs=[0,1,2,3,4,5].sort(()=>Math.random()-.5).slice(0,4);
+    const pairs=idxs.map(i=>({pron:TR_PRONS[i],form:fn(verb.inf,i)}));
+    const shuffForms=[...pairs].sort(()=>Math.random()-.5);
+    window._exPairs=pairs; window._exMatched={};
+    html+=`
+    <div class="ex-prompt">Une cada pronombre con su forma conjugada:</div>
+    <div class="ex-verb-display"><span class="ex-verb-inf">${verb.inf}</span><span class="ex-verb-tr">${verb.es}</span> — <em>${tLabel}</em></div>
+    <div class="ex-match-wrap">
+      <div class="ex-match-col">${pairs.map(p=>`<div class="ex-match-card pron-card" data-pron="${p.pron}" onclick="selPron(this)">${p.pron}</div>`).join('')}</div>
+      <div class="ex-match-col">${shuffForms.map(p=>`<div class="ex-match-card form-card" data-form="${p.form}" onclick="selForm(this)">${p.form}</div>`).join('')}</div>
+    </div>
+    <button class="btn-primary" onclick="checkMatch()">Comprobar</button>
+    <div id="ex-fb" class="ex-feedback"></div>`;
+  }
+
+  html+=`</div>`;
+  area.innerHTML=html;
+  document.getElementById('ex-inp')?.focus();
+}
+
+function checkEx() {
+  const inp=document.getElementById('ex-inp');
+  if(!inp) return;
+  const ok=inp.value.trim().toLowerCase()===EX._correct.toLowerCase();
+  inp.classList.add(ok?'inp-correct':'inp-wrong'); inp.disabled=true;
+  const fb=document.getElementById('ex-fb');
+  if(fb){ fb.textContent=ok?'✅ ¡Correcto!':'❌ Correcto: '+EX._correct; fb.className='ex-feedback '+(ok?'fb-ok':'fb-err'); }
+  if(ok) EX.score++;
+  EX.q++;
+  if(EX.q>=EX.total) EX.done=true;
+  setTimeout(()=>{ inp.classList.remove('inp-correct','inp-wrong'); renderEx(); }, ok?900:1800);
+}
+
+function checkMC(btn, chosen, correct) {
+  btn.parentElement.querySelectorAll('.ex-mc-btn').forEach(b=>{b.disabled=true;if(b.textContent===correct)b.classList.add('mc-correct');});
+  const ok=chosen===correct;
+  btn.classList.add(ok?'mc-correct':'mc-wrong');
+  if(ok) EX.score++;
+  EX.q++; if(EX.q>=EX.total) EX.done=true;
+  setTimeout(()=>renderEx(), ok?900:1800);
+}
+
+let _selPron=null;
+function selPron(el) { document.querySelectorAll('.pron-card').forEach(c=>c.classList.remove('selected')); el.classList.add('selected'); _selPron=el; }
+function selForm(el) {
+  if(!_selPron) return;
+  window._exMatched[_selPron.dataset.pron]=el.dataset.form;
+  _selPron.classList.remove('selected'); _selPron.classList.add('paired');
+  el.classList.add('paired'); _selPron=null;
+}
+function checkMatch() {
+  let ok=window._exPairs.every(p=>window._exMatched[p.pron]===p.form);
+  const fb=document.getElementById('ex-fb');
+  if(fb){ fb.textContent=ok?'✅ ¡Correcto!':'❌ Algunas respuestas son incorrectas'; fb.className='ex-feedback '+(ok?'fb-ok':'fb-err'); }
+  if(ok) EX.score++;
+  EX.q++; if(EX.q>=EX.total) EX.done=true;
+  window._exMatched={};
+  setTimeout(()=>renderEx(), ok?900:1800);
+}
+
+/* ============================================================
+   FLASHCARDS
+   ============================================================ */
+function buildFlashcards() {
+  return `<div class="page-wrap">
+    <div class="unit-back-bar">
+      <button class="btn-back" onclick="showPage('home')">← Volver</button>
+      <span style="font-weight:700">🃏 Flashcards — Verbos Turcos</span>
+    </div>
+    <div class="fc-header">
+      <select id="fc-filter" onchange="fcSetFilter(this.value)" class="fc-select">
+        <option value="all">Todos (100)</option>
+        <option value="mak">-mak (51)</option>
+        <option value="mek">-mek (49)</option>
+      </select>
+      <select id="fc-mode" onchange="fcSetMode(this.value)" class="fc-select">
+        <option value="es-tr">ES → TR</option>
+        <option value="tr-es">TR → ES</option>
+      </select>
+      <button class="fc-btn-shuffle" onclick="fcShuffle()">🔀 Mezclar</button>
+    </div>
+    <div class="fc-stats-bar" id="fc-stats">0 conocidas · 0 para repasar</div>
+    <div class="fc-card-wrap">
+      <div class="fc-card" onclick="fcFlip()">
+        <div class="fc-card-inner" id="fc-inner">
+          <div class="fc-card-front">
+            <div class="fc-word" id="fc-word">—</div>
+            <div class="fc-tipo" id="fc-tipo"></div>
+            <div class="fc-card-hint">Toca para ver 👆</div>
+          </div>
+          <div class="fc-card-back">
+            <div class="fc-translation" id="fc-trans">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fc-actions">
+      <button class="fc-action-unknown" onclick="fcMark('unknown')">🔄 Repasar</button>
+      <button class="fc-action-known"   onclick="fcMark('known')">✅ Lo sé</button>
+    </div>
+    <div class="hidden" id="fc-done">
+      <div class="fc-done-wrap">
+        <div class="fc-done-title">¡Completado! 🎉</div>
+        <button class="fc-btn-restart" onclick="fcRestart()">🔁 Repetir</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+let FC={deck:[],idx:0,mode:'es-tr',filter:'all',known:new Set(),unknown:new Set(),flipped:false};
+function initFC() { fcBuildDeck(); fcRender(); }
+function fcBuildDeck() {
+  FC.deck=FC.filter==='all'?[...VERBOS_TR]:VERBOS_TR.filter(v=>v.tipo===FC.filter);
+  FC.idx=0; FC.flipped=false; FC.known=new Set(); FC.unknown=new Set();
+}
+function fcRender() {
+  const v=FC.deck[FC.idx]; if(!v) return;
+  const inner=document.getElementById('fc-inner'); if(inner) inner.style.transform='rotateY(0)';
+  FC.flipped=false;
+  const isTR=FC.mode==='tr-es';
+  document.getElementById('fc-word').textContent=isTR?v.inf:v.es;
+  document.getElementById('fc-trans').textContent=isTR?v.es:v.inf;
+  document.getElementById('fc-tipo').textContent=v.tipo;
+  const bar=document.getElementById('fc-stats');
+  if(bar) bar.textContent=`${FC.known.size} conocidas · ${FC.unknown.size} para repasar`;
+}
+function fcFlip() { FC.flipped=!FC.flipped; const i=document.getElementById('fc-inner'); if(i) i.style.transform=FC.flipped?'rotateY(180deg)':'rotateY(0)'; }
+function fcMark(s) {
+  const v=FC.deck[FC.idx]; if(!v) return;
+  if(s==='known') FC.known.add(v.id); else FC.unknown.add(v.id);
+  FC.idx++;
+  if(FC.idx>=FC.deck.length) {
+    document.getElementById('fc-done')?.classList.remove('hidden');
+    addXP(5);
+    return;
+  }
+  fcRender();
+}
+function fcShuffle() { FC.deck.sort(()=>Math.random()-.5); FC.idx=0; fcRender(); }
+function fcSetFilter(v) { FC.filter=v; fcBuildDeck(); fcRender(); }
+function fcSetMode(v)   { FC.mode=v;   fcRender(); }
+function fcRestart()    { document.getElementById('fc-done')?.classList.add('hidden'); fcBuildDeck(); fcRender(); }
+
+/* ============================================================
+   VERB SEARCH
+   ============================================================ */
+function showVerbSearch() {
+  let m=document.getElementById('vs-modal');
+  if(!m) {
+    m=document.createElement('div');
+    m.id='vs-modal';
+    m.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:900;display:flex;align-items:center;justify-content:center;padding:12px';
+    m.innerHTML=`<div style="background:var(--bg-card);border-radius:var(--radius);width:min(820px,96vw);max-height:88vh;display:flex;flex-direction:column;overflow:hidden">
+      <div style="display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:2px solid var(--border)">
+        <input id="vs-inp" class="ex-input" placeholder="Buscar verbo turco... (ej: gelmek, venir)" style="flex:1;margin:0" oninput="renderVS(this.value)" autocomplete="off">
+        <button onclick="document.getElementById('vs-modal').remove()" style="padding:6px 12px;border-radius:8px;border:2px solid var(--border);background:var(--bg);cursor:pointer;font-size:1rem">✕</button>
+      </div>
+      <div id="vs-box" style="overflow-y:auto;flex:1;padding:12px"></div>
+    </div>`;
+    document.body.appendChild(m);
+  }
+  m.style.display='flex';
+  setTimeout(()=>document.getElementById('vs-inp')?.focus(),100);
+  renderVS('');
+}
+
+function renderVS(q) {
+  const box=document.getElementById('vs-box'); if(!box) return;
+  const q2=q.trim().toLowerCase();
+  const res=!q2?VERBOS_TR:VERBOS_TR.filter(v=>v.inf.toLowerCase().includes(q2)||v.es.toLowerCase().includes(q2));
+  if(!res.length){box.innerHTML='<p style="text-align:center;color:var(--text-muted);padding:24px">Sin resultados</p>';return;}
+
+  if(q2.length>=3 && res.length===1) {
+    const v=res[0];
+    box.innerHTML=`<div>
+      <div class="vsearch-detail-head" style="background:linear-gradient(135deg,#7C3AED,#4F6AF5)">
+        <span class="vsearch-detail-inf">${v.inf}</span>
+        <span class="vsearch-detail-tr">${v.es}</span>
+      </div>
+      <div class="vsearch-tense-grid">
+        ${[
+          {label:'Şimdiki Zaman',color:'#4F6AF5',fn:conjugarTR_Simdiki},
+          {label:'Geçmiş Zaman', color:'#1CB0F6',fn:conjugarTR_Gecmis},
+          {label:'Geniş Zaman',  color:'#7C3AED',fn:conjugarTR_Genis},
+        ].map(t=>`
+        <div class="vsearch-tense-block">
+          <div class="vsearch-tense-label" style="background:${t.color}">${t.label}</div>
+          ${TR_PRONS.map((p,i)=>`
+          <div class="vsearch-pair">
+            <span class="vsearch-pron">${p}</span>
+            <span class="vsearch-form">${t.fn(v.inf,i)}</span>
+          </div>`).join('')}
+        </div>`).join('')}
+      </div>
+    </div>`;
+    return;
+  }
+
+  box.innerHTML=res.map(v=>`
+    <div class="vsearch-card" onclick="document.getElementById('vs-inp').value='${v.inf}';renderVS('${v.inf}')">
+      <div class="vsearch-head" style="background:linear-gradient(135deg,#7C3AED,#4F6AF5)">
+        <span class="vsearch-inf">${v.inf}</span>
+        <span class="vsearch-tr">${v.es}</span>
+        <span class="vsearch-tipo">${v.tipo}</span>
+      </div>
+      <div class="vsearch-forms">
+        ${TR_PRONS.slice(0,3).map((p,i)=>`
+        <div class="vsearch-pair">
+          <span class="vsearch-pron">${p}</span>
+          <span class="vsearch-form">${conjugarTR_Simdiki(v.inf,i)}</span>
+        </div>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+/* ============================================================
+   DAILY CHALLENGE
+   ============================================================ */
+function startDailyChallenge() {
+  const today=new Date();
+  const dayIdx=(today.getFullYear()*10000+(today.getMonth()+1)*100+today.getDate())%VERBOS_TR.length;
+  const verb=VERBOS_TR[dayIdx];
+  const fns=[conjugarTR_Simdiki,conjugarTR_Gecmis,conjugarTR_Genis];
+  const fLabels=['Şimdiki Zaman','Geçmiş Zaman','Geniş Zaman'];
+  let qs=[];
+  fns.forEach((fn,fi)=>[0,1,2,3].forEach(i=>qs.push({verb,fn,pIdx:i,correct:fn(verb.inf,i),tenseLabel:fLabels[fi]})));
+  qs=qs.sort(()=>Math.random()-.5).slice(0,10);
+  let qi=0, score=0;
+
+  let m=document.getElementById('dc-modal');
+  if(!m){ m=document.createElement('div'); m.id='dc-modal'; m.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:999;display:flex;align-items:center;justify-content:center;padding:12px'; document.body.appendChild(m); }
+
+  const render=()=>{
+    if(qi>=qs.length) {
+      const pct=Math.round(score/qs.length*100);
+      m.innerHTML=`<div style="background:var(--bg-card);border-radius:var(--radius);padding:28px;max-width:420px;width:90vw;text-align:center">
+        <div style="font-size:3rem">🎉</div>
+        <div style="font-family:'Baloo 2',cursive;font-size:1.4rem;font-weight:800">${pct}%</div>
+        <div style="color:var(--text-muted);margin-bottom:16px">${score}/${qs.length} correctas</div>
+        <button class="btn-primary" onclick="document.getElementById('dc-modal').remove();showPage('home')">Cerrar</button>
+      </div>`;
+      localStorage.setItem('vesp-tr-dc-'+today.toDateString(),'1');
+      addXP(20); if(pct===100) launchConfetti();
+      return;
+    }
+    const q=qs[qi];
+    m.innerHTML=`<div style="background:var(--bg-card);border-radius:var(--radius);padding:24px;max-width:460px;width:90vw">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+        <span style="font-size:.9rem;color:var(--text-muted)">${qi+1}/${qs.length}</span>
+        <button onclick="m.remove()" style="border:none;background:none;font-size:1.2rem;cursor:pointer">✕</button>
+      </div>
+      <div style="font-family:'Baloo 2',cursive;font-size:1.1rem;font-weight:800;margin-bottom:4px">🔥 Desafío del día</div>
+      <div style="color:var(--text-muted);font-size:.88rem;margin-bottom:12px">${q.tenseLabel}</div>
+      <div style="font-size:1.3rem;font-weight:800;color:var(--primary);margin-bottom:2px">${q.verb.inf}</div>
+      <div style="color:var(--text-muted);font-style:italic;margin-bottom:12px">${q.verb.es} — ${TR_PRONS[q.pIdx]}</div>
+      <input id="dc-inp" class="ex-input" placeholder="Escribe la conjugación..." autocomplete="off" onkeydown="if(event.key==='Enter')dcCheck()">
+      <button class="btn-primary" onclick="dcCheck()" style="margin-top:10px;width:100%">Comprobar</button>
+      <div id="dc-fb" style="margin-top:8px;font-weight:700;min-height:22px"></div>
+    </div>`;
+    setTimeout(()=>document.getElementById('dc-inp')?.focus(),80);
+    window._dcQ=q; window._dcScore=0;
+  };
+
+  window.dcCheck=function(){
+    const inp=document.getElementById('dc-inp'); const fb=document.getElementById('dc-fb');
+    if(!inp||!fb) return;
+    const ok=inp.value.trim().toLowerCase()===window._dcQ.correct.toLowerCase();
+    inp.disabled=true;
+    fb.textContent=ok?'✅ ¡Correcto!':'❌ Correcto: '+window._dcQ.correct;
+    fb.style.color=ok?'#18A34A':'#dc2626';
+    if(ok) score++;
+    qi++;
+    setTimeout(render, ok?900:1800);
+  };
+
+  render();
+}
+
+/* ============================================================
+   DAILY PAGE
+   ============================================================ */
+function getStreak() {
+  const done=getDailyData(), today=new Date(); today.setHours(0,0,0,0);
+  const dSet=new Set(done); let s=0;
+  for(let i=0;i<365;i++){const d=new Date(today);d.setDate(d.getDate()-i);if(dSet.has(d.toDateString()))s++;else if(i>0)break;}
+  return s;
+}
+
+function buildDaily() {
+  const done=getDailyData(), today=new Date(); today.setHours(0,0,0,0);
+  const dSet=new Set(done);
+  let streak=0, longest=0, cur=0;
+  for(let i=0;i<365;i++){const d=new Date(today);d.setDate(d.getDate()-i);if(dSet.has(d.toDateString()))streak++;else if(i>0)break;}
+  for(let i=364;i>=0;i--){const d=new Date(today);d.setDate(d.getDate()-i);if(dSet.has(d.toDateString())){cur++;longest=Math.max(longest,cur);}else cur=0;}
+  const total=dSet.size, todayDone=dSet.has(today.toDateString());
+  const dayIdx=(today.getFullYear()*10000+(today.getMonth()+1)*100+today.getDate())%VERBOS_TR.length;
+  const verb=VERBOS_TR[dayIdx];
+  const sEmoji=streak>=365?'👑':streak>=180?'🌟':streak>=100?'🚀':streak>=30?'🏆':streak>=7?'🔥':'🌱';
+  const MILES=[{d:1,i:'🌱',l:'1er día'},{d:7,i:'🔥',l:'1 semana'},{d:30,i:'🏆',l:'1 mes'},{d:100,i:'🚀',l:'100 días'},{d:365,i:'👑',l:'1 año'}];
+
+  return `<div class="page-wrap">
+    <div class="dp-hero">
+      <div class="dp-hero-left">
+        <div class="dp-hero-title">🔥 Desafío del día</div>
+        <div class="dp-hero-sub">Un verbo al día · No rompas la racha</div>
+      </div>
+      <div class="dp-streak-circle ${streak>0?'dp-streak-active':''}">
+        <span class="dp-streak-num">${streak}</span>
+        <span class="dp-streak-lbl">días</span>
+      </div>
+    </div>
+    <div class="dp-stats-row">
+      <div class="dp-stat"><div class="dp-stat-icon">${sEmoji}</div><div class="dp-stat-val">${streak}</div><div class="dp-stat-lbl">Racha actual</div></div>
+      <div class="dp-stat"><div class="dp-stat-icon">🏅</div><div class="dp-stat-val">${longest}</div><div class="dp-stat-lbl">Racha más larga</div></div>
+      <div class="dp-stat"><div class="dp-stat-icon">📅</div><div class="dp-stat-val">${total}</div><div class="dp-stat-lbl">Días completados</div></div>
+      <div class="dp-stat"><div class="dp-stat-icon">🎯</div><div class="dp-stat-val">${Math.round(total/365*100)}%</div><div class="dp-stat-lbl">Meta 365 días</div></div>
+    </div>
+    <div class="dp-today ${todayDone?'dp-today-done':''}">
+      <div class="dp-today-left">
+        <div class="dp-today-badge">${todayDone?'✅':'🎯'}</div>
+        <div>
+          <div class="dp-today-label">Verbo de hoy</div>
+          <div class="dp-today-verb">${verb.inf} <span class="dp-today-tr">· ${verb.es}</span></div>
+          <div class="dp-today-status">${todayDone?'¡Completado hoy! 🎉':'Esperando — ¡empieza ahora!'}</div>
+        </div>
+      </div>
+      <button class="dp-today-btn" onclick="startDailyChallenge()">${todayDone?'🔄 Repetir':'▶ Empezar'}</button>
+    </div>
+    <div class="dp-cal-section">
+      <div class="cal-view-tabs">
+        <button class="cal-view-tab active" onclick="switchCal('weekly',this)">📅 Semanal</button>
+        <button class="cal-view-tab" onclick="switchCal('monthly',this)">🗓️ Mensual</button>
+        <button class="cal-view-tab" onclick="switchCal('yearly',this)">📆 Anual</button>
+      </div>
+      <div id="cal-content">${calWeekly(dSet,today)}</div>
+    </div>
+    <div class="dp-miles-section">
+      <div class="dp-miles-title"><strong>🏅 Hitos de racha</strong></div>
+      <div class="dp-miles-track">
+        ${MILES.map(m=>{
+          const done2=streak>=m.d||longest>=m.d;
+          const pct=Math.min(100,Math.round(streak/m.d*100));
+          return `<div class="dp-mile ${done2?'dp-mile-done':''}">
+            <div class="dp-mile-dot">${done2?m.i:'○'}</div>
+            <div class="dp-mile-days">${m.d} ${m.d===365?'':'días'}</div>
+            <div class="dp-mile-label">${m.l}</div>
+            ${!done2?`<div class="dp-mile-progress"><div class="dp-mile-fill" style="width:${pct}%"></div></div>`:''}
+          </div>`;
+        }).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+
+let _calOffset=0;
+function switchCal(v,btn) {
+  document.querySelectorAll('.cal-view-tab').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+  const done=getDailyData(), today=new Date(); today.setHours(0,0,0,0);
+  const dSet=new Set(done); const box=document.getElementById('cal-content'); if(!box) return;
+  if(v==='weekly')  box.innerHTML=calWeekly(dSet,today);
+  if(v==='monthly') { _calOffset=0; box.innerHTML=calMonthly(dSet,today,0); }
+  if(v==='yearly')  box.innerHTML=calYearly(dSet,today);
+}
+function calWeekly(dSet,today) {
+  const DAYS=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+  const dow=today.getDay(), off=dow===0?6:dow-1;
+  const cells=[]; for(let i=0;i<7;i++){const d=new Date(today);d.setDate(today.getDate()-off+i);cells.push(d);}
+  const wd=cells.filter(d=>dSet.has(d.toDateString())).length;
+  return `<div style="margin-bottom:8px;font-size:.85rem;color:var(--text-muted);font-weight:700">Esta semana: <span style="color:var(--primary)">${wd}/7 días</span></div>
+  <div class="cal-week-grid">${cells.map(d=>{
+    const done2=dSet.has(d.toDateString()), isT=d.toDateString()===today.toDateString();
+    return `<div class="cal-week-cell ${done2?'done':''} ${isT?'today':''}">
+      <div class="cal-week-day">${DAYS[d.getDay()]}</div>
+      <div class="cal-week-date">${d.getDate()}</div>
+      <div class="cal-week-dot">${done2?'✅':isT?'🎯':'·'}</div>
+    </div>`;
+  }).join('')}</div>`;
+}
+function calMonthly(dSet,today,off) {
+  const MN=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  const DN=['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
+  const ref=new Date(today.getFullYear(),today.getMonth()+off,1);
+  const yr=ref.getFullYear(),mo=ref.getMonth();
+  const first=new Date(yr,mo,1),last=new Date(yr,mo+1,0);
+  const pad=(first.getDay()+6)%7;
+  const cells=[]; for(let i=0;i<pad;i++) cells.push(null); for(let d=1;d<=last.getDate();d++) cells.push(new Date(yr,mo,d));
+  const mDone=cells.filter(d=>d&&dSet.has(d.toDateString())).length;
+  const getD="new Set(getDailyData())", getT="(()=>{const t=new Date();t.setHours(0,0,0,0);return t;})()";
+  return `<div class="cal-month-nav">
+    <button class="cal-month-nav-btn" ${off>-11?'':'disabled'} onclick="_calOffset--;document.getElementById('cal-content').innerHTML=calMonthly(${getD},${getT},_calOffset)">◀</button>
+    <span class="cal-month-name">${MN[mo]} ${yr}</span>
+    <button class="cal-month-nav-btn" ${off<0?'':'disabled'} onclick="_calOffset++;document.getElementById('cal-content').innerHTML=calMonthly(${getD},${getT},_calOffset)">▶</button>
+  </div>
+  <div style="margin-bottom:6px;font-size:.85rem;color:var(--text-muted);font-weight:700">${MN[mo]}: <span style="color:var(--primary)">${mDone}/${last.getDate()} días</span></div>
+  <div class="cal-month-grid">
+    ${DN.map(d=>`<div class="cal-month-hdr">${d}</div>`).join('')}
+    ${cells.map(d=>{
+      if(!d) return `<div class="cal-month-cell empty"></div>`;
+      const done2=dSet.has(d.toDateString()), isT=d.toDateString()===today.toDateString();
+      return `<div class="cal-month-cell ${done2?'done':''} ${isT?'today':''}">${d.getDate()}</div>`;
+    }).join('')}
+  </div>`;
+}
+function calYearly(dSet,today) {
+  const MO=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const DL=['L','M','X','J','V','S','D'];
+  const cells=[]; for(let i=364;i>=0;i--){const d=new Date(today);d.setDate(d.getDate()-i);cells.push({date:d,done:dSet.has(d.toDateString()),isToday:i===0});}
+  const pad=(cells[0].date.getDay()+6)%7;
+  const weeks=[]; let wk=Array(pad).fill(null);
+  cells.forEach(c=>{wk.push(c);if(wk.length===7){weeks.push(wk);wk=[];}});
+  if(wk.length){while(wk.length<7)wk.push(null);weeks.push(wk);}
+  const ml=Array(weeks.length).fill(''); let lm=-1;
+  weeks.forEach((w,wi)=>{const f=w.find(c=>c);if(f&&f.date.getMonth()!==lm){ml[wi]=MO[f.date.getMonth()];lm=f.date.getMonth();}});
+  const ch=c=>{if(!c)return`<div class="dc-cell dc-cell-empty"></div>`;const cl=c.done?'dc-cell-done':c.isToday?'dc-cell-today':'';return`<div class="dc-cell ${cl}"></div>`;};
+  const yr=cells.filter(c=>c&&c.done).length;
+  return `<div style="margin-bottom:8px;font-size:.85rem;color:var(--text-muted);font-weight:700">Últimos 365 días: <span style="color:var(--primary)">${yr}/365</span></div>
+  <div class="dp-cal-scroll">
+    <div class="dc365-month-row">${ml.map(m=>`<div class="dc365-month-lbl">${m}</div>`).join('')}</div>
+    <div class="dc365-grid-row">
+      <div class="dc365-day-labels">${DL.map((d,i)=>`<div class="dc365-day-lbl">${i%2===0?d:''}</div>`).join('')}</div>
+      <div class="dc365-cols">${weeks.map(w=>`<div class="dc365-col">${w.map(ch).join('')}</div>`).join('')}</div>
+    </div>
+  </div>`;
+}
+
+/* ============================================================
+   LOGROS
+   ============================================================ */
+function buildLogros() {
+  const ACHS=[
+    {id:'xp50',   icon:'⭐', name:'Primeros pasos',  desc:'Consigue 50 XP',      unlocked:xp>=50},
+    {id:'xp200',  icon:'🌟', name:'En camino',       desc:'Consigue 200 XP',     unlocked:xp>=200},
+    {id:'xp500',  icon:'🚀', name:'Estudiante serio',desc:'Consigue 500 XP',     unlocked:xp>=500},
+    {id:'s3',     icon:'🔥', name:'3 días seguidos', desc:'Racha de 3 días',      unlocked:getStreak()>=3},
+    {id:'s7',     icon:'💪', name:'Una semana',      desc:'Racha de 7 días',      unlocked:getStreak()>=7},
+    {id:'s30',    icon:'🏆', name:'Un mes',          desc:'Racha de 30 días',     unlocked:getStreak()>=30},
+    {id:'fc10',   icon:'🃏', name:'Flashcards',      desc:'Completa un mazo',     unlocked:parseInt(localStorage.getItem('vesp-tr-fc-known')||0)>=10},
+    {id:'perf',   icon:'💯', name:'¡Perfecto!',      desc:'100% en un ejercicio', unlocked:false},
+  ];
+  return `<div class="page-wrap">
+    <div style="font-family:'Baloo 2',cursive;font-size:1.3rem;font-weight:800;margin-bottom:16px;color:var(--text)">🏆 Logros</div>
+    <div class="logros-grid">
+      ${ACHS.map(a=>`<div class="logro-card ${a.unlocked?'unlocked':''}">
+        <div class="logro-icon">${a.unlocked?a.icon:'🔒'}</div>
+        <div class="logro-name">${a.name}</div>
+        <div class="logro-desc">${a.desc}</div>
+      </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+(function init() {
+  applyTheme();
+  document.getElementById('xpVal').textContent = xp;
+  const hashPage=location.hash.replace('#','');
+  const valid=['home','unit','flashcards','logros','daily'];
+  const start=valid.includes(hashPage)?hashPage:'home';
+  history.replaceState({page:start},'','#'+start);
+  showPage(start, false);
+})();
+</script>
+</body>
+</html>
